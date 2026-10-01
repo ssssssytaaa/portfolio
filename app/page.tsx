@@ -1,10 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { useMemo, useRef, useState } from "react";
+import { type AnchorHTMLAttributes, useMemo, useRef, useState } from "react";
 import { ArrowDownRight, ArrowUpRight, Download, Mail } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { categories, featured, secondaryWork, work } from "@/lib/work";
+
+function Link({ href, ...props }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+  return <a href={href} {...props} />;
+}
 
 function Header() {
   return <header className="site-header"><Link href="#top" className="wordmark">SY<span>®</span></Link><nav aria-label="Main navigation"><Link href="#about">About</Link><Link href="#work">Work</Link><Link href="#contact">Contact</Link></nav><a className="header-cta" href="mailto:sunyutong662@gmail.com">Let’s talk <ArrowUpRight size={15} /></a></header>;
