@@ -4,32 +4,23 @@ import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
 import { ArrowDownRight, ArrowUpRight, Download, Mail } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { categories, featured, work } from "@/lib/work";
+import { categories, featured, secondaryWork, work } from "@/lib/work";
 
 function Header() {
   return <header className="site-header"><Link href="#top" className="wordmark">SY<span>®</span></Link><nav aria-label="Main navigation"><Link href="#about">About</Link><Link href="#work">Work</Link><Link href="#contact">Contact</Link></nav><a className="header-cta" href="mailto:sunyutong662@gmail.com">Let’s talk <ArrowUpRight size={15} /></a></header>;
 }
 
 function Hero() {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-  const onMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (reduce || !cardRef.current) return;
-    const r = cardRef.current.getBoundingClientRect();
-    const x = ((event.clientX - r.left) / r.width - .5) * 10;
-    const y = ((event.clientY - r.top) / r.height - .5) * 8;
-    cardRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) rotateX(${-y / 4}deg) rotateY(${x / 4}deg)`;
-  };
   return <section className="hero" id="top">
-    <p className="hero-kicker">Singapore · Available for opportunities</p>
-    <h1 aria-label="Sun Yutong"><span>SUN</span><span>YUTONG</span></h1>
-    <div className="hero-video" ref={cardRef} onMouseMove={onMove} onMouseLeave={() => { if (cardRef.current) cardRef.current.style.transform = ""; }}>
-      <video autoPlay muted playsInline loop preload="metadata" poster="/media/echos-poster.webp" aria-label="A preview of Echos of Her" onTimeUpdate={(e) => { if (e.currentTarget.currentTime >= 40) e.currentTarget.currentTime = 0; }}>
+    <div className="hero-video">
+      <video autoPlay muted playsInline loop preload="auto" poster="/media/echos-poster.webp" aria-label="A preview of Echos of Her" onTimeUpdate={(e) => { if (e.currentTarget.currentTime >= 40) e.currentTarget.currentTime = 0; }}>
         <source media="(max-width: 720px)" src="/media/echos-hero-mobile.mp4" type="video/mp4" /><source src="/media/echos-hero-desktop.mp4" type="video/mp4" />
       </video>
-      <Link href="/work/echos-of-her" className="video-label"><span>Featured work / 2025</span><strong>Echos of Her</strong><ArrowUpRight /></Link>
     </div>
-    <div className="hero-bottom"><p>Creative Marketing<br />& Player Experience</p><p>I turn player insight into ideas, stories and campaigns that people want to enter.</p><a className="round-link" href="#work" aria-label="Explore selected work"><ArrowDownRight /></a></div>
+    <p className="hero-kicker">Singapore · Open to opportunities</p>
+    <h1 aria-label="Creative marketer"><span>CREATIVE</span><span>MARKETER</span></h1>
+    <Link href="/work/echos-of-her" className="video-label"><span>Featured project · 2025</span><strong>Echos of Her</strong><ArrowUpRight /></Link>
+    <div className="hero-bottom"><p>Creative Marketing<br />& Player Experience</p><p>I turn player insight into ideas, stories and campaigns that people want to enter.</p><div className="hero-profile"><span>PROFILE</span><strong>Sun Yutong</strong><small>● Available for opportunities</small></div><a className="round-link" href="#work" aria-label="Explore selected work"><ArrowDownRight /></a></div>
   </section>;
 }
 
@@ -74,7 +65,7 @@ function Impact() { return <section className="impact"><div className="section-l
 
 function Library() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
-  const filtered = useMemo(() => active === "All" ? work : work.filter((item) => item.category === active), [active]);
+  const filtered = useMemo(() => active === "All" ? secondaryWork : secondaryWork.filter((item) => item.category === active), [active]);
   return <section className="library"><div className="library-head"><div><div className="section-label"><span>05</span><span>Complete library</span></div><h2>MORE WORK</h2></div><div className="filters" aria-label="Filter projects">{categories.map((cat) => <button key={cat} className={active === cat ? "active" : ""} onClick={() => setActive(cat)}>{cat}</button>)}</div></div><motion.div layout className="work-grid">{filtered.map((item, index) => <motion.article layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} key={item.slug} className={`work-card ${index % 5 === 0 ? "wide" : ""}`}><Link href={`/work/${item.slug}`}><div className="work-image"><img src={item.heroMedia} alt={`${item.title} preview`} loading="lazy" /><span><ArrowUpRight /></span></div><p>{item.category}</p><h3>{item.title}</h3><small>{item.role}</small></Link></motion.article>)}</motion.div></section>;
 }
 
