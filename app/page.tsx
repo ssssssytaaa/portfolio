@@ -1,7 +1,7 @@
 "use client";
 
 import { type AnchorHTMLAttributes, useMemo, useRef, useState } from "react";
-import { ArrowDownRight, ArrowUpRight, Download, Mail } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Download, Mail, Volume2, VolumeX } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { categories, featured, secondaryWork, work } from "@/lib/work";
 
@@ -14,15 +14,26 @@ function Header() {
 }
 
 function Hero() {
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const toggleSound = () => {
+    const nextMuted = !muted;
+    setMuted(nextMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = nextMuted;
+      if (!nextMuted && videoRef.current.paused) void videoRef.current.play();
+    }
+  };
   return <section className="hero" id="top">
     <div className="hero-video">
-      <video autoPlay muted playsInline loop preload="auto" poster="/media/echos-poster.webp" aria-label="A preview of Echos of Her">
+      <video ref={videoRef} autoPlay muted={muted} playsInline loop preload="auto" poster="/media/echos-poster.webp" aria-label="A preview of Echos of Her">
         <source media="(max-width: 720px)" src="/media/echos-hero-mobile.mp4" type="video/mp4" /><source src="/media/echos-hero-desktop.mp4" type="video/mp4" />
       </video>
     </div>
     <p className="hero-kicker">Singapore · Open to opportunities</p>
     <h1 aria-label="Sun Yutong"><span>SUN YUTONG</span></h1>
     <Link href="/work/echos-of-her" className="video-label"><span>Featured project · 2025</span><strong>Echos of Her</strong><ArrowUpRight /></Link>
+    <button className="sound-toggle" type="button" onClick={toggleSound} aria-label={muted ? "Play video with sound" : "Mute video"} aria-pressed={!muted}>{muted ? <VolumeX /> : <Volume2 />}<span>{muted ? "Sound on" : "Sound off"}</span></button>
     <div className="hero-bottom"><p>Creative Marketing<br />& Player Experience</p><p>I turn player insight into ideas, stories and campaigns that people want to enter.</p><div className="hero-profile"><span>PROFILE</span><strong>Sun Yutong</strong><small>● Available for opportunities</small></div><a className="round-link" href="#work" aria-label="Explore selected work"><ArrowDownRight /></a></div>
   </section>;
 }
