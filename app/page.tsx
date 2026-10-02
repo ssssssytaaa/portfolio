@@ -16,12 +16,12 @@ function Header() {
 function Hero() {
   return <section className="hero" id="top">
     <div className="hero-video">
-      <video autoPlay muted playsInline loop preload="auto" poster="/media/echos-poster.webp" aria-label="A preview of Echos of Her" onTimeUpdate={(e) => { if (e.currentTarget.currentTime >= 40) e.currentTarget.currentTime = 0; }}>
+      <video autoPlay muted playsInline loop preload="auto" poster="/media/echos-poster.webp" aria-label="A preview of Echos of Her">
         <source media="(max-width: 720px)" src="/media/echos-hero-mobile.mp4" type="video/mp4" /><source src="/media/echos-hero-desktop.mp4" type="video/mp4" />
       </video>
     </div>
     <p className="hero-kicker">Singapore · Open to opportunities</p>
-    <h1 aria-label="Creative marketer"><span>CREATIVE</span><span>MARKETER</span></h1>
+    <h1 aria-label="Sun Yutong"><span>SUN YUTONG</span></h1>
     <Link href="/work/echos-of-her" className="video-label"><span>Featured project · 2025</span><strong>Echos of Her</strong><ArrowUpRight /></Link>
     <div className="hero-bottom"><p>Creative Marketing<br />& Player Experience</p><p>I turn player insight into ideas, stories and campaigns that people want to enter.</p><div className="hero-profile"><span>PROFILE</span><strong>Sun Yutong</strong><small>● Available for opportunities</small></div><a className="round-link" href="#work" aria-label="Explore selected work"><ArrowDownRight /></a></div>
   </section>;
