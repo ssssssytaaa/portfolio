@@ -23,13 +23,13 @@ export type WorkItem = {
 export const work: WorkItem[] = [
   {
     slug: "echos-of-her", title: "Echos of Her", category: "Games & Interactive", depth: "case",
-    role: "Creative Director · Game Designer · Visual Development",
+    role: "Creator · Film Director · Digital Artist",
     summary: "A digital art experience honouring the many roles women have carried across eras and cultures—preserving their tenderness, resilience and power through a contemporary visual language.",
     heroMedia: "/media/echos-screen.webp", accent: "#b88a72", tools: ["Unity", "Blender", "Adobe Creative Suite", "Narrative Design"],
     metrics: [
       { value: "10", label: "Cities", context: "Presented across China and international cultural venues." },
       { value: "170 × 18 m", label: "Public screen", context: "Adapted for a landmark-scale LED façade in Hangzhou." },
-      { value: "2025", label: "Gold Prize", context: "CDSA International Media Art Competition." },
+      { value: "Gold Prize", label: "CDSA 2025", context: "International Media Art Competition." },
       { value: "Finalist", label: "Light Art", context: "Tuzishan International Light Art Festival." },
     ],
     sections: [
@@ -39,7 +39,7 @@ export const work: WorkItem[] = [
       { title: "Exhibition Design", body: "The composition was designed to travel across very different formats—from a personal screen to gallery presentation and a 170 × 18 metre public LED façade. Panoramic chapters preserve the work’s rhythm while allowing each venue to reveal a different scale of detail." },
       { title: "Outcome", body: "The project received the Gold Prize at the 2025 CDSA International Media Art Competition and was a finalist at the Tuzishan International Light Art Festival. It was exhibited across ten cities, including Hangzhou, Milan, Hamburg, venues in Spain and Singapore." },
     ],
-    gallery: ["/media/echos-award-ceremony.webp", "/media/echos-gold-award-poster.webp", "/media/echos-screen.webp", "/media/echos-visual-chapter-04.webp"],
+    gallery: ["/media/echos-gold-award-poster.webp", "/media/echos-art-3.webp", "/media/echos-award-ceremony.webp", "/media/echos-screen.webp"],
     recognition: [
       "Gold Prize — 2025 CDSA International Media Art Competition",
       "Finalist — Tuzishan International Light Art Festival",

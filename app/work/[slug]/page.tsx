@@ -23,43 +23,43 @@ function EchosCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <h1><span>Echos</span><em>of Her</em></h1>
       <div className="echos-hero-details">
         <p>{item.summary}</p>
-        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Format</dt><dd>Digital art · Interactive media · Public exhibition</dd></div><div><dt>Tools</dt><dd>{item.tools.join(" · ")}</dd></div></dl>
+        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Format</dt><dd>Digital film · Public exhibition · Media art</dd></div></dl>
         {item.externalLinks?.[0] ? <a className="case-project-link" href={item.externalLinks[0].href} target="_blank" rel="noreferrer">{item.externalLinks[0].label}<ArrowUpRight /></a> : null}
       </div>
     </header>
 
-    <figure className="echos-hero-image"><img src={item.heroMedia} alt="Echos of Her presented on a landmark public LED screen" /><figcaption>Hangzhou · Landmark public LED façade · 170 × 18 m</figcaption></figure>
-
-    <section className="echos-statement">
-      <div className="section-label"><span>01</span><span>Project statement</span></div>
-      <div><p className="echos-lead">A tribute to women’s growth, cultural memory and the identities carried across generations.</p><p>{item.sections[0].body}</p></div>
-    </section>
-
     <section className="echos-recognition">
-      <div><span className="section-kicker">Recognition</span><h2>A personal work,<br />made public.</h2></div>
+      <div><span className="section-kicker">01 · Recognition</span><h2>A personal work,<br />made public.</h2></div>
       <ol>{item.recognition?.map((award, index) => <li key={award}><span>{String(index + 1).padStart(2, "0")}</span><strong>{award}</strong></li>)}</ol>
     </section>
 
-    <section className="echos-artwork">
-      <div className="section-label"><span>02</span><span>Selected visual chapters</span></div>
-      <div className="echos-section-intro"><h2>A story designed<br />to unfold horizontally.</h2><p>The panoramic format brings portraits, landscape, archival texture and symbolism into one continuous visual journey. Each chapter can stand alone, while the sequence builds a collective portrait across time.</p></div>
-      <div className="echos-panoramas">{artwork.map((media, index) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{media.caption}</figcaption></figure>)}</div>
+    <section className="echos-video-section">
+      <div className="section-label"><span>02</span><span>Film introduction</span></div>
+      <div className="echos-video-copy"><h2>A moving portrait<br />of women across time.</h2><p>Created as a digital film, Echos of Her layers portraiture, landscape and cultural memory into a continuous visual journey. Women emerge as creators, healers, workers, guardians and pioneers—each carrying history forward.</p></div>
+      <figure className="echos-hero-image"><video autoPlay muted loop playsInline controls poster="/media/echos-screen.webp" aria-label="Echos of Her playing on the West Lake public screen"><source src="/media/echos-hero-desktop.mp4" type="video/mp4" /></video><figcaption>West Lake, Hangzhou · Landmark public LED façade · 170 × 18 m</figcaption></figure>
     </section>
 
-    <section className="echos-thinking">
-      {item.sections.slice(1, 4).map((section, index) => <article key={section.title}><span>{String(index + 3).padStart(2, "0")}</span><h2>{section.title}</h2><p>{section.body}</p></article>)}
+    <section className="echos-statement">
+      <div className="section-label"><span>03</span><span>Project statement</span></div>
+      <div><p className="echos-lead">A tribute to women’s growth, cultural memory and the identities carried across generations.</p><p>{item.sections[0].body}</p></div>
+    </section>
+
+    <section className="echos-artwork">
+      <div className="section-label"><span>04</span><span>Selected visual chapters</span></div>
+      <div className="echos-section-intro"><h2>A story designed<br />to unfold horizontally.</h2><p>The panoramic format brings portraits, landscape, archival texture and symbolism into one continuous visual journey. Each chapter can stand alone, while the sequence builds a collective portrait across time.</p></div>
+      <div className="echos-panoramas">{artwork.map((media, index) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{media.caption}</figcaption></figure>)}</div>
     </section>
 
     {item.metrics?.length ? <section className="case-stats echos-stats" aria-label="Project results">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
 
     <section className="echos-documentation">
-      <div className="section-label"><span>06</span><span>Recognition & global exhibition</span></div>
+      <div className="section-label"><span>05</span><span>Recognition & global exhibition</span></div>
       <div className="echos-section-intro"><h2>From award stage<br />to city scale.</h2><p>{item.sections[4].body}</p></div>
       <div className="echos-documentation-grid">{exhibition.map((media) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption>{media.caption}</figcaption></figure>)}</div>
     </section>
 
     <section className="echos-materials">
-      <div className="section-label"><span>07</span><span>Exhibition materials</span></div>
+      <div className="section-label"><span>06</span><span>Exhibition materials</span></div>
       <div className="echos-materials-grid">{materials.map((media) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption>{media.caption}</figcaption></figure>)}</div>
     </section>
 
