@@ -1,5 +1,6 @@
 export type Metric = { value: string; label: string; context: string };
 export type Section = { title: string; body: string };
+export type DetailMedia = { src: string; alt: string; caption: string; group: "artwork" | "exhibition" | "materials" };
 
 export type WorkItem = {
   slug: string;
@@ -14,6 +15,8 @@ export type WorkItem = {
   metrics?: Metric[];
   sections: Section[];
   gallery: string[];
+  recognition?: string[];
+  detailMedia?: DetailMedia[];
   externalLinks?: { label: string; href: string }[];
 };
 
@@ -21,22 +24,42 @@ export const work: WorkItem[] = [
   {
     slug: "echos-of-her", title: "Echos of Her", category: "Games & Interactive", depth: "case",
     role: "Creative Director · Game Designer · Visual Development",
-    summary: "An interactive memory experience that transforms a deeply personal story into a public-facing cultural installation.",
-    heroMedia: "/media/echos-poster.webp", accent: "#b88a72", tools: ["Unity", "Blender", "Adobe Creative Suite", "Narrative Design"],
+    summary: "A digital art experience honouring the many roles women have carried across eras and cultures—preserving their tenderness, resilience and power through a contemporary visual language.",
+    heroMedia: "/media/echos-screen.webp", accent: "#b88a72", tools: ["Unity", "Blender", "Adobe Creative Suite", "Narrative Design"],
     metrics: [
-      { value: "10", label: "Cities", context: "Presented across a touring programme spanning China and international venues." },
-      { value: "170 × 18 m", label: "Media façade", context: "Shown on a landmark public LED screen in Hangzhou." },
-      { value: "400+", label: "Submissions", context: "Selected from more than four hundred competition entries." },
-      { value: "2025", label: "Gold Prize", context: "Gold Prize and Tuzishan finalist recognition." },
+      { value: "10", label: "Cities", context: "Presented across China and international cultural venues." },
+      { value: "170 × 18 m", label: "Public screen", context: "Adapted for a landmark-scale LED façade in Hangzhou." },
+      { value: "2025", label: "Gold Prize", context: "CDSA International Media Art Competition." },
+      { value: "Finalist", label: "Light Art", context: "Tuzishan International Light Art Festival." },
     ],
     sections: [
-      { title: "Overview", body: "Echos of Her is a narrative-led interactive work about memory, absence and the traces people leave behind. I shaped its visual system, interaction language and public presentation so an intimate story could remain legible at exhibition scale." },
-      { title: "Challenge", body: "The experience needed to feel emotionally specific without relying on exposition. It also had to move between a playable screen, award presentation and an enormous urban media façade while preserving a coherent identity." },
-      { title: "My Role", body: "I led creative direction, game design, visual development and presentation strategy, connecting the emotional premise to interaction, art direction and the audience journey." },
-      { title: "Process", body: "The process moved from memory fragments and visual motifs into interaction prototypes, cinematic compositions and a modular presentation system. Repeated playtests focused on pacing, comprehension and emotional rhythm." },
-      { title: "Outcome", body: "The project won a 2025 Gold Prize, became a Tuzishan finalist and was presented across ten cities, including Hangzhou, Milan, Hamburg, Spain and Singapore." },
+      { title: "Overview", body: "Echos of Her places women at the centre of its narrative, tracing the roles and responsibilities they have carried across different eras and cultural contexts. The work moves between intimate portraiture and panoramic digital collage to hold tenderness and strength in the same frame." },
+      { title: "Narrative", body: "Women appear as life-givers, resilient workers, creative world-builders, healers, guardians and pioneers. Each figure witnesses change while also helping to drive it, connecting individual memory with a wider cultural history." },
+      { title: "Creative Direction", body: "I developed a visual system in which faces, flora, archival textures and symbolic landscapes overlap rather than sit apart. This layered language lets identity and history feel remembered, fragmented and continuously reborn." },
+      { title: "Exhibition Design", body: "The composition was designed to travel across very different formats—from a personal screen to gallery presentation and a 170 × 18 metre public LED façade. Panoramic chapters preserve the work’s rhythm while allowing each venue to reveal a different scale of detail." },
+      { title: "Outcome", body: "The project received the Gold Prize at the 2025 CDSA International Media Art Competition and was a finalist at the Tuzishan International Light Art Festival. It was exhibited across ten cities, including Hangzhou, Milan, Hamburg, venues in Spain and Singapore." },
     ],
-    gallery: ["/media/echos-award.webp", "/media/echos-art-1.webp", "/media/echos-art-2.webp", "/media/echos-screen.webp"],
+    gallery: ["/media/echos-award-ceremony.webp", "/media/echos-gold-award-poster.webp", "/media/echos-screen.webp", "/media/echos-visual-chapter-04.webp"],
+    recognition: [
+      "Gold Prize — 2025 CDSA International Media Art Competition",
+      "Finalist — Tuzishan International Light Art Festival",
+      "Global exhibition programme across 10 cities",
+    ],
+    detailMedia: [
+      { src: "/media/echos-visual-chapter-01.webp", alt: "A panoramic chapter from Echos of Her with a woman framed by flowers and branches", caption: "Selected visual chapter 01", group: "artwork" },
+      { src: "/media/echos-visual-chapter-02.webp", alt: "A panoramic mountain landscape chapter from Echos of Her", caption: "Selected visual chapter 02", group: "artwork" },
+      { src: "/media/echos-visual-chapter-03.webp", alt: "A panoramic illustrated chapter centred on a woman in red", caption: "Selected visual chapter 03", group: "artwork" },
+      { src: "/media/echos-visual-chapter-04.webp", alt: "A panoramic botanical portrait chapter from Echos of Her", caption: "Selected visual chapter 04", group: "artwork" },
+      { src: "/media/echos-visual-chapter-05.webp", alt: "A panoramic archival collage chapter from Echos of Her", caption: "Selected visual chapter 05", group: "artwork" },
+      { src: "/media/echos-visual-chapter-06.webp", alt: "A panoramic ink and portrait chapter from Echos of Her", caption: "Selected visual chapter 06", group: "artwork" },
+      { src: "/media/echos-award-ceremony.webp", alt: "Sun Yutong accepting recognition at the CDSA award ceremony", caption: "Gold Prize recognition at CDSA 2025", group: "exhibition" },
+      { src: "/media/echos-global-exhibition-montage.webp", alt: "A montage showing Echos of Her presented across international venues", caption: "Exhibition documentation across ten cities", group: "exhibition" },
+      { src: "/media/echos-global-exhibition-social-01.webp", alt: "Social documentation of Echos of Her on panoramic public screens", caption: "Public presentation documentation", group: "exhibition" },
+      { src: "/media/echos-global-exhibition-social-02.webp", alt: "Further social documentation of the project in multiple colourways", caption: "Audience-facing exhibition documentation", group: "exhibition" },
+      { src: "/media/echos-gold-award-poster.webp", alt: "Gold Award poster for Echos of Her at the 2025 CDSA competition", caption: "CDSA Gold Award poster", group: "materials" },
+      { src: "/media/echos-exhibition-book.webp", alt: "Printed exhibition publication featuring Echos of Her", caption: "Exhibition publication", group: "materials" },
+    ],
+    externalLinks: [{ label: "View project film", href: "https://drive.google.com/file/d/1joHPeDnchtqoUalaywEgxHl7JLJk2x5k/view?usp=drive_link" }],
   },
   {
     slug: "lets-build-a-dungeon", title: "Let’s Build a Dungeon", category: "Games & Interactive", depth: "case",

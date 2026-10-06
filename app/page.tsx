@@ -69,8 +69,8 @@ function Capabilities() {
 }
 
 function Featured() {
-  return <section className="featured" id="work"><div className="section-label"><span>03</span><span>Featured case studies</span></div><h2>Selected work,<br /><em>built to connect.</em></h2><div className="feature-stack">{featured.map((item, index) => <article className="feature-card" key={item.slug} style={{ "--accent": item.accent, "--i": index } as React.CSSProperties}>
-    <div className="feature-meta"><span>0{index + 1}</span><span>{item.category}</span></div><div className="feature-images"><img src={item.heroMedia} alt={`${item.title} project`} loading="lazy" /><img src={item.gallery[0]} alt="" loading="lazy" /><img src={item.gallery[1]} alt="" loading="lazy" /></div><div className="feature-copy"><div><p>{item.role}</p><h3>{item.title}</h3></div><Link href={`/work/${item.slug}`}>View case study <ArrowUpRight /></Link></div>
+  return <section className="featured" id="work"><div className="section-label"><span>03</span><span>Featured case studies</span></div><h2>Selected work,<br /><em>built to connect.</em></h2><div className="feature-stack">{featured.map((item, index) => <article className={`feature-card ${index === 0 ? "feature-card--lead" : ""}`} key={item.slug} style={{ "--accent": item.accent, "--i": index } as React.CSSProperties}>
+    <div className="feature-meta"><span>0{index + 1}</span><span>{item.category}</span><Link className="feature-meta-link" href={`/work/${item.slug}`}>View case study <ArrowUpRight /></Link></div><Link href={`/work/${item.slug}`} className="feature-images" aria-label={`Open ${item.title} case study`}><img src={item.heroMedia} alt={`${item.title} project`} loading="lazy" /><img src={item.gallery[0]} alt="" loading="lazy" /><img src={item.gallery[1]} alt="" loading="lazy" /></Link><div className="feature-copy"><div><p>{item.role}</p><h3>{item.title}</h3>{index === 0 ? <span className="feature-summary">{item.summary}</span> : null}</div><Link href={`/work/${item.slug}`}>View case study <ArrowUpRight /></Link></div>
   </article>)}</div></section>;
 }
 
