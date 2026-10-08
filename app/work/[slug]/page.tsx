@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { getWork, work, type WorkItem } from "@/lib/work";
+import { featured, getWork, work, type WorkItem } from "@/lib/work";
 
 export function generateStaticParams() { return work.map((item) => ({ slug: item.slug })); }
 
@@ -67,13 +67,60 @@ function EchosCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   </main>;
 }
 
+function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  return <main className="case-page rct-case" style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+
+    <header className="rct-case-hero">
+      <div className="case-eyebrow"><span>Commercial game production · Internship</span><span>Case study 02</span></div>
+      <h1><span>RollerCoaster Tycoon</span><em>Wonderworks</em></h1>
+      <div className="rct-hero-details">
+        <p>{item.summary}</p>
+        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Studio / Publisher</dt><dd>Springloaded · Atari</dd></div></dl>
+        <div className="rct-links">{item.externalLinks?.map((link) => <a className="case-project-link" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label}<ArrowUpRight /></a>)}</div>
+      </div>
+    </header>
+
+    <figure className="rct-hero-image"><img src={item.heroMedia} alt="RollerCoaster Tycoon Wonderworks theme park" /><figcaption><span>Official game imagery</span><span>Springloaded · Atari</span></figcaption></figure>
+
+    <section className="rct-trailer">
+      <div className="section-label"><span>01</span><span>Announcement trailer</span></div>
+      <div className="rct-section-intro"><h2>Turning playable<br />systems into a story.</h2><p>I assisted with production for the announcement trailer, bringing a QA-informed understanding of the game into its audience-facing presentation. The work connected representative gameplay, visual clarity and the rhythm needed to introduce a new RollerCoaster Tycoon.</p></div>
+      <div className="rct-video"><iframe src="https://www.youtube-nocookie.com/embed/QWsU277r8OM" title="RollerCoaster Tycoon Wonderworks official announcement trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
+    </section>
+
+    <section className="rct-contribution">
+      <div className="section-label dark"><span>02</span><span>My contribution</span></div>
+      <div className="rct-contribution-head"><h2>Three connected<br />production lenses.</h2><p>My internship role crossed product quality and product communication. Each area sharpened a different part of the same question: what will the player notice, understand and feel?</p></div>
+      <div className="rct-contribution-grid">
+        {item.sections.slice(2, 5).map((section, index) => <article key={section.title}><span>0{index + 1}</span><h3>{section.title}</h3><p>{section.body}</p></article>)}
+      </div>
+    </section>
+
+    {item.metrics?.length ? <section className="case-stats rct-stats" aria-label="Official project scope">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
+
+    <section className="rct-product">
+      <div className="section-label"><span>03</span><span>Project context</span></div>
+      <div className="rct-section-intro"><h2>A classic simulation,<br />rebuilt around chaos.</h2><p>{item.sections[0].body} Official Steam information describes custom coaster construction, ride tuning, guest needs, staff management and physics-driven destruction across Hollow Creek and Forest Frontiers.</p></div>
+      <div className="rct-gallery">{item.gallery.map((image, index) => <figure key={image}><img src={image} alt={`RollerCoaster Tycoon Wonderworks project image ${index + 1}`} loading="lazy" /><figcaption>{index === 0 ? "Theme park gameplay" : "Wonderworks key art"}</figcaption></figure>)}</div>
+      <a className="rct-source" href="https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" target="_blank" rel="noreferrer">Project scope and feature data: official Steam listing <ArrowUpRight /></a>
+    </section>
+
+    <section className="rct-takeaway"><span className="section-kicker">04 · Takeaway</span><p>{item.sections[5].body}</p></section>
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getWork(slug);
   if (!item) notFound();
-  const index = work.findIndex((entry) => entry.slug === slug);
-  const next = work[(index + 1) % work.length];
+  const caseOrder = [...featured, ...work.filter((entry) => !featured.some((feature) => feature.slug === entry.slug))];
+  const index = caseOrder.findIndex((entry) => entry.slug === slug);
+  const next = caseOrder[(index + 1) % caseOrder.length];
   if (item.slug === "echos-of-her") return <EchosCaseStudy item={item} next={next} />;
+  if (item.slug === "rollercoaster-tycoon-wonderworks") return <RctCaseStudy item={item} next={next} />;
   const sections = item.sections?.length ? item.sections : [
     { title: "Project", body: item.summary },
     { title: "Contribution", body: `I worked across ${item.role.toLowerCase()}, using ${item.tools.join(", ")} to shape a clear and purposeful result.` },

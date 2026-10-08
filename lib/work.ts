@@ -77,16 +77,28 @@ export const work: WorkItem[] = [
   },
   {
     slug: "rollercoaster-tycoon-wonderworks", title: "RollerCoaster Tycoon: Wonderworks", category: "Games & Interactive", depth: "case",
-    role: "QA · Game Balance · Trailer Production Support",
-    summary: "Commercial production work connecting quality assurance, balance feedback and trailer support for a recognisable theme-park game franchise.",
+    role: "QA · Game Balance · Assist in Trailer Production",
+    summary: "Commercial production work supporting quality assurance, game balance and the announcement trailer for a new entry in the iconic theme-park simulation franchise.",
     heroMedia: "/media/rct-hero.webp", accent: "#e3563b", tools: ["QA Testing", "Game Balance", "Trailer Production", "Cross-functional Review"],
+    metrics: [
+      { value: "60+", label: "Rides & shops", context: "Official Early Access project scope, including rides, coasters and shops." },
+      { value: "150+", label: "Decor pieces", context: "Customisable scenery and decoration items listed on Steam." },
+      { value: "2", label: "Launch parks", context: "Hollow Creek and Forest Frontiers in the Early Access edition." },
+      { value: "8", label: "Languages", context: "Interface and subtitle languages listed on the official Steam page." },
+    ],
     sections: [
-      { title: "Overview", body: "RollerCoaster Tycoon: Wonderworks combines the readable pleasure of park building with the demands of a commercial production pipeline. My internship contribution focused on the details that make systems feel coherent and marketing footage feel trustworthy." },
-      { title: "My Role", body: "I supported quality assurance and game-balance review, then assisted with trailer production. This meant evaluating the experience both as a player and as communication: what works, what reads clearly and what best represents the product." },
-      { title: "Process", body: "I recorded reproducible issues, reviewed balance and pacing, and helped identify visually strong gameplay moments for presentation. The work required close attention to both system behaviour and the audience-facing image of the game." },
-      { title: "Takeaway", body: "The project showed me how product quality and creative marketing reinforce one another. A convincing trailer begins with genuine player-facing value, then frames it with clarity and rhythm." },
+      { title: "Overview", body: "RollerCoaster Tycoon: Wonderworks is a new commercial theme-park management game developed by Springloaded and published by Atari. It reimagines the franchise around custom coaster building, guest and staff management, ride tuning and a physics-driven layer of chaos." },
+      { title: "My Role", body: "During my internship at Springloaded, I contributed across quality assurance, game-balance review and trailer production support. The role connected close observation of player-facing systems with the challenge of presenting the game clearly to a wider audience." },
+      { title: "QA", body: "I supported the team by testing game builds, identifying inconsistencies and communicating actionable observations. The work required attention to repeatability, system interactions and the difference between a technical issue and a player-experience problem." },
+      { title: "Game Balance", body: "I reviewed how progression, rewards and ride behaviour felt in play, approaching balance through clarity, pacing and player expectation. The goal was to help the simulation feel readable while preserving the playful unpredictability at the heart of Wonderworks." },
+      { title: "Trailer Production", body: "I assisted with production for the announcement trailer, helping connect representative gameplay with an audience-facing story. This experience showed me how testing knowledge and marketing judgement can work together: the strongest footage communicates a real product strength quickly." },
+      { title: "Takeaway", body: "Wonderworks strengthened my understanding of commercial game development as a shared production process. QA, balance and marketing are not isolated stages; together they shape what players understand, feel and remember." },
     ],
     gallery: ["/media/rct-gameplay.webp", "/media/rct-hero.webp"],
+    externalLinks: [
+      { label: "Watch announcement trailer", href: "https://www.youtube.com/watch?v=QWsU277r8OM" },
+      { label: "View on Steam", href: "https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" },
+    ],
   },
   {
     slug: "meat-lover", title: "Meat Lover", category: "Marketing", depth: "case",
@@ -223,7 +235,7 @@ export const work: WorkItem[] = [
   },
 ];
 
-const featuredSlugs = ["echos-of-her", "lets-build-a-dungeon", "rollercoaster-tycoon-wonderworks", "meat-lover", "soul-vein"];
+const featuredSlugs = ["echos-of-her", "rollercoaster-tycoon-wonderworks", "lets-build-a-dungeon", "meat-lover", "soul-vein"];
 export const featured = featuredSlugs.map((slug) => work.find((item) => item.slug === slug)!).filter(Boolean);
 export const secondaryWork = work.filter((item) => !featuredSlugs.includes(item.slug));
 export const categories = ["All", "Marketing", "Games & Interactive", "3D & Motion", "Visual Art"] as const;
