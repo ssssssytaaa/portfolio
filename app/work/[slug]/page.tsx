@@ -81,7 +81,12 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       </div>
     </header>
 
-    <figure className="rct-hero-image"><img src={item.heroMedia} alt="Official RollerCoaster Tycoon Wonderworks cover art" /><figcaption><span>Official game key art</span><span>Springloaded · Atari</span></figcaption></figure>
+    <section className="rct-hero-image" aria-label="Official RollerCoaster Tycoon Wonderworks imagery">
+      <div className="rct-hero-pair">
+        <figure><img src={item.heroMedia} alt="Official RollerCoaster Tycoon Wonderworks cover art" /><figcaption><span>Official game key art</span><span>Springloaded · Atari</span></figcaption></figure>
+        <figure><img src="/media/rct-park-hd.jpg" alt="RollerCoaster Tycoon Wonderworks theme park overview" /><figcaption><span>Theme park overview</span><span>In-game imagery</span></figcaption></figure>
+      </div>
+    </section>
 
     <section className="rct-trailer">
       <div className="section-label"><span>01</span><span>Announcement trailer</span></div>
