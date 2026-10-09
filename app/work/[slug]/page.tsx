@@ -87,6 +87,8 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <div className="section-label"><span>01</span><span>Announcement trailer</span></div>
       <div className="rct-section-intro"><h2>Turning playable<br />systems into a story.</h2><p>I assisted with production for the announcement trailer, bringing a QA-informed understanding of the game into its audience-facing presentation. The work connected representative gameplay, visual clarity and the rhythm needed to introduce a new RollerCoaster Tycoon.</p></div>
       <div className="rct-video"><iframe src="https://www.youtube-nocookie.com/embed/QWsU277r8OM" title="RollerCoaster Tycoon Wonderworks official announcement trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
+      {item.metrics?.length ? <section className="case-stats rct-stats" aria-label="Announcement trailer performance">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
+      <p className="rct-metric-note">Public YouTube figures checked 9 October 2026. View and like counts will continue to change.</p>
     </section>
 
     <section className="rct-contribution">
@@ -97,13 +99,11 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       </div>
     </section>
 
-    {item.metrics?.length ? <section className="case-stats rct-stats" aria-label="Official project scope">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
-
     <section className="rct-product">
       <div className="section-label"><span>03</span><span>Project context</span></div>
       <div className="rct-section-intro"><h2>A classic simulation,<br />rebuilt around chaos.</h2><p>{item.sections[0].body} Official Steam information describes custom coaster construction, ride tuning, guest needs, staff management and physics-driven destruction across Hollow Creek and Forest Frontiers.</p></div>
-      <div className="rct-gallery">{item.gallery.map((image, index) => <figure key={image}><img src={image} alt={`RollerCoaster Tycoon Wonderworks project image ${index + 1}`} loading="lazy" /><figcaption>{index === 0 ? "Theme park gameplay" : "Wonderworks key art"}</figcaption></figure>)}</div>
-      <a className="rct-source" href="https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" target="_blank" rel="noreferrer">Project scope and feature data: official Steam listing <ArrowUpRight /></a>
+      <div className="rct-gallery">{item.gallery.map((image, index) => <figure key={image}><img src={image} alt={index === 0 ? "RollerCoaster Tycoon Wonderworks coaster builder interface" : "RollerCoaster Tycoon Wonderworks rescue helicopter and ride debris"} loading="lazy" /><figcaption>{index === 0 ? "Custom coaster construction" : "Chaos physics and rescue systems"}</figcaption></figure>)}</div>
+      <a className="rct-source" href="https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" target="_blank" rel="noreferrer">High-resolution imagery and project information: official Steam listing <ArrowUpRight /></a>
     </section>
 
     <section className="rct-takeaway"><span className="section-kicker">04 · Takeaway</span><p>{item.sections[5].body}</p></section>

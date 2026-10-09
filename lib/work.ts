@@ -79,12 +79,12 @@ export const work: WorkItem[] = [
     slug: "rollercoaster-tycoon-wonderworks", title: "RollerCoaster Tycoon: Wonderworks", category: "Games & Interactive", depth: "case",
     role: "QA · Game Balance · Assist in Trailer Production",
     summary: "Commercial production work supporting quality assurance, game balance and the announcement trailer for a new entry in the iconic theme-park simulation franchise.",
-    heroMedia: "/media/rct-hero.webp", accent: "#e3563b", tools: ["QA Testing", "Game Balance", "Trailer Production", "Cross-functional Review"],
+    heroMedia: "/media/rct-park-hd.jpg", accent: "#e3563b", tools: ["QA Testing", "Game Balance", "Trailer Production", "Cross-functional Review"],
     metrics: [
-      { value: "60+", label: "Rides & shops", context: "Official Early Access project scope, including rides, coasters and shops." },
-      { value: "150+", label: "Decor pieces", context: "Customisable scenery and decoration items listed on Steam." },
-      { value: "2", label: "Launch parks", context: "Hollow Creek and Forest Frontiers in the Early Access edition." },
-      { value: "8", label: "Languages", context: "Interface and subtitle languages listed on the official Steam page." },
+      { value: "85K+", label: "Trailer views", context: "Public views on the official Early Access announcement trailer." },
+      { value: "1.7K+", label: "YouTube likes", context: "Audience likes on the official announcement trailer." },
+      { value: "1:21", label: "Trailer runtime", context: "A concise reveal built around gameplay, personality and product clarity." },
+      { value: "Aug 2026", label: "Published", context: "Official public release of the Early Access announcement trailer." },
     ],
     sections: [
       { title: "Overview", body: "RollerCoaster Tycoon: Wonderworks is a new commercial theme-park management game developed by Springloaded and published by Atari. It reimagines the franchise around custom coaster building, guest and staff management, ride tuning and a physics-driven layer of chaos." },
@@ -94,7 +94,7 @@ export const work: WorkItem[] = [
       { title: "Trailer Production", body: "I assisted with production for the announcement trailer, helping connect representative gameplay with an audience-facing story. This experience showed me how testing knowledge and marketing judgement can work together: the strongest footage communicates a real product strength quickly." },
       { title: "Takeaway", body: "Wonderworks strengthened my understanding of commercial game development as a shared production process. QA, balance and marketing are not isolated stages; together they shape what players understand, feel and remember." },
     ],
-    gallery: ["/media/rct-gameplay.webp", "/media/rct-hero.webp"],
+    gallery: ["/media/rct-builder-hd.jpg", "/media/rct-chaos-hd.jpg"],
     externalLinks: [
       { label: "Watch announcement trailer", href: "https://www.youtube.com/watch?v=QWsU277r8OM" },
       { label: "View on Steam", href: "https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" },
