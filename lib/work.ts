@@ -102,20 +102,20 @@ export const work: WorkItem[] = [
   {
     slug: "meat-lover", title: "Meat Lover", category: "Marketing", depth: "case",
     role: "Creative Marketing · Content Strategy · Game Design",
-    summary: "A deliberately strange cutting-game concept turned into a fast, measurable social launch through positioning, content design and community feedback.",
-    heroMedia: "/media/meat-hero.webp", accent: "#ff623f", tools: ["Unity", "RedNote", "Content Strategy", "Analytics"],
+    summary: "A first-person 3D puzzle game turned into a platform-native launch campaign through audience research, playful content experiments and community-led iteration.",
+    heroMedia: "/media/meat-hero.webp", accent: "#ef3e2f", tools: ["Game Design", "Content Strategy", "Community Marketing", "Analytics"],
     metrics: [
-      { value: "70K+", label: "Views", context: "Debut post reach on RedNote." },
-      { value: "1.6K+", label: "Likes", context: "Organic response to the initial launch creative." },
-      { value: "~500", label: "Followers", context: "Audience growth within three days from a single post." },
-      { value: "22.4%", label: "Conversion", context: "39 link clicks from 174 tracked landing-page views." },
+      { value: "58,512", label: "Exposure", context: "Recorded across the RedNote campaign snapshot." },
+      { value: "10,544", label: "Views", context: "Content views recorded in the same campaign snapshot." },
+      { value: "~500", label: "Followers", context: "Audience built through platform-native content and active community management." },
+      { value: "22.4%", label: "One-day conversion", context: "RedNote generated 39 tracked clicks from 174 views." },
     ],
     sections: [
-      { title: "Overview", body: "Meat Lover pairs tactile cutting interactions with an absurd, memorable premise. The marketing strategy treated the game’s strangeness as an advantage and built a recognisable voice around quick visual payoffs." },
-      { title: "Challenge", body: "With no established audience, the launch needed to communicate the mechanic instantly, earn attention in-feed and convert curiosity into meaningful actions rather than vanity reach." },
-      { title: "My Role", body: "I worked across game concept, creative positioning, asset production, post design and performance review. Product decisions and marketing decisions were developed together." },
-      { title: "Process", body: "I isolated the most visually satisfying moments, tested concise hooks, built a repeatable content identity and used early audience behaviour to refine the message and call to action." },
-      { title: "Outcome", body: "The launch reached more than 70,000 views and 1,600 likes. The project gained roughly 500 followers in three days and recorded a 22.4% tracked conversion rate." },
+      { title: "Game Concept", body: "Meat Lover is a first-person 3D puzzle game with a lightly unsettling sense of humour. Players cut exact weights of meat, remove fat and manage limited cuts while trying to earn a five-star Meatchelin rating." },
+      { title: "Challenge", body: "The game had no established audience and an intentionally strange premise. The launch needed to make the mechanic readable in seconds, reach people beyond the core gaming community and turn attention into genuine player interest." },
+      { title: "My Role", body: "I worked across the game concept, creative positioning, content production, community interaction and performance analysis. Product and marketing decisions developed together, so player response could inform both the message and the experience." },
+      { title: "Content Strategy", body: "We researched platform behaviour, adapted the creative for each audience and used a hook-first, sell-later approach. Relatable memes and interactive choices opened the conversation before gameplay, development updates and calls to action moved audiences closer to the game." },
+      { title: "Outcome", body: "The campaign built a recognisable character identity, an active feedback loop and measurable cross-platform traffic. RedNote was the strongest tracked conversion channel in the one-day comparison, reaching a 22.4% click-through rate." },
     ],
     gallery: ["/media/meat-identity.webp", "/media/meat-ui.webp", "/media/meat-social.webp"],
   },
@@ -234,7 +234,7 @@ export const work: WorkItem[] = [
   },
 ];
 
-const featuredSlugs = ["echos-of-her", "rollercoaster-tycoon-wonderworks", "lets-build-a-dungeon", "meat-lover", "soul-vein"];
+const featuredSlugs = ["echos-of-her", "rollercoaster-tycoon-wonderworks", "meat-lover", "lets-build-a-dungeon", "soul-vein"];
 export const featured = featuredSlugs.map((slug) => work.find((item) => item.slug === slug)!).filter(Boolean);
 export const secondaryWork = work.filter((item) => !featuredSlugs.includes(item.slug));
 export const categories = ["All", "Marketing", "Games & Interactive", "3D & Motion", "Visual Art"] as const;

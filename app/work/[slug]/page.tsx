@@ -115,6 +115,69 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   </main>;
 }
 
+function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  const channelResults = [
+    { channel: "RedNote", views: "174", clicks: "39", rate: "22.4%", width: "100%" },
+    { channel: "Instagram", views: "127", clicks: "10", rate: "7.87%", width: "35%" },
+    { channel: "TikTok", views: "451", clicks: "11", rate: "2.44%", width: "11%" },
+    { channel: "YouTube", views: "538", clicks: "3", rate: "0.55%", width: "3%" },
+  ];
+
+  return <main className="case-page meat-case" style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav meat-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+
+    <header className="meat-case-hero">
+      <div className="case-eyebrow"><span>Game design · Creative marketing</span><span>Case study 03</span></div>
+      <div className="meat-title"><span>MEAT</span><em>LOVER</em></div>
+      <div className="meat-hero-grid">
+        <figure><img src={item.heroMedia} alt="Meat Lover pixel-art title screen" /><figcaption>Game Jam project · First-person 3D puzzle game</figcaption></figure>
+        <div className="meat-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Focus</dt><dd>Player insight · Platform strategy · Community growth</dd></div></dl></div>
+      </div>
+    </header>
+
+    <section className="meat-concept">
+      <div className="section-label"><span>01</span><span>The game</span></div>
+      <div className="meat-section-heading"><h2>Precision cutting.<br />Delicious pressure.</h2><p>{item.sections[0].body}</p></div>
+      <div className="meat-concept-grid">
+        <figure><img src="/media/meat-identity.webp" alt="Meat Lover cutting board, cleaver and pixel-art game scene" loading="lazy" /><figcaption>Core cutting loop · Level one</figcaption></figure>
+        <div className="meat-mechanics"><article><span>01</span><h3>Exact weight</h3><p>Read the meat as a puzzle and cut to the requested gram target.</p></article><article><span>02</span><h3>Limited cuts</h3><p>Every slice matters, turning a tactile action into a planning problem.</p></article><article><span>03</span><h3>Minimal waste</h3><p>Remove fat and unwanted pieces without damaging the useful meat.</p></article></div>
+      </div>
+    </section>
+
+    <section className="meat-positioning">
+      <div className="section-label dark"><span>02</span><span>From product to positioning</span></div>
+      <div className="meat-positioning-head"><h2>Find the behaviour.<br />Build the hook.</h2><p>{item.sections[1].body}</p></div>
+      <ol className="meat-process"><li><span>01</span><strong>Research platform trends</strong><p>Study how people discover, trust and interact with content on each channel.</p></li><li><span>02</span><strong>Define the audience</strong><p>Focus on puzzle players and people drawn to satisfying visual payoffs.</p></li><li><span>03</span><strong>Adapt the creative</strong><p>Turn one product idea into platform-native posts, challenges and short videos.</p></li><li><span>04</span><strong>Convert attention</strong><p>Move from meme-led discovery to gameplay, development and a clear call to action.</p></li></ol>
+    </section>
+
+    <section className="meat-hook">
+      <div className="section-label"><span>03</span><span>Creative iteration</span></div>
+      <div className="meat-hook-grid"><div><p className="meat-overline">Puzzle × satisfying</p><h2>“You only have<br />two cuts.”</h2><p>The strongest short-form creative introduced a challenge immediately, then held attention with fast, smooth cutting and amplified sound. The question gave the right audience a reason to stay for the result.</p><div className="meat-hook-tags"><span>Challenge-led opening</span><span>Visual payoff</span><span>Enhanced cutting sound</span></div></div><figure><img src="/media/meat-social.webp" alt="Vertical Meat Lover challenge post asking players to remove all the fat in two cuts" loading="lazy" /><figcaption>Short-form challenge creative</figcaption></figure></div>
+    </section>
+
+    <section className="meat-channels">
+      <div className="section-label dark"><span>04</span><span>Platform-native content</span></div>
+      <div className="meat-section-heading"><h2>One game.<br />Four ways in.</h2><p>{item.sections[3].body}</p></div>
+      <div className="meat-channel-grid"><article><span>RedNote</span><h3>Visual, personal, interactive</h3><p>Player-POV recommendations, character-led posts, quizzes and choices made discovery feel authentic and participatory.</p></article><article><span>TikTok + Instagram</span><h3>Hook first, sell later</h3><p>Relatable memes reached beyond core players before challenges and gameplay turned attention into curiosity.</p></article><article><span>Reddit</span><h3>Feedback as development</h3><p>Prototype posts invited detailed player responses, creating an early validation loop around readability and challenge.</p></article><article><span>YouTube</span><h3>Gameplay with context</h3><p>Longer-form clips let the cutting loop, challenge and product personality read more clearly.</p></article></div>
+    </section>
+
+    <section className="meat-community">
+      <div className="section-label"><span>05</span><span>Community & identity</span></div>
+      <div className="meat-community-grid"><figure><img src="/media/meat-ui.webp" alt="A RedNote Meat Lover post featuring the personified meat character and community comments" loading="lazy" /><figcaption>Character voice, comments and clear calls to action</figcaption></figure><div><h2>Make the meat<br />worth following.</h2><p>We replied to comments, treated suggestions as product input and gave the meat a distinct personality. The character became more than key art: it carried the account voice and made every post recognisably part of the same world.</p><ul><li>Proactive community interaction</li><li>User-driven improvements</li><li>Clear calls to action</li><li>A recognisable IP identity</li></ul></div></div>
+    </section>
+
+    {item.metrics?.length ? <section className="case-stats meat-stats" aria-label="Meat Lover campaign results">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
+
+    <section className="meat-conversion">
+      <div className="section-label"><span>06</span><span>One-day link conversion</span></div>
+      <div className="meat-conversion-grid"><div><p className="meat-overline">Strongest tracked channel</p><strong>22.4%</strong><h2>RedNote conversion</h2><p>39 clicks from 174 tracked views in the one-day comparison.</p></div><div className="meat-bars">{channelResults.map((result) => <article key={result.channel}><div><strong>{result.channel}</strong><span>{result.views} views · {result.clicks} clicks</span><b>{result.rate}</b></div><i><span style={{ width: result.width }} /></i></article>)}</div></div>
+      <p className="meat-data-note">Campaign snapshots and one-day link tracking cover different reporting windows and are presented separately.</p>
+    </section>
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getWork(slug);
@@ -124,6 +187,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const next = caseOrder[(index + 1) % caseOrder.length];
   if (item.slug === "echos-of-her") return <EchosCaseStudy item={item} next={next} />;
   if (item.slug === "rollercoaster-tycoon-wonderworks") return <RctCaseStudy item={item} next={next} />;
+  if (item.slug === "meat-lover") return <MeatLoverCaseStudy item={item} next={next} />;
   const sections = item.sections?.length ? item.sections : [
     { title: "Project", body: item.summary },
     { title: "Contribution", body: `I worked across ${item.role.toLowerCase()}, using ${item.tools.join(", ")} to shape a clear and purposeful result.` },
