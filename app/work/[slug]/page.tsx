@@ -76,7 +76,7 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <h1><span>RollerCoaster Tycoon</span><em>Wonderworks</em></h1>
       <div className="rct-hero-details">
         <p>{item.summary}</p>
-        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Studio / Publisher</dt><dd>Springloaded · Atari</dd></div></dl>
+        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Internship</dt><dd>May–August 2026</dd></div><div><dt>Studio / Publisher</dt><dd>Springloaded · Atari</dd></div></dl>
         <div className="rct-links">{item.externalLinks?.map((link) => <a className="case-project-link" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label}<ArrowUpRight /></a>)}</div>
       </div>
     </header>
@@ -85,7 +85,7 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
 
     <section className="rct-trailer">
       <div className="section-label"><span>01</span><span>Announcement trailer</span></div>
-      <div className="rct-section-intro"><h2>Turning playable<br />systems into a story.</h2><p>I assisted with production for the announcement trailer, bringing a QA-informed understanding of the game into its audience-facing presentation. The work connected representative gameplay, visual clarity and the rhythm needed to introduce a new RollerCoaster Tycoon.</p></div>
+      <div className="rct-section-intro"><h2>Building the world<br />behind the trailer.</h2><p>I built the in-game scenes used in the announcement trailer, arranging rides, scenery and park layouts for clear, visually engaging shots. My QA and game-balance work gave me a detailed understanding of the systems I was presenting on screen.</p></div>
       <div className="rct-video"><iframe src="https://www.youtube-nocookie.com/embed/QWsU277r8OM" title="RollerCoaster Tycoon Wonderworks official announcement trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
       {item.metrics?.length ? <section className="case-stats rct-stats" aria-label="Announcement trailer performance">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
       <p className="rct-metric-note">Public YouTube figures checked 9 October 2026. View and like counts will continue to change.</p>
@@ -105,8 +105,6 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <div className="rct-gallery">{item.gallery.map((image, index) => <figure key={image}><img src={image} alt={index === 0 ? "RollerCoaster Tycoon Wonderworks coaster builder interface" : "RollerCoaster Tycoon Wonderworks rescue helicopter and ride debris"} loading="lazy" /><figcaption>{index === 0 ? "Custom coaster construction" : "Chaos physics and rescue systems"}</figcaption></figure>)}</div>
       <a className="rct-source" href="https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" target="_blank" rel="noreferrer">High-resolution imagery and project information: official Steam listing <ArrowUpRight /></a>
     </section>
-
-    <section className="rct-takeaway"><span className="section-kicker">04 · Takeaway</span><p>{item.sections[5].body}</p></section>
 
     <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
   </main>;

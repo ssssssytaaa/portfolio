@@ -77,8 +77,8 @@ export const work: WorkItem[] = [
   },
   {
     slug: "rollercoaster-tycoon-wonderworks", title: "RollerCoaster Tycoon: Wonderworks", category: "Games & Interactive", depth: "case",
-    role: "QA · Game Balance · Assist in Trailer Production",
-    summary: "Commercial production work supporting quality assurance, game balance and the announcement trailer for a new entry in the iconic theme-park simulation franchise.",
+    role: "QA · Game Balance · Trailer Scene Building",
+    summary: "Commercial production work spanning quality assurance, game balance and the construction of in-game scenes for the announcement trailer of a new entry in the iconic theme-park simulation franchise.",
     heroMedia: "/media/rct-park-hd.jpg", accent: "#e3563b", tools: ["QA Testing", "Game Balance", "Trailer Production", "Cross-functional Review"],
     metrics: [
       { value: "85K+", label: "Trailer views", context: "Public views on the official Early Access announcement trailer." },
@@ -88,11 +88,10 @@ export const work: WorkItem[] = [
     ],
     sections: [
       { title: "Overview", body: "RollerCoaster Tycoon: Wonderworks is a new commercial theme-park management game developed by Springloaded and published by Atari. It reimagines the franchise around custom coaster building, guest and staff management, ride tuning and a physics-driven layer of chaos." },
-      { title: "My Role", body: "During my internship at Springloaded, I contributed across quality assurance, game-balance review and trailer production support. The role connected close observation of player-facing systems with the challenge of presenting the game clearly to a wider audience." },
+      { title: "My Role", body: "During my May–August 2026 internship at Springloaded, I contributed across quality assurance, game-balance review and building the in-game scenes required for the announcement trailer. The role connected close observation of player-facing systems with the challenge of presenting the game clearly to a wider audience." },
       { title: "QA", body: "I supported the team by testing game builds, identifying inconsistencies and communicating actionable observations. The work required attention to repeatability, system interactions and the difference between a technical issue and a player-experience problem." },
       { title: "Game Balance", body: "I reviewed how progression, rewards and ride behaviour felt in play, approaching balance through clarity, pacing and player expectation. The goal was to help the simulation feel readable while preserving the playful unpredictability at the heart of Wonderworks." },
-      { title: "Trailer Production", body: "I assisted with production for the announcement trailer, helping connect representative gameplay with an audience-facing story. This experience showed me how testing knowledge and marketing judgement can work together: the strongest footage communicates a real product strength quickly." },
-      { title: "Takeaway", body: "Wonderworks strengthened my understanding of commercial game development as a shared production process. QA, balance and marketing are not isolated stages; together they shape what players understand, feel and remember." },
+      { title: "Trailer Scene Building", body: "I built the in-game scenes needed for the announcement trailer, arranging rides, scenery and park layouts so each shot presented the game clearly and supported the trailer’s visual storytelling. My familiarity with the game’s systems helped me construct scenes that were both representative of play and visually readable on screen." },
     ],
     gallery: ["/media/rct-builder-hd.jpg", "/media/rct-chaos-hd.jpg"],
     externalLinks: [
