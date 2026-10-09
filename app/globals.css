@@ -55,3 +55,4 @@ footer{background:#d6ff3e;color:#101010;padding:7vw 3.2vw 1.5rem}.footer-top>p{t
 .rct-trailer .rct-stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:1.5rem}.rct-trailer .rct-stats strong{display:block;font-size:clamp(2.4rem,4.4vw,4.7rem)}.rct-metric-note{margin:.8rem 0 0;color:#787872;font-size:.7rem;letter-spacing:.06em;text-align:right}
 @media (max-width:800px){.rct-trailer .rct-stats{grid-template-columns:1fr 1fr}.rct-trailer .rct-stats strong{font-size:2.8rem}.rct-metric-note{text-align:left;line-height:1.5}}
 @media (max-width:420px){.rct-trailer .rct-stats{grid-template-columns:1fr}.rct-trailer .rct-stats article{padding:1.5rem 0;border-right:0}.rct-trailer .rct-stats article:last-child{border-bottom:0}}
+.rct-hero-image img{aspect-ratio:1232/706}

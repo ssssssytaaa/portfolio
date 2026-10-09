@@ -79,7 +79,7 @@ export const work: WorkItem[] = [
     slug: "rollercoaster-tycoon-wonderworks", title: "RollerCoaster Tycoon: Wonderworks", category: "Games & Interactive", depth: "case",
     role: "QA · Game Balance · Trailer Scene Building",
     summary: "Commercial production work spanning quality assurance, game balance and the construction of in-game scenes for the announcement trailer of a new entry in the iconic theme-park simulation franchise.",
-    heroMedia: "/media/rct-park-hd.jpg", accent: "#e3563b", tools: ["QA Testing", "Game Balance", "Trailer Production", "Cross-functional Review"],
+    heroMedia: "/media/rct-cover-hd.jpg", accent: "#e3563b", tools: ["QA Testing", "Game Balance", "Trailer Production", "Cross-functional Review"],
     metrics: [
       { value: "85K+", label: "Trailer views", context: "Public views on the official Early Access announcement trailer." },
       { value: "1.7K+", label: "YouTube likes", context: "Audience likes on the official announcement trailer." },
