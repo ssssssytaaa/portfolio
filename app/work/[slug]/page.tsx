@@ -115,6 +115,74 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   </main>;
 }
 
+function LetsBuildDungeonCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  const contributions = [
+    { number: "01", title: "Systematic QA", body: "I tested repeated gameplay flows, reproduced edge cases and documented issues in a form the wider team could act on." },
+    { number: "02", title: "Game balance", body: "I reviewed pacing, progression and player feedback, separating balance observations from technical defects." },
+    { number: "03", title: "Design support", body: "I contributed design feedback grounded in hands-on play, focusing on clarity, usability and the player’s understanding of interconnected systems." },
+    { number: "04", title: "Asset integration", body: "I helped move content from working files into the production build while checking consistency, placement and implementation quality." },
+  ];
+  const productionSteps = [
+    { title: "Play the system", body: "Test features in context rather than as isolated tasks, observing how management, building and RPG layers affect one another." },
+    { title: "Make evidence useful", body: "Record reliable reproduction steps, distinguish severity from player impact and communicate the clearest next action." },
+    { title: "Verify the result", body: "Re-test changes in the build and check that an improvement holds across the wider player journey." },
+  ];
+
+  return <main className="case-page dungeon-case" style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav dungeon-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+
+    <header className="dungeon-hero">
+      <div className="case-eyebrow"><span>Commercial game production · Springloaded</span><span>Case study 04</span></div>
+      <div className="dungeon-hero-art">
+        <img className="dungeon-hero-background" src={item.heroMedia} alt="Official Let’s Build a Dungeon key art featuring its fantasy creatures" />
+        <img className="dungeon-logo" src="/media/lets-build-library-logo.png" alt="Let’s Build a Dungeon" />
+      </div>
+      <div className="dungeon-hero-details">
+        <p>{item.summary}</p>
+        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Internship</dt><dd>May–August 2026</dd></div><div><dt>Studio</dt><dd>Springloaded · Singapore</dd></div></dl>
+        <div className="dungeon-links">{item.externalLinks?.map((link) => <a className="case-project-link" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label}<ArrowUpRight /></a>)}</div>
+      </div>
+    </header>
+
+    {item.metrics?.length ? <section className="case-stats dungeon-stats" aria-label="Official public project scale">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
+
+    <section className="dungeon-contribution">
+      <div className="section-label"><span>01</span><span>My contribution</span></div>
+      <div className="dungeon-section-head"><h2>Supporting quality<br />across the build.</h2><p>The public numbers describe the scale of the project. My contribution was inside the production pipeline: improving reliability, clarity and implementation through four connected areas.</p></div>
+      <div className="dungeon-contribution-grid">{contributions.map((contribution) => <article key={contribution.title}><span>{contribution.number}</span><h3>{contribution.title}</h3><p>{contribution.body}</p></article>)}</div>
+    </section>
+
+    <section className="dungeon-systems">
+      <div className="section-label dark"><span>02</span><span>A multi-layered product</span></div>
+      <div className="dungeon-section-head"><h2>Studio management.<br />World building. RPG play.</h2><p>Let’s Build a Dungeon asks players to manage a development studio, construct an MMORPG and step inside the game they create. Testing one feature meant understanding how it affected several layers of the experience.</p></div>
+      <div className="dungeon-systems-grid">
+        <figure className="dungeon-system-wide"><img src="/media/lets-build-steam-01.jpg" alt="A large custom RPG world built in Let’s Build a Dungeon" loading="lazy" /><figcaption>World-building scale · Official Steam imagery</figcaption></figure>
+        <figure><img src="/media/lets-build-steam-03.jpg" alt="Product analytics and player retention interface in Let’s Build a Dungeon" loading="lazy" /><figcaption>Player analytics and product rating</figcaption></figure>
+        <figure><img src="/media/lets-build-steam-04.jpg" alt="Game studio desktop and communication interface in Let’s Build a Dungeon" loading="lazy" /><figcaption>Studio communication and production decisions</figcaption></figure>
+      </div>
+    </section>
+
+    <section className="dungeon-process">
+      <div className="section-label"><span>03</span><span>Production approach</span></div>
+      <div className="dungeon-process-grid">{productionSteps.map((step, index) => <article key={step.title}><span>0{index + 1}</span><h3>{step.title}</h3><p>{step.body}</p></article>)}</div>
+    </section>
+
+    <section className="dungeon-context">
+      <div className="section-label dark"><span>04</span><span>Official game context</span></div>
+      <div className="dungeon-section-head"><h2>A game-development sim<br />inside an RPG builder.</h2><p>Developed and self-published by Springloaded, the game is scheduled to enter Early Access on 11 February 2027. Its four modes combine studio simulation, accessible creative tools, cooperative building and community-made games.</p></div>
+      <div className="dungeon-gallery">
+        <figure><img src="/media/lets-build-steam-02.jpg" alt="Building and decorating a fantasy town in Let’s Build a Dungeon" loading="lazy" /><figcaption>Building tools and asset integration</figcaption></figure>
+        <figure><img src="/media/lets-build-steam-06.jpg" alt="Virtual players exploring a custom world in Let’s Build a Dungeon" loading="lazy" /><figcaption>Virtual player behaviour and world interaction</figcaption></figure>
+        <figure><img src="/media/lets-build-steam-07.jpg" alt="Boss battle gameplay in Let’s Build a Dungeon" loading="lazy" /><figcaption>Playable RPG combat and balancing</figcaption></figure>
+        <figure><img src="/media/lets-build-steam-08.jpg" alt="A science laboratory area created in Let’s Build a Dungeon" loading="lazy" /><figcaption>Custom interiors and thousands of assets</figcaption></figure>
+      </div>
+      <p className="dungeon-source-note">Public project data and high-resolution imagery are sourced from the official Steam listing and Springloaded development updates. Figures describe the overall project, not an individual attribution.</p>
+    </section>
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   const rednoteAccountUrl = "https://www.rednote.com/user/profile/6982e12a000000002603a3ff";
   const rednoteLaunchPostUrl = "https://www.rednote.com/discovery/item/69ad634600000000290337ac";
@@ -265,6 +333,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   if (item.slug === "echos-of-her") return <EchosCaseStudy item={item} next={next} />;
   if (item.slug === "rollercoaster-tycoon-wonderworks") return <RctCaseStudy item={item} next={next} />;
   if (item.slug === "meat-lover") return <MeatLoverCaseStudy item={item} next={next} />;
+  if (item.slug === "lets-build-a-dungeon") return <LetsBuildDungeonCaseStudy item={item} next={next} />;
   const sections = item.sections?.length ? item.sections : [
     { title: "Project", body: item.summary },
     { title: "Contribution", body: `I worked across ${item.role.toLowerCase()}, using ${item.tools.join(", ")} to shape a clear and purposeful result.` },

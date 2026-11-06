@@ -65,15 +65,24 @@ export const work: WorkItem[] = [
     slug: "lets-build-a-dungeon", title: "Let’s Build a Dungeon", category: "Games & Interactive", depth: "case",
     role: "Game Design · QA · Game Balance · Asset Integration",
     summary: "Commercial game production experience supporting a large-scale management game through design feedback, systematic QA and production-ready content integration.",
-    heroMedia: "/media/lets-build-hero.webp", accent: "#8ab76f", tools: ["QA Testing", "Game Balance", "Asset Integration", "Production Documentation"],
-    metrics: [{ value: "180K+", label: "Steam wishlists", context: "Project context during my internship at Springloaded." }],
+    heroMedia: "/media/lets-build-background-hd.jpg", accent: "#c6ff5a", tools: ["QA Testing", "Game Balance", "Asset Integration", "Production Documentation"],
+    metrics: [
+      { value: "180K+", label: "Steam wishlists", context: "Public milestone shared by Springloaded in an official development update." },
+      { value: "500", label: "Demo reviews", context: "Public Steam demo review milestone following Steam Next Fest." },
+      { value: "4", label: "Game modes", context: "Campaign, Creative, Just Build and Dungeoneering." },
+      { value: "14", label: "Languages", context: "Interface and subtitle languages listed on the official Steam page." },
+    ],
     sections: [
       { title: "Overview", body: "Let’s Build a Dungeon is a commercial game project developed at Springloaded. During my internship, I worked within the production pipeline rather than on a standalone student prototype, learning how design decisions are reviewed, tested and prepared for release." },
       { title: "My Role", body: "My contribution covered game-design support, quality assurance, game-balance feedback and asset integration. I documented issues clearly, reproduced edge cases and helped move content from working files into a dependable game build." },
       { title: "Process", body: "I tested features across repeated play sessions, separated balance observations from technical defects and communicated results in a form that designers and developers could act on. Asset work required equal attention to visual consistency and production constraints." },
       { title: "What I Learned", body: "The project strengthened my understanding of commercial production: player experience is shaped not only by big ideas, but by thousands of small, well-tested decisions and reliable collaboration across disciplines." },
     ],
-    gallery: ["/media/lets-build-gameplay.webp", "/media/lets-build-hero.webp"],
+    gallery: ["/media/lets-build-steam-01.jpg", "/media/lets-build-steam-02.jpg", "/media/lets-build-steam-03.jpg", "/media/lets-build-steam-06.jpg"],
+    externalLinks: [
+      { label: "View on Steam", href: "https://store.steampowered.com/app/2365790/Lets_Build_a_Dungeon/" },
+      { label: "Official development updates", href: "https://steamcommunity.com/app/2365790/allnews/" },
+    ],
   },
   {
     slug: "rollercoaster-tycoon-wonderworks", title: "RollerCoaster Tycoon: Wonderworks", category: "Games & Interactive", depth: "case",
