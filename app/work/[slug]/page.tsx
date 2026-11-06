@@ -116,6 +116,16 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
 }
 
 function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  const rednoteAccountUrl = "https://www.rednote.com/user/profile/6982e12a000000002603a3ff";
+  const rednoteLaunchPostUrl = "https://www.rednote.com/discovery/item/69ad634600000000290337ac";
+  const rednoteLaunchSlides = [
+    { src: "/media/meat-rednote-launch-01.webp", alt: "Meat Lover character introducing the independent game in a hand-drawn comic panel" },
+    { src: "/media/meat-rednote-launch-02.webp", alt: "RedNote slide explaining Meat Lover as a 3D strategy cutting game with light horror elements" },
+    { src: "/media/meat-rednote-launch-03.webp", alt: "RedNote slide explaining exact-weight cutting, fat removal and bone constraints" },
+    { src: "/media/meat-rednote-launch-04.webp", alt: "Meat Lover visual-development sheet with pixel-art meat, knives and heart motifs" },
+    { src: "/media/meat-rednote-launch-05.webp", alt: "Meat Lover character asking readers to follow the RedNote account for development updates" },
+    { src: "/media/meat-rednote-launch-06.webp", alt: "Early black-and-white Meat Lover concept sketches of meat, organs and unsettling food forms" },
+  ];
   const channelResults = [
     { channel: "RedNote", views: "174", clicks: "39", rate: "22.4%", width: "100%" },
     { channel: "Instagram", views: "127", clicks: "10", rate: "7.87%", width: "35%" },
@@ -139,8 +149,11 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <div className="section-label dark"><span>01</span><span>RedNote launch</span></div>
       <div className="meat-rednote-grid">
         <div className="meat-rednote-proof">
-          <figure><img src="/media/meat-rednote-profile.webp" alt="Meat Lover RedNote account showing 454 followers and 2.3K likes and saves" loading="eager" /><figcaption>Meat Lover · RedNote account</figcaption></figure>
+          <a className="meat-rednote-account-link" href={rednoteAccountUrl} target="_blank" rel="noreferrer" aria-label="Visit the Meat Lover RedNote account">
+            <figure><img src="/media/meat-rednote-profile.webp" alt="Meat Lover RedNote account showing 454 followers and 2.3K likes and saves" loading="eager" /><figcaption>Meat Lover · RedNote account <ArrowUpRight size={14} /></figcaption></figure>
+          </a>
           <p>One platform-native post introduced the game through a clear visual hook, then converted that attention into an audience for future development updates.</p>
+          <a className="meat-rednote-profile-cta" href={rednoteAccountUrl} target="_blank" rel="noreferrer">Visit the RedNote account <ArrowUpRight size={16} /></a>
         </div>
         <div className="meat-rednote-highlight">
           <p className="meat-overline">Using a single post</p>
@@ -153,6 +166,42 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <div className="meat-launch-stats" aria-label="RedNote single-post results">
         {item.metrics?.slice(0, 3).map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}
       </div>
+    </section>
+
+    <section className="meat-rednote-experiments">
+      <div className="section-label"><span>RedNote creative experiments</span><span>Two posts · Two hooks</span></div>
+
+      <article className="meat-rednote-experiment meat-rednote-story-post">
+        <div className="meat-rednote-experiment-copy">
+          <p className="meat-overline">Experiment 01 · Character-first reveal</p>
+          <h2>Turn the launch<br />into a story.</h2>
+          <p>Instead of opening with a feature list, the carousel lets the nervous meat character introduce the game. Humour creates a low-friction entry point; the next slides explain the mechanic, reveal the art direction and finish with a direct invitation to follow development.</p>
+          <ol>
+            <li><span>01</span><strong>Character hook</strong><p>A recognisable voice makes a strange premise approachable.</p></li>
+            <li><span>02</span><strong>Progressive reveal</strong><p>Each swipe rewards curiosity with a new layer of the product.</p></li>
+            <li><span>03</span><strong>Community CTA</strong><p>The final slide turns interest into an ongoing relationship.</p></li>
+          </ol>
+          <div className="meat-rednote-public-stats" aria-label="Public engagement on the RedNote launch post">
+            <span><strong>1,653</strong>Likes</span><span><strong>222</strong>Saves</span><span><strong>114</strong>Comments</span>
+          </div>
+          <a className="meat-rednote-post-link" href={rednoteLaunchPostUrl} target="_blank" rel="noreferrer">View the original post <ArrowUpRight size={17} /></a>
+        </div>
+        <div className="meat-rednote-carousel" aria-label="Six images from the RedNote launch post">
+          {rednoteLaunchSlides.map((slide, index) => <figure key={slide.src}><img src={slide.src} alt={slide.alt} loading="lazy" /><figcaption>{String(index + 1).padStart(2, "0")} / 06</figcaption></figure>)}
+        </div>
+      </article>
+
+      <article className="meat-rednote-experiment meat-rednote-prelaunch-post">
+        <figure><img src="/media/meat-rednote-prelaunch-ipad.png" alt="Pre-launch RedNote post staging the Meat Lover cover art on an iPad as if the game were already open" loading="lazy" /><figcaption>Pre-launch iPad staging · Screenshot supplied by Sun Yutong</figcaption></figure>
+        <div className="meat-rednote-experiment-copy">
+          <p className="meat-overline">Experiment 02 · Premise before product</p>
+          <h2>Make an unreleased<br />game feel tangible.</h2>
+          <p>The game was not live yet, so the iPad became a simple product mock-up: placing the cover art in a real device context made the concept feel immediately playable. The provocative title created urgency, while the caption disclosed that development was still in progress and redirected curiosity toward following the account.</p>
+          <div className="meat-rednote-funnel"><span><b>01</b>Staged device context</span><span><b>02</b>Curiosity-led headline</span><span><b>03</b>Follow for launch</span></div>
+          <blockquote>“I won’t allow anyone not to have played this game.”</blockquote>
+          <p className="meat-data-note">The visual sells the feeling of access; the copy then sets an honest expectation that the game is still being developed.</p>
+        </div>
+      </article>
     </section>
 
     <section className="meat-community">
