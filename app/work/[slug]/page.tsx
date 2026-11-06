@@ -117,10 +117,10 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
 
 function LetsBuildDungeonCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   const contributions = [
-    { number: "01", title: "Systematic QA", body: "I tested repeated gameplay flows, reproduced edge cases and documented issues in a form the wider team could act on." },
-    { number: "02", title: "Progression balance", body: "I balanced difficulty by tuning rating requirements, task gates and the asset unlocks players needed to access the next objective." },
-    { number: "03", title: "Quest implementation", body: "I imported quest dialogue, configured quest steps and conditions, and tested that conversations, objectives and unlocks progressed correctly in-game." },
-    { number: "04", title: "Asset integration", body: "I helped move content from working files into the production build while checking consistency, placement and implementation quality." },
+    { number: "01", title: "Progression balance", body: "I balanced difficulty by tuning rating requirements, task gates and the asset unlocks players needed to access the next objective." },
+    { number: "02", title: "Quest implementation", body: "I imported quest dialogue, configured quest steps and conditions, and tested that conversations, objectives and unlocks progressed correctly in-game." },
+    { number: "03", title: "Tutorial design", body: "I designed onboarding steps that introduced interconnected systems in a clear sequence without overwhelming new players." },
+    { number: "04", title: "QA & asset integration", body: "I reproduced edge cases, documented actionable issues and helped move content into the production build with consistency checks." },
   ];
   const productionSteps = [
     { title: "Test the loop", body: "Play progression in context, checking how ratings, objectives and rewards affect the difficulty and pace of the player journey." },
@@ -152,8 +152,29 @@ function LetsBuildDungeonCaseStudy({ item, next }: { item: WorkItem; next: WorkI
       <div className="dungeon-contribution-grid">{contributions.map((contribution) => <article key={contribution.title}><span>{contribution.number}</span><h3>{contribution.title}</h3><p>{contribution.body}</p></article>)}</div>
     </section>
 
+    <section className="dungeon-evidence">
+      <div className="section-label dark"><span>02</span><span>Production evidence</span></div>
+      <div className="dungeon-section-head"><h2>Systems I balanced<br />and implemented.</h2><p>These pre-release screens show the player-facing systems I worked within. They illustrate the progression and quest flows—not confidential tuning sheets or unreleased internal values.</p></div>
+
+      <article className="dungeon-evidence-feature">
+        <figure><img src="/media/lets-build-progression-balance.png" alt="Pre-release progression screen showing quest selection, locked content and point costs" loading="lazy" /><figcaption>Pre-release system view · Progression gates and asset access</figcaption></figure>
+        <div><span>01 · Progression Balance</span><h3>Tuning the path<br />to the next objective.</h3><p>I adjusted rating requirements, task gates and asset unlock costs so players had enough challenge and direction without reaching a progression wall. This screen represents the system area I balanced; the detailed working values remain part of the unreleased production build.</p></div>
+      </article>
+
+      <article className="dungeon-evidence-quest">
+        <div className="dungeon-evidence-copy"><span>02 · Quest Implementation</span><h3>From dialogue import<br />to playable quest flow.</h3><p>I imported quest conversations, configured objectives and required assets, then verified that the full sequence progressed correctly—from unlock and sign-off to tracking and completion.</p></div>
+        <div className="dungeon-quest-grid">
+          <figure><img src="/media/lets-build-quest-unlocked.png" alt="New quest unlocked screen showing required characters and assets" loading="lazy" /><figcaption>Quest unlock and required content</figcaption></figure>
+          <figure><img src="/media/lets-build-asset-signoff.png" alt="Asset sign-off screen used to select and prioritise quest assets" loading="lazy" /><figcaption>Asset sign-off and prioritisation</figcaption></figure>
+          <figure><img src="/media/lets-build-quest-details.png" alt="Quest details panel showing completion rate, quest giver and conditions" loading="lazy" /><figcaption>Quest tracking and completion conditions</figcaption></figure>
+        </div>
+      </article>
+
+      <aside className="dungeon-tutorial-note"><span>03 · Tutorial Design</span><strong>Teach the system in the order players need it.</strong><p>I structured onboarding around progressive disclosure: introduce one action, let the player apply it, then reveal the next connected system. This contribution is presented as process documentation while public tutorial visuals are not yet available.</p></aside>
+    </section>
+
     <section className="dungeon-systems">
-      <div className="section-label dark"><span>02</span><span>A multi-layered product</span></div>
+      <div className="section-label dark"><span>03</span><span>A multi-layered product</span></div>
       <div className="dungeon-section-head"><h2>Studio management.<br />World building. RPG play.</h2><p>Let’s Build a Dungeon asks players to manage a development studio, construct an MMORPG and step inside the game they create. Testing one feature meant understanding how it affected several layers of the experience.</p></div>
       <div className="dungeon-systems-grid">
         <figure className="dungeon-system-wide"><img src="/media/lets-build-steam-01.jpg" alt="A large custom RPG world built in Let’s Build a Dungeon" loading="lazy" /><figcaption>World-building scale · Official Steam imagery</figcaption></figure>
@@ -163,12 +184,12 @@ function LetsBuildDungeonCaseStudy({ item, next }: { item: WorkItem; next: WorkI
     </section>
 
     <section className="dungeon-process">
-      <div className="section-label"><span>03</span><span>Production approach</span></div>
+      <div className="section-label"><span>04</span><span>Production approach</span></div>
       <div className="dungeon-process-grid">{productionSteps.map((step, index) => <article key={step.title}><span>0{index + 1}</span><h3>{step.title}</h3><p>{step.body}</p></article>)}</div>
     </section>
 
     <section className="dungeon-context">
-      <div className="section-label dark"><span>04</span><span>Official game context</span></div>
+      <div className="section-label dark"><span>05</span><span>Official game context</span></div>
       <div className="dungeon-section-head"><h2>A game-development sim<br />inside an RPG builder.</h2><p>Developed and self-published by Springloaded, the game is scheduled to enter Early Access on 11 February 2027. Its four modes combine studio simulation, accessible creative tools, cooperative building and community-made games.</p></div>
       <div className="dungeon-gallery">
         <figure><img src="/media/lets-build-steam-02.jpg" alt="Building and decorating a fantasy town in Let’s Build a Dungeon" loading="lazy" /><figcaption>Building tools and asset integration</figcaption></figure>
