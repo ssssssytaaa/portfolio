@@ -149,13 +149,25 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
           <p>The account grew from launch content alone—proof that the game’s unusual premise could become a recognisable, followable identity.</p>
         </div>
       </div>
-      <div className="meat-launch-stats" aria-label="RedNote campaign results">
+      <p className="meat-single-post-label">Single-post performance snapshot</p>
+      <div className="meat-launch-stats" aria-label="RedNote single-post results">
         {item.metrics?.slice(0, 3).map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}
       </div>
     </section>
 
+    <section className="meat-community">
+      <div className="section-label"><span>02</span><span>RedNote community & identity</span></div>
+      <div className="meat-community-grid"><figure><img src="/media/meat-ui.webp" alt="A RedNote Meat Lover post featuring the personified meat character and community comments" loading="lazy" /><figcaption>Character voice, comments and clear calls to action</figcaption></figure><div><h2>Make the meat<br />worth following.</h2><p>We replied to comments, treated suggestions as product input and gave the meat a distinct personality. The character became more than key art: it carried the account voice and made every post recognisably part of the same world.</p><ul><li>Proactive community interaction</li><li>User-driven improvements</li><li>Clear calls to action</li><li>A recognisable IP identity</li></ul></div></div>
+    </section>
+
+    <section className="meat-conversion">
+      <div className="section-label"><span>03</span><span>RedNote link conversion</span></div>
+      <div className="meat-conversion-grid"><div><p className="meat-overline">Strongest tracked channel</p><strong>22.4%</strong><h2>RedNote conversion</h2><p>39 clicks from 174 tracked views in the one-day comparison.</p></div><div className="meat-bars">{channelResults.map((result) => <article key={result.channel}><div><strong>{result.channel}</strong><span>{result.views} views · {result.clicks} clicks</span><b>{result.rate}</b></div><i><span style={{ width: result.width }} /></i></article>)}</div></div>
+      <p className="meat-data-note">The single-post snapshot above and this one-day link comparison cover different reporting windows, so they are presented as related but separate RedNote evidence.</p>
+    </section>
+
     <section className="meat-concept">
-      <div className="section-label"><span>02</span><span>The game</span></div>
+      <div className="section-label"><span>04</span><span>The game</span></div>
       <div className="meat-section-heading"><h2>Precision cutting.<br />Delicious pressure.</h2><p>{item.sections[0].body}</p></div>
       <div className="meat-concept-grid">
         <figure><img src="/media/meat-identity.webp" alt="Meat Lover cutting board, cleaver and pixel-art game scene" loading="lazy" /><figcaption>Core cutting loop · Level one</figcaption></figure>
@@ -164,18 +176,18 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
     </section>
 
     <section className="meat-positioning">
-      <div className="section-label dark"><span>03</span><span>From product to positioning</span></div>
+      <div className="section-label dark"><span>05</span><span>From product to positioning</span></div>
       <div className="meat-positioning-head"><h2>Find the behaviour.<br />Build the hook.</h2><p>{item.sections[1].body}</p></div>
       <ol className="meat-process"><li><span>01</span><strong>Research platform trends</strong><p>Study how people discover, trust and interact with content on each channel.</p></li><li><span>02</span><strong>Define the audience</strong><p>Focus on puzzle players and people drawn to satisfying visual payoffs.</p></li><li><span>03</span><strong>Adapt the creative</strong><p>Turn one product idea into platform-native posts, challenges and short videos.</p></li><li><span>04</span><strong>Convert attention</strong><p>Move from meme-led discovery to gameplay, development and a clear call to action.</p></li></ol>
     </section>
 
     <section className="meat-hook">
-      <div className="section-label"><span>04</span><span>Creative iteration</span></div>
+      <div className="section-label"><span>06</span><span>Creative iteration</span></div>
       <div className="meat-hook-grid"><div><p className="meat-overline">Puzzle × satisfying</p><h2>“You only have<br />two cuts.”</h2><p>The strongest short-form creative introduced a challenge immediately, then held attention with fast, smooth cutting and amplified sound. The question gave the right audience a reason to stay for the result.</p><div className="meat-hook-tags"><span>Challenge-led opening</span><span>Visual payoff</span><span>Enhanced cutting sound</span></div></div><figure><img src="/media/meat-social.webp" alt="Vertical Meat Lover challenge post asking players to remove all the fat in two cuts" loading="lazy" /><figcaption>Short-form challenge creative</figcaption></figure></div>
     </section>
 
     <section className="meat-video-edits">
-      <div className="section-label"><span>05</span><span>TikTok edits</span></div>
+      <div className="section-label"><span>07</span><span>TikTok edits</span></div>
       <div className="meat-video-heading"><h2>Designed for<br />the first second.</h2><p>Two vertical edits turn the cutting mechanic into short-form entertainment: one leads with the game’s horror-comedy identity, while the other frames the mechanic as an instantly understandable two-cut challenge.</p></div>
       <div className="meat-video-grid">
         <figure>
@@ -194,20 +206,9 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
     </section>
 
     <section className="meat-channels">
-      <div className="section-label dark"><span>06</span><span>Platform-native content</span></div>
+      <div className="section-label dark"><span>08</span><span>Platform-native content</span></div>
       <div className="meat-section-heading"><h2>One game.<br />Four ways in.</h2><p>{item.sections[3].body}</p></div>
       <div className="meat-channel-grid"><article><span>RedNote</span><h3>Visual, personal, interactive</h3><p>Player-POV recommendations, character-led posts, quizzes and choices made discovery feel authentic and participatory.</p></article><article><span>TikTok + Instagram</span><h3>Hook first, sell later</h3><p>Relatable memes reached beyond core players before challenges and gameplay turned attention into curiosity.</p></article><article><span>Reddit</span><h3>Feedback as development</h3><p>Prototype posts invited detailed player responses, creating an early validation loop around readability and challenge.</p></article><article><span>YouTube</span><h3>Gameplay with context</h3><p>Longer-form clips let the cutting loop, challenge and product personality read more clearly.</p></article></div>
-    </section>
-
-    <section className="meat-community">
-      <div className="section-label"><span>07</span><span>Community & identity</span></div>
-      <div className="meat-community-grid"><figure><img src="/media/meat-ui.webp" alt="A RedNote Meat Lover post featuring the personified meat character and community comments" loading="lazy" /><figcaption>Character voice, comments and clear calls to action</figcaption></figure><div><h2>Make the meat<br />worth following.</h2><p>We replied to comments, treated suggestions as product input and gave the meat a distinct personality. The character became more than key art: it carried the account voice and made every post recognisably part of the same world.</p><ul><li>Proactive community interaction</li><li>User-driven improvements</li><li>Clear calls to action</li><li>A recognisable IP identity</li></ul></div></div>
-    </section>
-
-    <section className="meat-conversion">
-      <div className="section-label"><span>08</span><span>One-day link conversion</span></div>
-      <div className="meat-conversion-grid"><div><p className="meat-overline">Strongest tracked channel</p><strong>22.4%</strong><h2>RedNote conversion</h2><p>39 clicks from 174 tracked views in the one-day comparison.</p></div><div className="meat-bars">{channelResults.map((result) => <article key={result.channel}><div><strong>{result.channel}</strong><span>{result.views} views · {result.clicks} clicks</span><b>{result.rate}</b></div><i><span style={{ width: result.width }} /></i></article>)}</div></div>
-      <p className="meat-data-note">Campaign snapshots and one-day link tracking cover different reporting windows and are presented separately.</p>
     </section>
 
     <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
