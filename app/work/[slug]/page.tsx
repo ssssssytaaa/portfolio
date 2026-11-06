@@ -29,31 +29,31 @@ function EchosCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
     </header>
 
     <section className="echos-recognition">
-      <div><span className="section-kicker">01 · Recognition</span><h2>A personal work,<br />made public.</h2></div>
+      <div><span className="section-kicker">01 · Recognition & impact</span><h2>A personal work,<br />made public.</h2></div>
       <ol>{item.recognition?.map((award, index) => <li key={award}><span>{String(index + 1).padStart(2, "0")}</span><strong>{award}</strong></li>)}</ol>
-    </section>
-
-    <section className="echos-video-section">
-      <div className="section-label"><span>02</span><span>Film introduction</span></div>
-      <div className="echos-video-copy"><h2>A moving portrait<br />of women across time.</h2><p>Created as a digital film, Echos of Her layers portraiture, landscape and cultural memory into a continuous visual journey. Women emerge as creators, healers, workers, guardians and pioneers—each carrying history forward.</p></div>
-      <figure className="echos-hero-image"><video autoPlay muted loop playsInline controls poster="/media/echos-screen.webp" aria-label="Echos of Her playing on the West Lake public screen"><source src="/media/echos-hero-desktop.mp4" type="video/mp4" /></video><figcaption>West Lake, Hangzhou · Landmark public LED façade · 170 × 18 m</figcaption></figure>
-    </section>
-
-    <section className="echos-statement">
-      <div className="section-label"><span>03</span><span>Project statement</span></div>
-      <div><p className="echos-lead">A tribute to women’s growth, cultural memory and the identities carried across generations.</p><p>{item.sections[0].body}</p></div>
-    </section>
-
-    <section className="echos-artwork">
-      <div className="section-label"><span>04</span><span>Selected visual chapters</span></div>
-      <div className="echos-section-intro"><h2>A story designed<br />to unfold horizontally.</h2><p>The panoramic format brings portraits, landscape, archival texture and symbolism into one continuous visual journey. Each chapter can stand alone, while the sequence builds a collective portrait across time.</p></div>
-      <div className="echos-panoramas">{artwork.map((media, index) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{media.caption}</figcaption></figure>)}</div>
     </section>
 
     {item.metrics?.length ? <section className="case-stats echos-stats" aria-label="Project results">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
 
+    <section className="echos-video-section">
+      <div className="section-label"><span>02</span><span>Final film</span></div>
+      <div className="echos-video-copy"><h2>A moving portrait<br />of women across time.</h2><p>Created as a digital film, Echos of Her layers portraiture, landscape and cultural memory into a continuous visual journey. Women emerge as creators, healers, workers, guardians and pioneers—each carrying history forward.</p></div>
+      <figure className="echos-hero-image"><video autoPlay muted loop playsInline controls poster="/media/echos-screen.webp" aria-label="Echos of Her playing on the West Lake public screen"><source src="/media/echos-hero-desktop.mp4" type="video/mp4" /></video><figcaption>West Lake, Hangzhou · Landmark public LED façade · 170 × 18 m</figcaption></figure>
+    </section>
+
+    <section className="echos-artwork">
+      <div className="section-label"><span>03</span><span>Selected visual chapters</span></div>
+      <div className="echos-section-intro"><h2>A story designed<br />to unfold horizontally.</h2><p>The panoramic format brings portraits, landscape, archival texture and symbolism into one continuous visual journey. Each chapter can stand alone, while the sequence builds a collective portrait across time.</p></div>
+      <div className="echos-panoramas">{artwork.map((media, index) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption><span>{String(index + 1).padStart(2, "0")}</span>{media.caption}</figcaption></figure>)}</div>
+    </section>
+
+    <section className="echos-statement">
+      <div className="section-label"><span>04</span><span>Creative rationale</span></div>
+      <div><p className="echos-lead">A tribute to women’s growth, cultural memory and identities carried across generations.</p><p>{item.sections[0].body}</p></div>
+    </section>
+
     <section className="echos-documentation">
-      <div className="section-label"><span>05</span><span>Recognition & global exhibition</span></div>
+      <div className="section-label"><span>05</span><span>Global exhibition evidence</span></div>
       <div className="echos-section-intro"><h2>From award stage<br />to city scale.</h2><p>{item.sections[4].body}</p></div>
       <div className="echos-documentation-grid">{exhibition.map((media) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption>{media.caption}</figcaption></figure>)}</div>
     </section>
@@ -75,7 +75,7 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <div className="case-eyebrow"><span>Commercial game production · Internship</span><span>Case study 02</span></div>
       <h1><span>RollerCoaster Tycoon</span><em>Wonderworks</em></h1>
       <div className="rct-hero-details">
-        <p>{item.summary}</p>
+        <p>I built the in-game scenes used in the official announcement trailer, supported game balance and tested the player experience across production.</p>
         <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Internship</dt><dd>May–August 2026</dd></div><div><dt>Studio / Publisher</dt><dd>Springloaded · Atari</dd></div></dl>
         <div className="rct-links">{item.externalLinks?.map((link) => <a className="case-project-link" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label}<ArrowUpRight /></a>)}</div>
       </div>
@@ -89,8 +89,8 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
     </section>
 
     <section className="rct-trailer">
-      <div className="section-label"><span>01</span><span>Announcement trailer</span></div>
-      <div className="rct-section-intro"><h2>Building the world<br />behind the trailer.</h2><p>I built the in-game scenes used in the announcement trailer, arranging rides, scenery and park layouts for clear, visually engaging shots. My QA and game-balance work gave me a detailed understanding of the systems I was presenting on screen.</p></div>
+      <div className="section-label"><span>01</span><span>Published outcome</span></div>
+      <div className="rct-section-intro"><h2>Scenes built for<br />the official trailer.</h2><p>I arranged rides, scenery and park layouts for clear, visually engaging shots in the published announcement trailer. My QA and balance work gave me a detailed understanding of the systems shown on screen.</p></div>
       <div className="rct-video"><iframe src="https://www.youtube-nocookie.com/embed/QWsU277r8OM" title="RollerCoaster Tycoon Wonderworks official announcement trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
       {item.metrics?.length ? <section className="case-stats rct-stats" aria-label="Announcement trailer performance">{item.metrics.map((metric) => <article key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
       <p className="rct-metric-note">Public YouTube figures checked 9 October 2026. View and like counts will continue to change.</p>
@@ -98,15 +98,15 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
 
     <section className="rct-contribution">
       <div className="section-label dark"><span>02</span><span>My contribution</span></div>
-      <div className="rct-contribution-head"><h2>Three connected<br />production lenses.</h2><p>My internship role crossed product quality and product communication. Each area sharpened a different part of the same question: what will the player notice, understand and feel?</p></div>
+      <div className="rct-contribution-head"><h2>What I delivered<br />across production.</h2><p>My internship connected trailer scene building, product quality and game balance—three ways of improving what the player sees, understands and feels.</p></div>
       <div className="rct-contribution-grid">
         {item.sections.slice(2, 5).map((section, index) => <article key={section.title}><span>0{index + 1}</span><h3>{section.title}</h3><p>{section.body}</p></article>)}
       </div>
     </section>
 
     <section className="rct-product">
-      <div className="section-label"><span>03</span><span>Project context</span></div>
-      <div className="rct-section-intro"><h2>A classic simulation,<br />rebuilt around chaos.</h2><p>{item.sections[0].body} Official Steam information describes custom coaster construction, ride tuning, guest needs, staff management and physics-driven destruction across Hollow Creek and Forest Frontiers.</p></div>
+      <div className="section-label"><span>03</span><span>Context</span></div>
+      <div className="rct-section-intro"><h2>A classic simulation,<br />rebuilt around chaos.</h2><p>{item.sections[0].body} The game combines coaster construction, park management and physics-driven destruction.</p></div>
       <div className="rct-gallery">{item.gallery.map((image, index) => <figure key={image}><img src={image} alt={index === 0 ? "RollerCoaster Tycoon Wonderworks coaster builder interface" : "RollerCoaster Tycoon Wonderworks rescue helicopter and ride debris"} loading="lazy" /><figcaption>{index === 0 ? "Custom coaster construction" : "Chaos physics and rescue systems"}</figcaption></figure>)}</div>
       <a className="rct-source" href="https://store.steampowered.com/app/4734550/RollerCoaster_Tycoon_Wonderworks/" target="_blank" rel="noreferrer">High-resolution imagery and project information: official Steam listing <ArrowUpRight /></a>
     </section>
@@ -141,7 +141,7 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <div className="meat-title"><span>MEAT</span><em>LOVER</em></div>
       <div className="meat-hero-grid">
         <figure><img src={item.heroMedia} alt="Meat Lover pixel-art title screen" /><figcaption>Game Jam project · First-person 3D puzzle game</figcaption></figure>
-        <div className="meat-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Focus</dt><dd>Player insight · Platform strategy · Community growth</dd></div></dl></div>
+        <div className="meat-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Product</dt><dd>First-person 3D puzzle game: cut exact weights, remove fat and work within limited cuts.</dd></div><div><dt>Focus</dt><dd>Player insight · Platform strategy · Community growth</dd></div></dl></div>
       </div>
     </header>
 
@@ -215,28 +215,13 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <p className="meat-data-note">The single-post snapshot above and this one-day link comparison cover different reporting windows, so they are presented as related but separate RedNote evidence.</p>
     </section>
 
-    <section className="meat-concept">
-      <div className="section-label"><span>04</span><span>The game</span></div>
-      <div className="meat-section-heading"><h2>Precision cutting.<br />Delicious pressure.</h2><p>{item.sections[0].body}</p></div>
-      <div className="meat-concept-grid">
-        <figure><img src="/media/meat-identity.webp" alt="Meat Lover cutting board, cleaver and pixel-art game scene" loading="lazy" /><figcaption>Core cutting loop · Level one</figcaption></figure>
-        <div className="meat-mechanics"><article><span>01</span><h3>Exact weight</h3><p>Read the meat as a puzzle and cut to the requested gram target.</p></article><article><span>02</span><h3>Limited cuts</h3><p>Every slice matters, turning a tactile action into a planning problem.</p></article><article><span>03</span><h3>Minimal waste</h3><p>Remove fat and unwanted pieces without damaging the useful meat.</p></article></div>
-      </div>
-    </section>
-
-    <section className="meat-positioning">
-      <div className="section-label dark"><span>05</span><span>From product to positioning</span></div>
-      <div className="meat-positioning-head"><h2>Find the behaviour.<br />Build the hook.</h2><p>{item.sections[1].body}</p></div>
-      <ol className="meat-process"><li><span>01</span><strong>Research platform trends</strong><p>Study how people discover, trust and interact with content on each channel.</p></li><li><span>02</span><strong>Define the audience</strong><p>Focus on puzzle players and people drawn to satisfying visual payoffs.</p></li><li><span>03</span><strong>Adapt the creative</strong><p>Turn one product idea into platform-native posts, challenges and short videos.</p></li><li><span>04</span><strong>Convert attention</strong><p>Move from meme-led discovery to gameplay, development and a clear call to action.</p></li></ol>
-    </section>
-
     <section className="meat-hook">
-      <div className="section-label"><span>06</span><span>Creative iteration</span></div>
+      <div className="section-label"><span>04</span><span>Creative output</span></div>
       <div className="meat-hook-grid"><div><p className="meat-overline">Puzzle × satisfying</p><h2>“You only have<br />two cuts.”</h2><p>The strongest short-form creative introduced a challenge immediately, then held attention with fast, smooth cutting and amplified sound. The question gave the right audience a reason to stay for the result.</p><div className="meat-hook-tags"><span>Challenge-led opening</span><span>Visual payoff</span><span>Enhanced cutting sound</span></div></div><figure><img src="/media/meat-social.webp" alt="Vertical Meat Lover challenge post asking players to remove all the fat in two cuts" loading="lazy" /><figcaption>Short-form challenge creative</figcaption></figure></div>
     </section>
 
     <section className="meat-video-edits">
-      <div className="section-label"><span>07</span><span>TikTok edits</span></div>
+      <div className="section-label"><span>05</span><span>TikTok edits</span></div>
       <div className="meat-video-heading"><h2>Designed for<br />the first second.</h2><p>Two vertical edits turn the cutting mechanic into short-form entertainment: one leads with the game’s horror-comedy identity, while the other frames the mechanic as an instantly understandable two-cut challenge.</p></div>
       <div className="meat-video-grid">
         <figure>
@@ -255,9 +240,15 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
     </section>
 
     <section className="meat-channels">
-      <div className="section-label dark"><span>08</span><span>Platform-native content</span></div>
-      <div className="meat-section-heading"><h2>One game.<br />Four ways in.</h2><p>{item.sections[3].body}</p></div>
+      <div className="section-label dark"><span>06</span><span>My contribution</span></div>
+      <div className="meat-section-heading"><h2>One game.<br />Four audience entries.</h2><p>I translated one product idea into channel-specific outputs, then used audience response to refine both the message and the experience.</p></div>
       <div className="meat-channel-grid"><article><span>RedNote</span><h3>Visual, personal, interactive</h3><p>Player-POV recommendations, character-led posts, quizzes and choices made discovery feel authentic and participatory.</p></article><article><span>TikTok + Instagram</span><h3>Hook first, sell later</h3><p>Relatable memes reached beyond core players before challenges and gameplay turned attention into curiosity.</p></article><article><span>Reddit</span><h3>Feedback as development</h3><p>Prototype posts invited detailed player responses, creating an early validation loop around readability and challenge.</p></article><article><span>YouTube</span><h3>Gameplay with context</h3><p>Longer-form clips let the cutting loop, challenge and product personality read more clearly.</p></article></div>
+    </section>
+
+    <section className="meat-positioning">
+      <div className="section-label dark"><span>07</span><span>Condensed strategy</span></div>
+      <div className="meat-positioning-head"><h2>Why the campaign<br />earned attention.</h2><p>The strategy came down to three repeatable decisions—not a long process.</p></div>
+      <ol className="meat-process"><li><span>01</span><strong>Lead with character</strong><p>Use humour and a recognisable voice to make an unusual game premise approachable.</p></li><li><span>02</span><strong>Stage the product</strong><p>Make an unreleased game feel tangible through device mock-ups, gameplay framing and progressive reveals.</p></li><li><span>03</span><strong>Convert curiosity</strong><p>Move from a provocative hook to honest context, interaction and a clear reason to follow.</p></li></ol>
     </section>
 
     <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
@@ -278,13 +269,18 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
     { title: "Project", body: item.summary },
     { title: "Contribution", body: `I worked across ${item.role.toLowerCase()}, using ${item.tools.join(", ")} to shape a clear and purposeful result.` },
   ];
+  const resultFirstPattern = /outcome|result|impact|my role|contribution/i;
+  const orderedSections = [
+    ...sections.filter((section) => resultFirstPattern.test(section.title)),
+    ...sections.filter((section) => !resultFirstPattern.test(section.title)),
+  ];
   return <main className="case-page" style={{ "--accent": item.accent } as React.CSSProperties}>
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
     <header className="case-hero"><div className="case-eyebrow"><span>{item.category}</span><span>{item.depth === "case" ? "Case study" : "Selected project"}</span></div><h1>{item.title}</h1><div className="case-intro"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Tools</dt><dd>{item.tools.join(" · ")}</dd></div></dl></div></header>
     <div className="case-visual"><img src={item.heroMedia} alt={`${item.title} project hero`} /></div>
-    <section className="case-sections">{sections.map((section) => <article className="case-section" key={section.title}><h2>{section.title}</h2><p>{section.body}</p></article>)}</section>
     {item.metrics?.length ? <section className={`case-stats ${item.metrics.length === 1 ? "solo" : ""}`} aria-label="Project results">{item.metrics.map((metric) => <article key={metric.value}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
     <section className="case-gallery">{item.gallery.map((image, imageIndex) => <img key={image} src={image} alt={`${item.title} project image ${imageIndex + 1}`} loading="lazy" />)}</section>
+    <section className="case-sections">{orderedSections.map((section) => <article className="case-section" key={section.title}><h2>{section.title}</h2><p>{section.body}</p></article>)}</section>
     <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
   </main>;
 }
