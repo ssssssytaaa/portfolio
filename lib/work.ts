@@ -107,7 +107,7 @@ export const work: WorkItem[] = [
     metrics: [
       { value: "58,512", label: "Exposure", context: "Recorded across the RedNote campaign snapshot." },
       { value: "10,544", label: "Views", context: "Content views recorded in the same campaign snapshot." },
-      { value: "~500", label: "Followers", context: "Audience built through platform-native content and active community management." },
+      { value: "~500", label: "Followers in 3 days", context: "Audience gained from a single RedNote launch post." },
       { value: "22.4%", label: "One-day conversion", context: "RedNote generated 39 tracked clicks from 174 views." },
     ],
     sections: [

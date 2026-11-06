@@ -74,7 +74,7 @@ function Featured() {
   </article>)}</div></section>;
 }
 
-const impact = [["10", "Cities", "Echos of Her toured across ten cities in China."], ["170 × 18 m", "Public screen", "A landmark-scale presentation in Hangzhou."], ["~500 / 3 days", "New followers", "Meat Lover turned launch attention into community."], ["22.4%", "Conversion", "39 clicks from 174 tracked landing-page views."]];
+const impact = [["10", "Cities", "Echos of Her toured across ten cities in China."], ["170 × 18 m", "Public screen", "A landmark-scale presentation in Hangzhou."], ["~500 / 3 days", "New followers", "A single Meat Lover RedNote post turned launch attention into community."], ["22.4%", "Conversion", "39 clicks from 174 tracked landing-page views."]];
 function Impact() { return <section className="impact"><div className="section-label"><span>04</span><span>Selected impact</span></div><div className="impact-grid">{impact.map(([value, label, context]) => <article key={value}><strong>{value}</strong><h3>{label}</h3><p>{context}</p></article>)}</div></section>; }
 
 function Library() {
