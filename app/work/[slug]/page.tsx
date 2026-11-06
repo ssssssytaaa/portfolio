@@ -182,7 +182,7 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
             <li><span>03</span><strong>Community CTA</strong><p>The final slide turns interest into an ongoing relationship.</p></li>
           </ol>
           <div className="meat-rednote-public-stats" aria-label="Public engagement on the RedNote launch post">
-            <span><strong>1,653</strong>Likes</span><span><strong>222</strong>Saves</span><span><strong>114</strong>Comments</span>
+            <span><strong>1,657</strong>Likes</span><span><strong>222</strong>Saves</span><span><strong>114</strong>Comments</span>
           </div>
           <a className="meat-rednote-post-link" href={rednoteLaunchPostUrl} target="_blank" rel="noreferrer">View the original post <ArrowUpRight size={17} /></a>
         </div>
@@ -221,8 +221,8 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
     </section>
 
     <section className="meat-video-edits">
-      <div className="section-label"><span>05</span><span>TikTok edits</span></div>
-      <div className="meat-video-heading"><h2>Designed for<br />the first second.</h2><p>Two vertical edits turn the cutting mechanic into short-form entertainment: one leads with the game’s horror-comedy identity, while the other frames the mechanic as an instantly understandable two-cut challenge.</p></div>
+      <div className="section-label"><span>05</span><span>TikTok + YouTube vertical edits</span></div>
+      <div className="meat-video-heading"><h2>Designed for<br />the first second.</h2><p>Two vertical edits were created for short-form distribution on TikTok and YouTube Shorts. One leads with the game’s horror-comedy identity; the other turns the mechanic into an instantly understandable two-cut challenge with a clear visual payoff.</p></div>
       <div className="meat-video-grid">
         <figure>
           <video controls playsInline preload="metadata" poster="/media/meat-tiktok-03-poster.webp" aria-label="Meat Lover TikTok edit: cutting meat with a touch of horror">
@@ -240,9 +240,9 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
     </section>
 
     <section className="meat-channels">
-      <div className="section-label dark"><span>06</span><span>My contribution</span></div>
-      <div className="meat-section-heading"><h2>One game.<br />Four audience entries.</h2><p>I translated one product idea into channel-specific outputs, then used audience response to refine both the message and the experience.</p></div>
-      <div className="meat-channel-grid"><article><span>RedNote</span><h3>Visual, personal, interactive</h3><p>Player-POV recommendations, character-led posts, quizzes and choices made discovery feel authentic and participatory.</p></article><article><span>TikTok + Instagram</span><h3>Hook first, sell later</h3><p>Relatable memes reached beyond core players before challenges and gameplay turned attention into curiosity.</p></article><article><span>Reddit</span><h3>Feedback as development</h3><p>Prototype posts invited detailed player responses, creating an early validation loop around readability and challenge.</p></article><article><span>YouTube</span><h3>Gameplay with context</h3><p>Longer-form clips let the cutting loop, challenge and product personality read more clearly.</p></article></div>
+      <div className="section-label dark"><span>06</span><span>Platform-native marketing</span></div>
+      <div className="meat-section-heading"><h2>Different platforms.<br />Different expectations.</h2><p>I did not publish one asset everywhere. I studied how each audience discovers, watches and interacts with content, then adapted the format, hook and level of explanation to match that behaviour.</p></div>
+      <div className="meat-channel-grid"><article><span>RedNote</span><h3>Image-led, saveable storytelling</h3><p>Because RedNote discovery is strongly visual and carousel-led, I used illustrated slides, progressive reveals and character narration. The format encouraged swiping, saving, commenting and following the development story.</p></article><article><span>TikTok</span><h3>Trend-aware vertical hooks</h3><p>Fast vertical edits lead with a question, striking sound or recognisable short-form pattern. The mechanic appears immediately, so viewers understand the challenge before they decide whether to keep watching.</p></article><article><span>YouTube Shorts</span><h3>Clear mechanic, complete payoff</h3><p>The same vertical production format was adapted around gameplay clarity: a readable challenge, enough context to understand the rule and a satisfying result that rewards watching through to the end.</p></article><article><span>Audience learning</span><h3>Format follows behaviour</h3><p>Platform trends informed the creative, while comments, saves, watch behaviour and link clicks showed which message resonated. Those signals guided the next content decision instead of treating every channel the same.</p></article></div>
     </section>
 
     <section className="meat-positioning">
