@@ -76,7 +76,7 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <h1><span>RollerCoaster Tycoon</span><em>Wonderworks</em></h1>
       <div className="rct-hero-details">
         <p>I built the in-game scenes used in the official announcement trailer, supported game balance and tested the player experience across production.</p>
-        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Internship</dt><dd>May–August 2026</dd></div><div><dt>Studio / Publisher</dt><dd>Springloaded · Atari</dd></div></dl>
+        <dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Internship</dt><dd>May–August 2026</dd></div><div><dt>Studio</dt><dd>Springloaded · Singapore</dd></div><div><dt>Publisher</dt><dd>Atari</dd></div></dl>
         <div className="rct-links">{item.externalLinks?.map((link) => <a className="case-project-link" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label}<ArrowUpRight /></a>)}</div>
       </div>
     </header>
@@ -118,14 +118,14 @@ function RctCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
 function LetsBuildDungeonCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   const contributions = [
     { number: "01", title: "Systematic QA", body: "I tested repeated gameplay flows, reproduced edge cases and documented issues in a form the wider team could act on." },
-    { number: "02", title: "Game balance", body: "I reviewed pacing, progression and player feedback, separating balance observations from technical defects." },
-    { number: "03", title: "Design support", body: "I contributed design feedback grounded in hands-on play, focusing on clarity, usability and the player’s understanding of interconnected systems." },
+    { number: "02", title: "Progression balance", body: "I balanced difficulty by tuning rating requirements, task gates and the asset unlocks players needed to access the next objective." },
+    { number: "03", title: "Quest implementation", body: "I imported quest dialogue, configured quest steps and conditions, and tested that conversations, objectives and unlocks progressed correctly in-game." },
     { number: "04", title: "Asset integration", body: "I helped move content from working files into the production build while checking consistency, placement and implementation quality." },
   ];
   const productionSteps = [
-    { title: "Play the system", body: "Test features in context rather than as isolated tasks, observing how management, building and RPG layers affect one another." },
-    { title: "Make evidence useful", body: "Record reliable reproduction steps, distinguish severity from player impact and communicate the clearest next action." },
-    { title: "Verify the result", body: "Re-test changes in the build and check that an improvement holds across the wider player journey." },
+    { title: "Test the loop", body: "Play progression in context, checking how ratings, objectives and rewards affect the difficulty and pace of the player journey." },
+    { title: "Tune the gates", body: "Adjust rating thresholds and required asset unlocks so the next task feels earned without creating an unnecessary progression wall." },
+    { title: "Implement and verify", body: "Import dialogue, set up quest logic and re-test the complete flow—from conversation trigger to objective completion and unlock." },
   ];
 
   return <main className="case-page dungeon-case" style={{ "--accent": item.accent } as React.CSSProperties}>

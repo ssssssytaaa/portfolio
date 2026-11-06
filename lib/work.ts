@@ -63,9 +63,9 @@ export const work: WorkItem[] = [
   },
   {
     slug: "lets-build-a-dungeon", title: "Let’s Build a Dungeon", category: "Games & Interactive", depth: "case",
-    role: "Game Design · QA · Game Balance · Asset Integration",
-    summary: "Commercial game production experience supporting a large-scale management game through design feedback, systematic QA and production-ready content integration.",
-    heroMedia: "/media/lets-build-background-hd.jpg", accent: "#c6ff5a", tools: ["QA Testing", "Game Balance", "Asset Integration", "Production Documentation"],
+    role: "QA · Progression Balance · Quest Implementation · Asset Integration",
+    summary: "Commercial game production experience supporting a large-scale management game through systematic QA, progression balancing, quest implementation and production-ready content integration.",
+    heroMedia: "/media/lets-build-background-hd.jpg", accent: "#c6ff5a", tools: ["QA Testing", "Progression Balance", "Quest Setup", "Dialogue Import", "Asset Integration"],
     metrics: [
       { value: "180K+", label: "Steam wishlists", context: "Public milestone shared by Springloaded in an official development update." },
       { value: "500", label: "Demo reviews", context: "Public Steam demo review milestone following Steam Next Fest." },
@@ -74,8 +74,8 @@ export const work: WorkItem[] = [
     ],
     sections: [
       { title: "Overview", body: "Let’s Build a Dungeon is a commercial game project developed at Springloaded. During my internship, I worked within the production pipeline rather than on a standalone student prototype, learning how design decisions are reviewed, tested and prepared for release." },
-      { title: "My Role", body: "My contribution covered game-design support, quality assurance, game-balance feedback and asset integration. I documented issues clearly, reproduced edge cases and helped move content from working files into a dependable game build." },
-      { title: "Process", body: "I tested features across repeated play sessions, separated balance observations from technical defects and communicated results in a form that designers and developers could act on. Asset work required equal attention to visual consistency and production constraints." },
+      { title: "My Role", body: "My contribution covered quality assurance, progression and difficulty balancing, quest implementation, dialogue import and asset integration. I documented issues clearly, reproduced edge cases and helped move content into a dependable game build." },
+      { title: "Process", body: "I tested repeated progression loops, tuned rating requirements and asset unlocks, imported quest dialogue, configured quest conditions and verified the full player flow in the build." },
       { title: "What I Learned", body: "The project strengthened my understanding of commercial production: player experience is shaped not only by big ideas, but by thousands of small, well-tested decisions and reliable collaboration across disciplines." },
     ],
     gallery: ["/media/lets-build-steam-01.jpg", "/media/lets-build-steam-02.jpg", "/media/lets-build-steam-03.jpg", "/media/lets-build-steam-06.jpg"],
