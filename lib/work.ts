@@ -228,31 +228,13 @@ export const work: WorkItem[] = [
     externalLinks: [{ label: "View prototype files · Code usi2", href: "https://pan.baidu.com/s/1KsvcaG6m4yiJB5z2QpNKUQ?pwd=usi2" }],
   },
   {
-    slug: "bridget", title: "Bridget", category: "Visual Art", depth: "compact", role: "Character Designer",
-    summary: "A character design study developed through silhouette, costume language and expressive detail.", heroMedia: "/media/bridget.webp", accent: "#dc6d83", tools: ["Procreate", "Character Design", "Illustration"],
-    sections: [
-      { title: "Character", body: "Bridget was developed from the outside in: silhouette, costume and gesture establish personality before smaller decorative details are introduced." },
-      { title: "Process", body: "I explored proportion and shape variants, then refined the design around a consistent visual language and expressive pose." },
-      { title: "Focus", body: "The study strengthened my ability to make narrative information visible through character design alone." },
-    ], gallery: ["/media/bridget.webp"],
-  },
-  {
-    slug: "allergy", title: "Allergy", category: "Visual Art", depth: "compact", role: "Visual Artist",
-    summary: "A graphic narrative experiment using composition and metaphor to make an internal sensation visible.", heroMedia: "/media/allergy.webp", accent: "#9d7fa7", tools: ["Illustration", "Visual Narrative", "Adobe Creative Suite"],
-    sections: [
-      { title: "Idea", body: "Allergy visualises an experience that is normally felt rather than seen, using metaphor and image sequence instead of literal explanation." },
-      { title: "Visual Language", body: "I used contrast, repetition and changes in density to move the viewer between calm observation and physical discomfort." },
-      { title: "Outcome", body: "The work became an exercise in turning an invisible bodily response into a direct and readable visual narrative." },
-    ], gallery: ["/media/allergy.webp"],
-  },
-  {
-    slug: "painting", title: "Painting", category: "Visual Art", depth: "compact", role: "Painter",
-    summary: "Selected observational and expressive works exploring colour, atmosphere and visual memory.", heroMedia: "/media/painting-1.webp", accent: "#b67e5d", tools: ["Traditional Media", "Digital Painting", "Composition"],
+    slug: "painting", title: "Painting", category: "Visual Art", depth: "compact", role: "Oil & Digital Artist",
+    summary: "A selected painting collection moving between observational oil studies and expressive digital worlds.", heroMedia: "/media/painting-1.webp", accent: "#b67e5d", tools: ["Oil Painting", "Digital Painting", "Composition"],
     sections: [
       { title: "Practice", body: "These selected paintings move between observation and interpretation, using colour and composition to retain the atmosphere of a scene rather than simply reproduce it." },
       { title: "Method", body: "I begin with large value and colour relationships, then introduce detail only where it strengthens focus, depth or emotional tone." },
       { title: "Relevance", body: "Painting continues to inform my game and marketing work by sharpening my sense of visual hierarchy, mood and controlled attention." },
-    ], gallery: ["/media/painting-1.webp", "/media/painting-2.webp", "/media/painting-3.webp"],
+    ], gallery: ["/media/painting-1.webp", "/media/painting-2.webp", "/media/painting-3.webp", "/media/bridget.webp", "/media/allergy.webp"],
   },
 ];
 

@@ -2,11 +2,14 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { featured, getWork, work, type WorkItem } from "@/lib/work";
 
-export function generateStaticParams() { return work.map((item) => ({ slug: item.slug })); }
+const workAliases: Record<string, string> = { bridget: "painting", allergy: "painting" };
+const resolveWorkSlug = (slug: string) => workAliases[slug] ?? slug;
+
+export function generateStaticParams() { return [...work.map((item) => ({ slug: item.slug })), ...Object.keys(workAliases).map((slug) => ({ slug }))]; }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const item = getWork(slug);
+  const item = getWork(resolveWorkSlug(slug));
   return item ? { title: `${item.title} — Sun Yutong`, description: item.summary } : {};
 }
 
@@ -416,18 +419,47 @@ function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   </main>;
 }
 
+function PaintingCollection({ item, next }: { item: WorkItem; next: WorkItem }) {
+  return <main className="case-page compact-case painting-case" style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+    <header className="case-hero painting-hero"><div className="case-eyebrow"><span>Visual Art</span><span>Selected collection</span></div><h1>{item.title}</h1><div className="case-intro"><p>{item.summary}</p><dl><div><dt>Practice</dt><dd>{item.role}</dd></div><div><dt>Media</dt><dd>{item.tools.join(" · ")}</dd></div></dl></div></header>
+
+    <section className="painting-collection" aria-label="Selected paintings">
+      <div className="painting-group">
+        <div className="painting-group-head"><span>01</span><h2>Oil Painting</h2><p>Observational studies in colour, light and material.</p></div>
+        <div className="painting-grid painting-grid--oil">
+          <figure><img src="/media/painting-1.webp" alt="Oil painting study of a peeled orange" /><figcaption>Oil painting · Still life</figcaption></figure>
+          <figure><img src="/media/painting-2.webp" alt="Oil painting still life with flowers and fruit" /><figcaption>Oil painting · Still life</figcaption></figure>
+        </div>
+      </div>
+
+      <div className="painting-group">
+        <div className="painting-group-head"><span>02</span><h2>Digital Painting</h2><p>Character, self-portrait and narrative illustration.</p></div>
+        <div className="painting-grid painting-grid--digital">
+          <figure><img src="/media/painting-3.webp" alt="Digital painting of a luminous figure beneath an animal spirit" loading="lazy" /><figcaption>Digital painting · Narrative illustration</figcaption></figure>
+          <figure><img src="/media/bridget.webp" alt="Bridget digital character illustration" loading="lazy" /><figcaption>Bridget · Digital character illustration</figcaption></figure>
+          <figure><img src="/media/allergy.webp" alt="Allergy digital self-portrait" loading="lazy" /><figcaption>Allergy · Digital self-portrait</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const item = getWork(slug);
+  const item = getWork(resolveWorkSlug(slug));
   if (!item) notFound();
   const caseOrder = [...featured, ...work.filter((entry) => !featured.some((feature) => feature.slug === entry.slug))];
-  const index = caseOrder.findIndex((entry) => entry.slug === slug);
+  const index = caseOrder.findIndex((entry) => entry.slug === item.slug);
   const next = caseOrder[(index + 1) % caseOrder.length];
   if (item.slug === "echos-of-her") return <EchosCaseStudy item={item} next={next} />;
   if (item.slug === "rollercoaster-tycoon-wonderworks") return <RctCaseStudy item={item} next={next} />;
   if (item.slug === "meat-lover") return <MeatLoverCaseStudy item={item} next={next} />;
   if (item.slug === "lets-build-a-dungeon") return <LetsBuildDungeonCaseStudy item={item} next={next} />;
   if (item.slug === "soul-vein") return <SoulVeinCaseStudy item={item} next={next} />;
+  if (item.slug === "painting") return <PaintingCollection item={item} next={next} />;
   return <main className="case-page compact-case" style={{ "--accent": item.accent } as React.CSSProperties}>
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
     <header className="case-hero"><div className="case-eyebrow"><span>{item.category}</span><span>{item.depth === "case" ? "Case study" : "Selected project"}</span></div><h1>{item.title}</h1><div className="case-intro"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Tools</dt><dd>{item.tools.join(" · ")}</dd></div></dl></div></header>
