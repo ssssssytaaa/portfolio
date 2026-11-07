@@ -355,8 +355,8 @@ function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <div className="case-eyebrow"><span>Student game project · Unity</span><span>Case study 05</span></div>
       <div className="soul-title"><span>SOUL</span><em>VEIN</em></div>
       <div className="soul-hero-grid">
-        <figure className="soul-crop soul-crop-hero"><img src={item.heroMedia} alt="Soul Vein title screen inside the finished Unity prototype" /><figcaption>Playable prototype · Final title screen</figcaption></figure>
-        <div className="soul-hero-copy"><p>{item.summary}</p><dl><div><dt>Focus</dt><dd>Player experience iteration</dd></div><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Format</dt><dd>Top-down single-player puzzle game</dd></div><div><dt>Team</dt><dd>Yulong · Cadden · Yutong</dd></div></dl></div>
+        <figure className="soul-crop soul-crop-hero"><video autoPlay muted loop playsInline preload="metadata" poster={item.heroMedia} aria-label="Soul Vein finished prototype title screen and opening gameplay"><source src="/media/soul-hero-video.mp4" type="video/mp4" /></video><figcaption>Playable prototype · Title screen and opening gameplay</figcaption></figure>
+        <div className="soul-hero-copy"><p>{item.summary}</p><dl><div><dt>Focus</dt><dd>Player experience iteration</dd></div><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Format</dt><dd>Top-down single-player puzzle game</dd></div></dl></div>
       </div>
     </header>
 
@@ -372,11 +372,11 @@ function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
 
     <section className="soul-iterations">
       <div className="section-label"><span>02</span><span>Iteration evidence</span></div>
-      <div className="soul-section-head"><h2>Five changes shaped<br />around the player.</h2><p>The following decisions come directly from the development review in slides 15–23. Each one connects an observed player problem to a concrete design response.</p></div>
+      <div className="soul-section-head soul-section-head--solo"><h2>Five changes shaped<br />around the player.</h2></div>
 
       <article className="soul-iteration soul-iteration-guidance">
         <div className="soul-iteration-copy"><p className="soul-overline">Iteration 01 · Navigation</p><h3>Turn resources into<br />a visual guide.</h3><div className="soul-before-after"><p><span>Observed</span>Players became lost and could not read the intended route through the continuous scene.</p><p><span>Changed</span>Ammo pickups were repositioned as a trail of spatial cues, guiding movement without a waypoint or extra tutorial text.</p></div></div>
-        <figure className="soul-crop soul-guidance-visual"><img src="/media/soul-iteration-connection-poster.webp" alt="Soul Vein level layout using ammo packages to guide the player through the environment" loading="lazy" /><figcaption>Resource placement used as environmental wayfinding</figcaption></figure>
+        <div className="soul-comparison-stack" aria-label="Before and after navigation comparisons"><figure><img src="/media/soul-ammo-before-after-a.webp" alt="Before and after comparison showing ammo pickups added as a route through the first level area" loading="lazy" /><figcaption>Level area A · Old / New</figcaption></figure><figure><img src="/media/soul-ammo-before-after-b.webp" alt="Before and after comparison showing ammo pickups guiding the route around a second level area" loading="lazy" /><figcaption>Level area B · Old / New</figcaption></figure></div>
       </article>
 
       <article className="soul-iteration soul-iteration-video">
@@ -385,7 +385,7 @@ function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       </article>
 
       <article className="soul-iteration soul-iteration-reward">
-        <figure className="soul-crop soul-reward-visual"><img src="/media/soul-gameplay.webp" alt="Soul Vein tree orb, restored grass and progression interface after a successful connection" loading="lazy" /><figcaption>Tree orb + grass ring + progressive UI</figcaption></figure>
+        <div className="soul-reward-comparison" aria-label="Before and after reward feedback"><figure><span>After</span><img src="/media/soul-reward-after.webp" alt="Updated Soul Vein reward feedback with a tree orb, restored grass and progressive interface" loading="lazy" /></figure><figure><span>Before</span><img src="/media/soul-reward-before.webp" alt="Earlier Soul Vein reward feedback prototype" loading="lazy" /></figure></div>
         <div className="soul-iteration-copy"><p className="soul-overline">Iteration 03 · Reward feedback</p><h3>Replace visual noise<br />with layered confirmation.</h3><div className="soul-before-after"><p><span>Observed</span>The original grass-rain celebration became messy once every level lived in one continuous scene.</p><p><span>Changed</span>A rising tree orb, a controlled circle of restored grass and a progressive level UI now confirm success at three readable scales.</p></div></div>
       </article>
 

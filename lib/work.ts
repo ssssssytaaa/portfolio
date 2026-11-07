@@ -134,7 +134,7 @@ export const work: WorkItem[] = [
     slug: "soul-vein", title: "Soul Vein", category: "Games & Interactive", depth: "case",
     role: "Game Design · Level Design · Gameplay Programming · Narrative Design",
     summary: "A top-down puzzle game where players reconnect green paths, restore withered trees and uncover the story of a city that has lost its life.",
-    heroMedia: "/media/soul-hero.webp", accent: "#6ec5b7", tools: ["Unity", "C#", "Level Design", "Narrative Design"],
+    heroMedia: "/media/soul-hero-clean.webp", videoMedia: "/media/soul-hero-video.mp4", videoPoster: "/media/soul-hero-clean.webp", accent: "#6ec5b7", tools: ["Unity", "C#", "Level Design", "Narrative Design"],
     sections: [
       { title: "Overview", body: "Soul Vein explores how environmental progression can carry both mechanical stakes and narrative meaning. The project was built as a connected design problem rather than a collection of isolated features." },
       { title: "Challenge", body: "The core challenge was balancing readable progression with an atmosphere of uncertainty, while keeping the level, code and narrative flexible enough to evolve together." },
@@ -142,7 +142,7 @@ export const work: WorkItem[] = [
       { title: "Process", body: "I mapped player beats, built greybox spaces, implemented interaction logic and revised pacing through repeated playtests. Narrative cues were placed where player attention naturally slowed." },
       { title: "Outcome", body: "The final prototype demonstrates a coherent player journey in which space, system and story reinforce one another, and reflects my ability to work across creative and technical boundaries." },
     ],
-    gallery: ["/media/soul-level.webp", "/media/soul-gameplay.webp", "/media/soul-code.webp"],
+    gallery: ["/media/soul-reward-after.webp", "/media/soul-iteration-connection-poster.webp", "/media/soul-code.webp"],
   },
   {
     slug: "personal-rednote", title: "Personal RedNote", category: "Marketing", depth: "compact", role: "Content Strategy · Audience Growth · Copywriting",
