@@ -59,6 +59,11 @@ footer{background:#d6ff3e;color:#101010;padding:7vw 3.2vw 1.5rem}.footer-top>p{t
 .case-links a:hover{background:#eee;color:#111;border-color:#eee}
 @media (max-width:800px){.case-links{margin:-3rem 1rem 5rem}}
 @media (prefers-reduced-motion:reduce){.work-image video{transition:none}}
+
+/* More Work detail pages stay media-first and intentionally concise. */
+.compact-case .case-visual{margin-bottom:4vw}
+.compact-case .case-gallery{padding-top:2vw;padding-bottom:6vw}
+@media (max-width:800px){.compact-case .case-visual{margin-bottom:2.5rem}.compact-case .case-gallery{padding-top:0;padding-bottom:3rem}}
 @media (max-width:800px){.hero h1{top:92px;left:1rem;font-size:10.5vw;line-height:.86;white-space:nowrap}.hero-kicker{top:148px}.sound-toggle{right:1rem;bottom:16rem}}
 @media (max-width:800px){.echos-video-section{padding:4.5rem 1rem}.echos-video-copy{display:block;margin:4rem 0}.echos-video-copy p{margin-top:2rem}.echos-video-section .echos-hero-image{padding:0;margin:0}.echos-video-section .echos-hero-image video{aspect-ratio:1.25}.echos-stats article:nth-child(3) strong{font-size:2.4rem}}
 @media (max-width:800px){.rct-case-hero{padding:4rem 1rem}.rct-case-hero h1{display:block;margin:3rem 0;font-size:14vw;line-height:.83}.rct-case-hero h1 span,.rct-case-hero h1 em{display:block}.rct-case-hero h1 em{margin-top:.3rem;text-shadow:2px 2px 0 var(--rct-ink)}.rct-hero-details{display:block;margin:0}.rct-hero-details>p{font-size:1.55rem}.rct-hero-details dl{margin:2rem 0}.rct-links{display:flex;flex-wrap:wrap}.rct-hero-image{padding:1rem}.rct-hero-image img{aspect-ratio:1.2}.rct-hero-image figcaption{font-size:.65rem}.rct-trailer,.rct-contribution,.rct-product{padding:4.5rem 1rem}.rct-section-intro,.rct-contribution-head{display:block;margin:4rem 0}.rct-section-intro p,.rct-contribution-head p{margin-top:2rem}.rct-contribution-grid{grid-template-columns:1fr}.rct-contribution-grid article,.rct-contribution-grid article:first-child{padding:2rem 0;border-right:0;border-bottom:1px solid #8f8b82}.rct-contribution-grid article:last-child{border-bottom:0}.rct-contribution-grid h3{margin:1.5rem 0 1rem}.rct-gallery{grid-template-columns:1fr}.rct-gallery img{min-height:260px}.rct-source{justify-content:flex-start;line-height:1.4}.rct-takeaway{grid-template-columns:1fr;padding:4.5rem 1rem}.rct-takeaway p{font-size:2.5rem}}

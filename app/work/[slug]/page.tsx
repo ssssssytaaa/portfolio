@@ -407,15 +407,8 @@ function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       </div>
     </section>
 
-    <section className="soul-visual-development">
-      <div className="section-label"><span>04</span><span>Supporting visual development</span></div>
-      <div className="soul-section-head"><h2>One restorative world,<br />from character to system.</h2><p>Original concept sheets from the Soul Vein presentation show how the character, water connection and environmental rebirth were developed as one visual language.</p></div>
-      <div className="soul-concept-grid"><figure><img src="/media/soul-character-concepts.png" alt="Soul Vein character development sheet showing insect-inspired costume explorations" loading="lazy" /><figcaption>Character and costume exploration</figcaption></figure><figure><img src="/media/soul-system-concepts.png" alt="Soul Vein concept sheet for the water connection, flowers and restored tree states" loading="lazy" /><figcaption>Connection, blossom and tree-state exploration</figcaption></figure></div>
-      <figure className="soul-restoration-art"><img src="/media/soul-restoration-art.png" alt="Original Soul Vein artwork of the player beside a restored tree" loading="lazy" /><figcaption>Restoration moment · Original project artwork</figcaption></figure>
-    </section>
-
     <section className="soul-reflection">
-      <div className="section-label dark"><span>05</span><span>What the project demonstrates</span></div>
+      <div className="section-label dark"><span>04</span><span>What the project demonstrates</span></div>
       <h2>Iteration grounded<br />in player behaviour.</h2><p>The final prototype demonstrates my ability to translate playtest friction into changes across level design, gameplay logic and visual feedback. Instead of adding explanation after confusion appeared, I changed the systems so the experience could communicate more clearly through play.</p>
     </section>
 
@@ -435,23 +428,13 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   if (item.slug === "meat-lover") return <MeatLoverCaseStudy item={item} next={next} />;
   if (item.slug === "lets-build-a-dungeon") return <LetsBuildDungeonCaseStudy item={item} next={next} />;
   if (item.slug === "soul-vein") return <SoulVeinCaseStudy item={item} next={next} />;
-  const sections = item.sections?.length ? item.sections : [
-    { title: "Project", body: item.summary },
-    { title: "Contribution", body: `I worked across ${item.role.toLowerCase()}, using ${item.tools.join(", ")} to shape a clear and purposeful result.` },
-  ];
-  const resultFirstPattern = /outcome|result|impact|my role|contribution/i;
-  const orderedSections = [
-    ...sections.filter((section) => resultFirstPattern.test(section.title)),
-    ...sections.filter((section) => !resultFirstPattern.test(section.title)),
-  ];
-  return <main className="case-page" style={{ "--accent": item.accent } as React.CSSProperties}>
+  return <main className="case-page compact-case" style={{ "--accent": item.accent } as React.CSSProperties}>
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
     <header className="case-hero"><div className="case-eyebrow"><span>{item.category}</span><span>{item.depth === "case" ? "Case study" : "Selected project"}</span></div><h1>{item.title}</h1><div className="case-intro"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Tools</dt><dd>{item.tools.join(" · ")}</dd></div></dl></div></header>
     <div className={`case-visual ${item.videoMedia ? "case-visual--video" : ""}`}>{item.videoMedia ? <video controls playsInline preload="metadata" poster={item.videoPoster ?? item.heroMedia}><source src={item.videoMedia} type="video/mp4" />Your browser does not support embedded video.</video> : <img src={item.heroMedia} alt={`${item.title} project hero`} />}</div>
     {item.externalLinks?.length ? <div className="case-links" aria-label="Project links">{item.externalLinks.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}<ArrowUpRight size={16} /></a>)}</div> : null}
     {item.metrics?.length ? <section className={`case-stats ${item.metrics.length === 1 ? "solo" : ""}`} aria-label="Project results">{item.metrics.map((metric) => <article key={metric.value}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</section> : null}
     {item.gallery.length ? <section className="case-gallery">{item.gallery.map((image, imageIndex) => <img key={image} src={image} alt={`${item.title} project image ${imageIndex + 1}`} loading="lazy" />)}</section> : null}
-    <section className="case-sections">{orderedSections.map((section) => <article className="case-section" key={section.title}><h2>{section.title}</h2><p>{section.body}</p></article>)}</section>
     <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
   </main>;
 }
