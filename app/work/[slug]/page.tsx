@@ -424,7 +424,7 @@ function PaintingCollection({ item, next }: { item: WorkItem; next: WorkItem }) 
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
     <header className="case-hero painting-hero"><div className="case-eyebrow"><span>Visual Art</span><span>Selected collection</span></div><h1>{item.title}</h1><div className="case-intro"><p>{item.summary}</p><dl><div><dt>Practice</dt><dd>{item.role}</dd></div><div><dt>Media</dt><dd>{item.tools.join(" · ")}</dd></div></dl></div></header>
 
-    <section className="painting-collection" aria-label="Selected paintings">
+    <section className="painting-collection" aria-label="Selected visual art">
       <div className="painting-group">
         <div className="painting-group-head"><span>01</span><h2>Oil Painting</h2><p>Observational studies in colour, light and material.</p></div>
         <div className="painting-grid painting-grid--oil">
@@ -435,10 +435,34 @@ function PaintingCollection({ item, next }: { item: WorkItem; next: WorkItem }) 
 
       <div className="painting-group">
         <div className="painting-group-head"><span>02</span><h2>Digital Painting</h2><p>Character, self-portrait and narrative illustration.</p></div>
-        <div className="painting-grid painting-grid--digital">
+        <div className="painting-grid painting-grid--feature">
           <figure><img src="/media/painting-3.webp" alt="Digital painting of a luminous figure beneath an animal spirit" loading="lazy" /><figcaption>Digital painting · Narrative illustration</figcaption></figure>
-          <figure><img src="/media/bridget.webp" alt="Bridget digital character illustration" loading="lazy" /><figcaption>Bridget · Digital character illustration</figcaption></figure>
-          <figure><img src="/media/allergy.webp" alt="Allergy digital self-portrait" loading="lazy" /><figcaption>Allergy · Digital self-portrait</figcaption></figure>
+        </div>
+
+        <div className="painting-series">
+          <div className="painting-series-head"><h3>Bridget</h3><p>Character design · Digital illustration</p></div>
+          <div className="painting-grid painting-grid--series">
+            <figure><img src="/media/bridget-design.webp" alt="Bridget character design sheet with costume, guitar and character notes" loading="lazy" /><figcaption>Character design · Concept sheet</figcaption></figure>
+            <figure><img src="/media/bridget-illustration-01.webp" alt="Bridget standing above a neon futuristic city" loading="lazy" /><figcaption>Bridget · City encounter</figcaption></figure>
+            <figure><img src="/media/bridget-illustration-02.webp" alt="Bridget reaching through a neon web toward a glowing portal" loading="lazy" /><figcaption>Bridget · Portal encounter</figcaption></figure>
+          </div>
+        </div>
+
+        <div className="painting-series">
+          <div className="painting-series-head"><h3>Allergy</h3><p>Self-portrait series · Digital mixed media</p></div>
+          <div className="painting-grid painting-grid--series">
+            <figure><img src="/media/allergy-main.webp" alt="Allergy self-portrait combining a pencil portrait, internal anatomy and a prawn" loading="lazy" /><figcaption>Allergy · Self-portrait</figcaption></figure>
+            <figure><img src="/media/allergy-tanglement.webp" alt="Allergy variation with tentacles winding across the portrait" loading="lazy" /><figcaption>Allergy · Tanglement</figcaption></figure>
+            <figure><img src="/media/allergy-dizziness.webp" alt="Allergy variation with concentric rings and a spreading rash" loading="lazy" /><figcaption>Allergy · Dizziness</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div className="painting-group">
+        <div className="painting-group-head"><span>03</span><h2>Pencil Drawing</h2><p>Observational studies focused on form, value and material contrast.</p></div>
+        <div className="painting-grid painting-grid--sketches">
+          <figure><img src="/media/pencil-still-life-2021.webp" alt="Pencil still life with a lidded vessel, fruit and draped cloth" loading="lazy" /><figcaption>Pencil · Observational still life · 2021</figcaption></figure>
+          <figure><img src="/media/pencil-still-life-2022.webp" alt="Pencil still life with a metal cylinder, pipe and draped fabric" loading="lazy" /><figcaption>Pencil · Observational still life · 2022</figcaption></figure>
         </div>
       </div>
     </section>

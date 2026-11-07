@@ -228,13 +228,13 @@ export const work: WorkItem[] = [
     externalLinks: [{ label: "View prototype files · Code usi2", href: "https://pan.baidu.com/s/1KsvcaG6m4yiJB5z2QpNKUQ?pwd=usi2" }],
   },
   {
-    slug: "painting", title: "Painting", category: "Visual Art", depth: "compact", role: "Oil & Digital Artist",
-    summary: "A selected painting collection moving between observational oil studies and expressive digital worlds.", heroMedia: "/media/painting-1.webp", accent: "#b67e5d", tools: ["Oil Painting", "Digital Painting", "Composition"],
+    slug: "painting", title: "Painting & Drawing", category: "Visual Art", depth: "compact", role: "Traditional & Digital Artist",
+    summary: "A selected visual-art collection moving between observational oil and pencil studies, character design and expressive digital self-portraiture.", heroMedia: "/media/painting-1.webp", accent: "#b67e5d", tools: ["Oil Painting", "Pencil Drawing", "Digital Painting"],
     sections: [
       { title: "Practice", body: "These selected paintings move between observation and interpretation, using colour and composition to retain the atmosphere of a scene rather than simply reproduce it." },
       { title: "Method", body: "I begin with large value and colour relationships, then introduce detail only where it strengthens focus, depth or emotional tone." },
       { title: "Relevance", body: "Painting continues to inform my game and marketing work by sharpening my sense of visual hierarchy, mood and controlled attention." },
-    ], gallery: ["/media/painting-1.webp", "/media/painting-2.webp", "/media/painting-3.webp", "/media/bridget.webp", "/media/allergy.webp"],
+    ], gallery: ["/media/painting-1.webp", "/media/painting-2.webp", "/media/painting-3.webp", "/media/bridget-design.webp", "/media/bridget-illustration-01.webp", "/media/bridget-illustration-02.webp", "/media/allergy-main.webp", "/media/allergy-tanglement.webp", "/media/allergy-dizziness.webp", "/media/pencil-still-life-2021.webp", "/media/pencil-still-life-2022.webp"],
   },
 ];
 
