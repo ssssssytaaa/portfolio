@@ -10,6 +10,8 @@ export type WorkItem = {
   role: string;
   summary: string;
   heroMedia: string;
+  videoMedia?: string;
+  videoPoster?: string;
   accent: string;
   tools: string[];
   metrics?: Metric[];
@@ -188,31 +190,42 @@ export const work: WorkItem[] = [
     ], gallery: ["/media/shaun.webp"],
   },
   {
-    slug: "3d-modeling", title: "3D Modeling", category: "3D & Motion", depth: "compact", role: "3D Artist",
-    summary: "Hard-surface modeling studies focused on silhouette, material readability and presentation.", heroMedia: "/media/car.webp", accent: "#6b8a9d", tools: ["Maya", "Substance 3D", "Rendering"],
+    slug: "3d-modeling", title: "3D Modeling & Rendering", category: "3D & Motion", depth: "compact", role: "3D Artist · Lighting & Rendering",
+    summary: "A hard-surface vehicle study developed from modeling and texturing through atmospheric lighting and final rendering.", heroMedia: "/media/3d-modeling-render.webp", accent: "#6b8a9d", tools: ["Maya", "Substance 3D", "Lighting", "Rendering"],
     sections: [
       { title: "Study", body: "This hard-surface vehicle study follows the full path from reference analysis and blockout to refined topology, materials and final presentation." },
       { title: "Craft", body: "I focused on silhouette accuracy, believable wear and material contrast so the model remains readable in both close-up and gameplay-scale views." },
       { title: "Presentation", body: "Lighting and framing were treated as part of the work, not an afterthought, because a finished asset also needs a clear visual argument." },
-    ], gallery: ["/media/car.webp"],
+    ], gallery: [],
   },
   {
-    slug: "weapon-animation", title: "Weapon Animation", category: "3D & Motion", depth: "compact", role: "Animator",
-    summary: "Animation studies exploring weight, anticipation and responsive first-person motion.", heroMedia: "/media/weapon.webp", accent: "#7798ad", tools: ["Maya", "Animation", "Unity"],
+    slug: "weapon-animation", title: "Weapon Animation", category: "3D & Motion", depth: "compact", role: "Animator · Cinematic Presentation",
+    summary: "A first-person weapon animation study exploring weight, anticipation, mechanical response and cinematic presentation.", heroMedia: "/media/weapon-animation-poster.webp", videoMedia: "/media/weapon-animation.mp4", videoPoster: "/media/weapon-animation-poster.webp", accent: "#7798ad", tools: ["Animation", "Cinematography", "Film Editing"],
     sections: [
       { title: "Animation Goal", body: "The study explores how first-person weapon motion can communicate weight, readiness and mechanical feedback without obscuring the player’s view." },
       { title: "Process", body: "I built the motion around strong poses, anticipation and controlled follow-through, then reviewed the timing from the gameplay camera rather than only in an animation viewport." },
       { title: "Result", body: "The final sequence balances visual impact with responsiveness and demonstrates animation designed for interaction." },
-    ], gallery: ["/media/weapon.webp"],
+    ], gallery: [],
   },
   {
-    slug: "motion-capture", title: "Motion Capture", category: "3D & Motion", depth: "compact", role: "Performer · Motion Editor",
-    summary: "A movement study spanning performance capture, cleanup and application in a real-time pipeline.", heroMedia: "/media/mocap.webp", accent: "#7bc8c8", tools: ["Motion Capture", "Maya", "Unity"],
+    slug: "motion-capture", title: "Motion Capture Film", category: "3D & Motion", depth: "compact", role: "Cleanup Animator · Cinematography · Film Editing",
+    summary: "A cinematic motion-capture project shaped through animation cleanup, shot composition and final film editing.", heroMedia: "/media/motion-capture-poster.webp", videoMedia: "/media/motion-capture.mp4", videoPoster: "/media/motion-capture-poster.webp", accent: "#7bc8c8", tools: ["Motion Capture Cleanup", "Cinematography", "Film Editing"],
     sections: [
-      { title: "Overview", body: "This work follows movement from physical performance through captured data to a usable real-time animation result." },
-      { title: "Process", body: "I considered intention and staging during performance, then cleaned the motion with attention to contact, drift and the rhythm of the original action." },
-      { title: "Learning", body: "The project connected acting choices with technical cleanup and showed how much character can be preserved through a disciplined pipeline." },
-    ], gallery: ["/media/mocap.webp"],
+      { title: "Overview", body: "This short film uses motion-capture performance as the foundation for a composed cinematic sequence." },
+      { title: "My Role", body: "I cleaned the captured animation, developed the cinematography and edited the final film, connecting technical motion work with the rhythm and clarity of the finished sequence." },
+      { title: "Cleanup Animation", body: "I refined contacts, reduced drift and preserved the intention of the original performance so the movement remained natural on the final characters." },
+      { title: "Cinematography & Edit", body: "I shaped camera placement, shot continuity and pacing to guide attention and turn the captured material into a coherent film." },
+    ], gallery: [],
+  },
+  {
+    slug: "unreal-interaction-prototype", title: "Unreal Interaction Prototype", category: "Games & Interactive", depth: "compact", role: "Game Design · Technical Prototyping",
+    summary: "A small Unreal Engine game prototype featuring multiple interactive mechanisms and trigger-based elements, presented through an edited gameplay demonstration.", heroMedia: "/media/unreal-prototype.svg", accent: "#6656e8", tools: ["Unreal Engine", "Blueprints", "Interaction Design", "Video Editing"],
+    sections: [
+      { title: "Prototype", body: "This compact prototype explores how multiple interactive mechanisms can be connected into a readable player journey inside Unreal Engine." },
+      { title: "Interaction Design", body: "Trigger-based events and environmental responses were arranged to make cause and effect easy to understand while keeping the experience active and exploratory." },
+      { title: "Demonstration", body: "The gameplay was edited into a concise demonstration video to communicate the core mechanics, interaction logic and overall experience." },
+    ], gallery: [],
+    externalLinks: [{ label: "View prototype files · Code usi2", href: "https://pan.baidu.com/s/1KsvcaG6m4yiJB5z2QpNKUQ?pwd=usi2" }],
   },
   {
     slug: "bridget", title: "Bridget", category: "Visual Art", depth: "compact", role: "Character Designer",
