@@ -48,24 +48,24 @@ function About() {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [70, -50]);
-  const words = "I combine game thinking, visual storytelling and performance-aware marketing to shape experiences that feel distinct—and give audiences a reason to care.".split(" ");
+  const words = "I’m a multidisciplinary creative combining visual storytelling, trend awareness and audience insight to turn original ideas into engaging experiences. Across game design, digital media and creative marketing, I create work that connects with people while delivering creative and commercial value.".split(" ");
   return <section className="about" id="about" ref={ref}><div className="section-label"><span>01</span><span>About</span></div><h2>ABOUT ME</h2><div className="about-grid">
     <motion.img style={{ y }} src="/media/portrait.webp" alt="Sun Yutong" loading="lazy" />
     <p className="reveal-copy">{words.map((word, index) => <motion.span key={`${word}-${index}`} initial={{ opacity: .15 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-12% 0px -12%" }} transition={{ delay: index * .018 }}>{word} </motion.span>)}</p>
-    <img className="about-art art-one" src="/media/bridget.webp" alt="Character artwork from Bridget" loading="lazy" /><img className="about-art art-two" src="/media/car.webp" alt="3D vehicle model" loading="lazy" /><p className="about-note">Based in Singapore<br />NTU, Media Art — Game Design<br />2023—2027</p>
+    <img className="about-art art-one" src="/media/bridget.webp" alt="Character artwork from Bridget" loading="lazy" /><img className="about-art art-two" src="/media/car.webp" alt="3D vehicle model" loading="lazy" /><p className="about-note">Based in Singapore<br />NTU ADM · Game Design<br />Game Development · Digital Media · Creative Marketing</p>
   </div></section>;
 }
 
 const capabilities = [
-  ["Creative Marketing", "Positioning, campaign concepts and content that translate product strengths into audience desire."],
-  ["Content Strategy", "Platform-aware ideas, publishing systems and iteration informed by real audience behaviour."],
-  ["Player Experience", "A player-first lens connecting communication, interaction and the emotional arc of a product."],
-  ["Game Design & Production", "Hands-on prototyping across systems, level flow, narrative, QA and asset integration."],
-  ["Visual Storytelling", "Art direction and motion-led compositions that make complex ideas instantly legible."],
+  ["Creative Strategy", "Original, audience-focused concepts that connect emotional engagement with meaningful creative and commercial value."],
+  ["Audience & Trend Insight", "A sensitive reading of platform behaviour, cultural trends and human emotion to understand what people respond to."],
+  ["Creative Marketing", "Positioning, platform-native content and campaign ideas that translate product strengths into audience interest."],
+  ["Game & Player Experience", "Hands-on game design, QA, progression balance and player-centred iteration across systems, levels and narrative."],
+  ["Visual Storytelling", "Visual aesthetics, composition and motion used to turn complex ideas into clear, memorable experiences."],
 ];
 
 function Capabilities() {
-  return <section className="capabilities"><div className="section-label dark"><span>02</span><span>Capabilities</span></div><p className="cap-intro">A hybrid practice for teams that need both the idea and the way it reaches people.</p><div className="cap-list">{capabilities.map(([title, body], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></article>)}</div></section>;
+  return <section className="capabilities"><div className="section-label dark"><span>02</span><span>Capabilities</span></div><p className="cap-intro">I connect creative ideas with the people they are made for—across strategy, stories, platforms and play.</p><div className="cap-list">{capabilities.map(([title, body], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></article>)}</div></section>;
 }
 
 function Featured() {
@@ -74,17 +74,14 @@ function Featured() {
   </article>)}</div></section>;
 }
 
-const impact = [["10", "Cities", "Echos of Her toured across ten cities in China."], ["170 × 18 m", "Public screen", "A landmark-scale presentation in Hangzhou."], ["~500 / 3 days", "New followers", "A single Meat Lover RedNote post turned launch attention into community."], ["22.4%", "Conversion", "39 clicks from 174 tracked landing-page views."]];
-function Impact() { return <section className="impact"><div className="section-label"><span>04</span><span>Selected impact</span></div><div className="impact-grid">{impact.map(([value, label, context]) => <article key={value}><strong>{value}</strong><h3>{label}</h3><p>{context}</p></article>)}</div></section>; }
-
 function Library() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
   const filtered = useMemo(() => active === "All" ? secondaryWork : secondaryWork.filter((item) => item.category === active), [active]);
-  return <section className="library"><div className="library-head"><div><div className="section-label"><span>05</span><span>Complete library</span></div><h2>MORE WORK</h2></div><div className="filters" aria-label="Filter projects">{categories.map((cat) => <button key={cat} className={active === cat ? "active" : ""} onClick={() => setActive(cat)}>{cat}</button>)}</div></div><motion.div layout className="work-grid">{filtered.map((item, index) => <motion.article layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} key={item.slug} className={`work-card ${index % 5 === 0 ? "wide" : ""}`}><Link href={`/work/${item.slug}`}><div className="work-image">{item.videoMedia ? <video autoPlay muted loop playsInline preload="metadata" poster={item.videoPoster ?? item.heroMedia} aria-label={`${item.title} video preview`}><source src={item.videoMedia} type="video/mp4" /></video> : <img src={item.heroMedia} alt={`${item.title} preview`} loading="lazy" />}<span><ArrowUpRight /></span></div><p>{item.category}</p><h3>{item.title}</h3><small>{item.role}</small></Link></motion.article>)}</motion.div></section>;
+  return <section className="library"><div className="library-head"><div><div className="section-label"><span>04</span><span>Complete library</span></div><h2>MORE WORK</h2></div><div className="filters" aria-label="Filter projects">{categories.map((cat) => <button key={cat} className={active === cat ? "active" : ""} onClick={() => setActive(cat)}>{cat}</button>)}</div></div><motion.div layout className="work-grid">{filtered.map((item, index) => <motion.article layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} key={item.slug} className={`work-card ${index % 5 === 0 ? "wide" : ""}`}><Link href={`/work/${item.slug}`}><div className="work-image">{item.videoMedia ? <video autoPlay muted loop playsInline preload="metadata" poster={item.videoPoster ?? item.heroMedia} aria-label={`${item.title} video preview`}><source src={item.videoMedia} type="video/mp4" /></video> : <img src={item.heroMedia} alt={`${item.title} preview`} loading="lazy" />}<span><ArrowUpRight /></span></div><p>{item.category}</p><h3>{item.title}</h3><small>{item.role}</small></Link></motion.article>)}</motion.div></section>;
 }
 
 function Contact() {
   return <footer id="contact"><div className="footer-top"><p>Have a role, brief or curious idea?</p><a href="mailto:sunyutong662@gmail.com">LET’S MAKE<br /><em>IT MATTER.</em><ArrowUpRight /></a></div><div className="footer-links"><a href="mailto:sunyutong662@gmail.com"><Mail /> sunyutong662@gmail.com</a><a href="/Sun-Yutong-Resume.pdf" download><Download /> Download résumé</a><a href="#top">Back to top ↑</a></div><div className="footer-base"><span>Sun Yutong © 2026</span><span>Creative Marketing & Player Experience</span></div></footer>;
 }
 
-export default function Home() { return <main><Header /><Hero /><Marquee /><About /><Capabilities /><Featured /><Impact /><Library /><Contact /></main>; }
+export default function Home() { return <main><Header /><Hero /><Marquee /><About /><Capabilities /><Featured /><Library /><Contact /></main>; }
