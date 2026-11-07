@@ -344,6 +344,65 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
   </main>;
 }
 
+function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  const outcomes = [
+    { number: "01", title: "Readable restoration", body: "The player creates a living green path toward each withered tree. Environmental change becomes the clearest confirmation that the puzzle has progressed." },
+    { number: "02", title: "Connected feedback", body: "Grass states, the tree orb and progressive UI reinforce the same action, helping players judge connection and completion without relying on long instructions." },
+    { number: "03", title: "Recoverable play", body: "Level-specific checkpoints, reset behaviour and controlled resource placement keep experimentation readable without erasing the player’s wider progress." },
+  ];
+
+  return <main className="case-page soul-case" style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav soul-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+
+    <header className="soul-hero">
+      <div className="case-eyebrow"><span>Student game project · Unity</span><span>Case study 05</span></div>
+      <div className="soul-title"><span>SOUL</span><em>VEIN</em></div>
+      <div className="soul-hero-grid">
+        <figure className="soul-crop soul-crop-hero"><img src={item.heroMedia} alt="Soul Vein title screen inside the finished Unity prototype" /><figcaption>Playable prototype · Final title screen</figcaption></figure>
+        <div className="soul-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Format</dt><dd>Top-down single-player puzzle game</dd></div><div><dt>Team</dt><dd>Yulong · Cadden · Yutong</dd></div></dl></div>
+      </div>
+    </header>
+
+    <section className="soul-outcome">
+      <div className="section-label dark"><span>01</span><span>Playable outcome</span></div>
+      <div className="soul-section-head"><h2>Bring life back<br />through play.</h2><p>Soul Vein turns restoration into the central puzzle language. Players connect green paths to withered trees, revive the environment and uncover the story behind the damaged city.</p></div>
+      <div className="soul-outcome-grid">{outcomes.map((outcome) => <article key={outcome.number}><span>{outcome.number}</span><h3>{outcome.title}</h3><p>{outcome.body}</p></article>)}</div>
+    </section>
+
+    <section className="soul-system">
+      <div className="section-label"><span>02</span><span>Core game system</span></div>
+      <div className="soul-system-grid">
+        <div><p className="soul-overline">Connection → feedback → restoration</p><h2>A puzzle the world<br />responds to.</h2><p>I worked across the mechanic, level structure and implementation so every successful connection produced a visible state change. The environment does not simply decorate progress—it communicates it.</p><ul><li>Connect a green path to the target tree</li><li>Read state through grass, light and the tree orb</li><li>Use limited water resources deliberately</li><li>Restore the area and continue the journey</li></ul></div>
+        <figure className="soul-crop soul-crop-system"><img src="/media/soul-gameplay.webp" alt="Soul Vein restoration mechanic connecting the player to a withered tree" loading="lazy" /><figcaption>Restoration system · Interaction, feedback and environmental change</figcaption></figure>
+      </div>
+    </section>
+
+    <section className="soul-improvements">
+      <div className="section-label dark"><span>03</span><span>Player-facing improvements</span></div>
+      <div className="soul-section-head"><h2>Make the system<br />teach itself.</h2><p>Iteration focused on what players needed to understand in the moment: where to connect, whether the path was working and how to recover from a failed attempt.</p></div>
+      <div className="soul-improvement-grid">
+        <article><figure className="soul-crop"><img src="/media/soul-level.webp" alt="Soul Vein level layout with connected green path and restoration node" loading="lazy" /></figure><div><span>01 · Visual distinction</span><h3>Different grass states clarify connection.</h3><p>Colour and density separate inactive, connected and restored areas, creating faster self-judgement during play.</p></div></article>
+        <article><figure className="soul-crop"><img src="/media/soul-code.webp" alt="Soul Vein level showing resource placement and gated navigation" loading="lazy" /></figure><div><span>02 · Checkpoints and reset</span><h3>Failure stays local to the current level.</h3><p>Reset and restart behaviour protects the wider journey while preserving the consequence of each puzzle attempt.</p></div></article>
+      </div>
+      <aside className="soul-teaching-note"><span>03 · Wordless teaching</span><strong>Resource placement closes unintended shortcuts.</strong><p>Ammo packages and reset points were positioned to prevent “cheating” routes and teach the intended mechanic through play rather than additional text.</p></aside>
+    </section>
+
+    <section className="soul-visual-development">
+      <div className="section-label"><span>04</span><span>Visual development</span></div>
+      <div className="soul-section-head"><h2>One restorative world,<br />from character to system.</h2><p>Original concept sheets from the Soul Vein presentation show how the character, water connection and environmental rebirth were developed as one visual language.</p></div>
+      <div className="soul-concept-grid"><figure><img src="/media/soul-character-concepts.png" alt="Soul Vein character development sheet showing insect-inspired costume explorations" loading="lazy" /><figcaption>Character and costume exploration</figcaption></figure><figure><img src="/media/soul-system-concepts.png" alt="Soul Vein concept sheet for the water connection, flowers and restored tree states" loading="lazy" /><figcaption>Connection, blossom and tree-state exploration</figcaption></figure></div>
+      <figure className="soul-restoration-art"><img src="/media/soul-restoration-art.png" alt="Original Soul Vein artwork of the player beside a restored tree" loading="lazy" /><figcaption>Restoration moment · Original project artwork</figcaption></figure>
+    </section>
+
+    <section className="soul-reflection">
+      <div className="section-label dark"><span>05</span><span>What the project demonstrates</span></div>
+      <h2>Design, code and story<br />working as one loop.</h2><p>The final prototype demonstrates my ability to move between level design, gameplay logic, narrative intention and player-facing feedback. Instead of treating those areas as separate deliverables, I used each one to make the same central action clearer and more meaningful.</p>
+    </section>
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getWork(slug);
@@ -355,6 +414,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   if (item.slug === "rollercoaster-tycoon-wonderworks") return <RctCaseStudy item={item} next={next} />;
   if (item.slug === "meat-lover") return <MeatLoverCaseStudy item={item} next={next} />;
   if (item.slug === "lets-build-a-dungeon") return <LetsBuildDungeonCaseStudy item={item} next={next} />;
+  if (item.slug === "soul-vein") return <SoulVeinCaseStudy item={item} next={next} />;
   const sections = item.sections?.length ? item.sections : [
     { title: "Project", body: item.summary },
     { title: "Contribution", body: `I worked across ${item.role.toLowerCase()}, using ${item.tools.join(", ")} to shape a clear and purposeful result.` },

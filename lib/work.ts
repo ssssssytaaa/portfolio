@@ -130,8 +130,8 @@ export const work: WorkItem[] = [
   },
   {
     slug: "soul-vein", title: "Soul Vein", category: "Games & Interactive", depth: "case",
-    role: "Game Design · Level Design · Programming · Narrative",
-    summary: "A systems-driven student game in which level structure, mechanics and story are designed as one connected player journey.",
+    role: "Game Design · Level Design · Gameplay Programming · Narrative Design",
+    summary: "A top-down puzzle game where players reconnect green paths, restore withered trees and uncover the story of a city that has lost its life.",
     heroMedia: "/media/soul-hero.webp", accent: "#6ec5b7", tools: ["Unity", "C#", "Level Design", "Narrative Design"],
     sections: [
       { title: "Overview", body: "Soul Vein explores how environmental progression can carry both mechanical stakes and narrative meaning. The project was built as a connected design problem rather than a collection of isolated features." },
