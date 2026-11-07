@@ -48,11 +48,11 @@ function About() {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [70, -50]);
-  const words = "I’m a multidisciplinary creative combining visual storytelling, trend awareness and audience insight to turn original ideas into engaging experiences. Across game design, digital media and creative marketing, I create work that connects with people while delivering creative and commercial value.".split(" ");
+  const words = "I’m a Game Design student at NTU ADM and a multidisciplinary creative with experience across game development, visual storytelling, QA and creative marketing. Guided by empathy, trend awareness and curiosity about psychology and human behaviour, I turn original ideas into engaging experiences that connect with people.".split(" ");
   return <section className="about" id="about" ref={ref}><div className="section-label"><span>01</span><span>About</span></div><h2>ABOUT ME</h2><div className="about-grid">
     <motion.img style={{ y }} src="/media/portrait.webp" alt="Sun Yutong" loading="lazy" />
     <p className="reveal-copy">{words.map((word, index) => <motion.span key={`${word}-${index}`} initial={{ opacity: .15 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-12% 0px -12%" }} transition={{ delay: index * .018 }}>{word} </motion.span>)}</p>
-    <img className="about-art art-one" src="/media/bridget.webp" alt="Character artwork from Bridget" loading="lazy" /><img className="about-art art-two" src="/media/car.webp" alt="3D vehicle model" loading="lazy" /><p className="about-note">Based in Singapore<br />NTU ADM · Game Design<br />Game Development · Digital Media · Creative Marketing</p>
+    <img className="about-art art-one" src="/media/bridget.webp" alt="Character artwork from Bridget" loading="lazy" /><img className="about-art art-two" src="/media/car.webp" alt="3D vehicle model" loading="lazy" /><p className="about-note">Based in Singapore<br />NTU ADM · Game Design<br />CDSA Gold Prize · Highest Honor</p>
   </div></section>;
 }
 
