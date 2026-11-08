@@ -101,6 +101,12 @@ footer{background:#d6ff3e;color:#101010;padding:7vw 3.2vw 1.5rem}.footer-top>p{t
 .indie-capy-gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:1rem;margin-top:clamp(3rem,6vw,6rem)}
 .indie-capy-gallery img{display:block;width:100%;height:100%;min-height:18rem;object-fit:cover;border-radius:.7rem}
 .indie-contribution{background:var(--accent);color:#0a0a0a}
+.indie-cultural-context{padding:clamp(4.5rem,9vw,9rem) var(--indie-pad);background:#171717;color:#f4f1e8}
+.indie-cultural-context em{font-family:Georgia,serif;font-weight:400}
+.indie-cultural-idea{display:grid;grid-template-columns:.4fr 1fr 1fr;gap:clamp(1.5rem,4vw,5rem);align-items:start;border-top:1px solid rgba(244,241,232,.35);padding-top:clamp(1.5rem,3vw,3rem)}
+.indie-cultural-idea span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+.indie-cultural-idea strong{font-size:clamp(1.8rem,3vw,3.6rem);line-height:1;letter-spacing:-.045em}
+.indie-cultural-idea p{font-size:clamp(1rem,1.4vw,1.35rem);line-height:1.55;margin:0;opacity:.78}
 .indie-threshold-grid{border-color:rgba(17,17,17,.45)}
 .indie-threshold-grid article{border-color:rgba(17,17,17,.45)}
 .indie-threshold-grid .is-success{background:#111;color:#f4f1e8}
@@ -114,6 +120,7 @@ footer{background:#d6ff3e;color:#101010;padding:7vw 3.2vw 1.5rem}.footer-top>p{t
   .indie-decision-row article,.indie-loop article,.indie-threshold-grid article{border-right:0;border-bottom:1px solid currentColor}
   .indie-decision-row article:last-child,.indie-loop article:last-child,.indie-threshold-grid article:last-child{border-bottom:0}
   .indie-capy-gallery{grid-template-columns:1fr}.indie-capy-gallery img{min-height:0;aspect-ratio:16/9}
+  .indie-cultural-idea{grid-template-columns:1fr}.indie-cultural-idea span{margin-bottom:.5rem}
 }
 
 /* Painting — one collection, grouped by medium */

@@ -175,7 +175,7 @@ export const work: WorkItem[] = [
   },
   {
     slug: "pengci-grandma", title: "PengCi Grandma", category: "Games & Interactive", depth: "compact", role: "Solo Developer · Game Designer · Programmer",
-    summary: "A solo-developed one-button game about judging the exact danger distance between an elderly character and approaching traffic to stage a successful collision.", heroMedia: "/media/pengci-gameplay.jpg", videoMedia: "/media/pengci-gameplay.mp4", videoPoster: "/media/pengci-gameplay.jpg", accent: "#e6d23f", tools: ["Unity", "C#", "Game Design", "Pixel Art"],
+    summary: "An original one-button game that translates the Chinese idea of pengci—staging an accident for compensation—into a precise, darkly comic risk mechanic.", heroMedia: "/media/pengci-gameplay.jpg", videoMedia: "/media/pengci-gameplay.mp4", videoPoster: "/media/pengci-gameplay.jpg", accent: "#e6d23f", tools: ["Unity", "C#", "Game Design", "Pixel Art"],
     sections: [
       { title: "One-button Rule", body: "The player uses only the Space bar, turning a culturally specific comic premise into an immediately readable timing challenge." },
       { title: "Risk Threshold", body: "Move too close and the character is hit, causing immediate failure. Stay too far away and the vehicle stops with no reward. Only the precise danger threshold earns money." },

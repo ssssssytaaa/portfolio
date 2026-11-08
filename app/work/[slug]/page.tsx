@@ -473,13 +473,19 @@ function IndieGameCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
     </> : null}
 
     {!isReapers && !isCapybara ? <>
+      <section className="indie-cultural-context">
+        <div className="section-label dark"><span>01</span><span>Cultural translation</span></div>
+        <div className="indie-section-head"><h2>From a Chinese social phrase<br />to a playable punchline.</h2><p>In China, <em>pengci</em> (碰瓷, literally “bumping porcelain”) is a widely understood slang term for staging an accident or fabricating responsibility in order to claim compensation. The premise is socially familiar, morally uncomfortable and often discussed through satire.</p></div>
+        <div className="indie-cultural-idea"><span>The creative idea</span><strong>I turned the cultural reference into the rule itself.</strong><p>Instead of explaining the joke through dialogue, distance becomes the punchline. Players immediately understand “too close, too far, or just convincing enough”—even if they have never heard the word <em>pengci</em> before.</p></div>
+      </section>
+
       <section className="indie-section indie-section--light">
-        <div className="section-label"><span>01</span><span>One-button rule</span></div>
+        <div className="section-label"><span>02</span><span>One-button rule</span></div>
         <div className="indie-section-head"><h2>One button.<br />One precise distance.</h2><p>The entire game is controlled with the Space bar. The humour and tension both come from judging where to stop in relation to an approaching vehicle.</p></div>
         <div className="indie-threshold-grid"><article><span>Too close</span><strong>Immediate failure</strong><p>The vehicle hits the character before the staged collision can succeed.</p></article><article className="is-success"><span>Exact threshold</span><strong>Earn the reward</strong><p>Stop inside the narrow danger zone and the collision is convincing enough to earn money.</p></article><article><span>Too far</span><strong>No reward</strong><p>The driver brakes early, so the attempt fails without a collision.</p></article></div>
       </section>
 
-      <section className="indie-video-section indie-video-section--dark"><div className="section-label dark"><span>02</span><span>Gameplay result</span></div><div className="indie-section-head"><h2>Risk control expressed<br />through timing.</h2><p>As a solo developer, I translated a culturally specific comic premise into a readable game loop built around distance judgement, timing and immediate feedback.</p></div><figure className="indie-video"><video controls playsInline preload="metadata" poster="/media/pengci-gameplay.jpg"><source src="/media/pengci-gameplay.mp4" type="video/mp4" /></video><figcaption>Gameplay overview · Solo-developed prototype</figcaption></figure></section>
+      <section className="indie-video-section indie-video-section--dark"><div className="section-label dark"><span>03</span><span>Gameplay result</span></div><div className="indie-section-head"><h2>Risk control expressed<br />through timing.</h2><p>As a solo developer, I translated a culturally specific comic premise into a readable game loop built around distance judgement, timing and immediate feedback.</p></div><figure className="indie-video"><video controls playsInline preload="metadata" poster="/media/pengci-gameplay.jpg"><source src="/media/pengci-gameplay.mp4" type="video/mp4" /></video><figcaption>Gameplay overview · Solo-developed prototype</figcaption></figure></section>
     </> : null}
 
     <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
