@@ -419,6 +419,73 @@ function SoulVeinCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   </main>;
 }
 
+function IndieGameCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  const isReapers = item.slug === "reapers-roulette";
+  const isCapybara = item.slug === "untitled-capybara";
+  const projectNumber = isReapers ? "01" : isCapybara ? "02" : "03";
+  const format = isReapers ? "2D pixel strategy roguelike" : isCapybara ? "Wordless 3D sandbox mystery" : "One-button timing game";
+  const team = isReapers || isCapybara ? "Two-person team" : "Solo developed";
+
+  return <main className={`case-page indie-case indie-case--${item.slug}`} style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav indie-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+
+    <header className="indie-hero">
+      <div className="case-eyebrow"><span>Independent game project · Unity</span><span>Selected game {projectNumber}</span></div>
+      <h1>{item.title}</h1>
+      <div className="indie-hero-grid">
+        <figure className="indie-hero-media"><img src={item.heroMedia} alt={`${item.title} key visual`} /><figcaption>Playable prototype · Unity</figcaption></figure>
+        <div className="indie-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Format</dt><dd>{format}</dd></div><div><dt>Team</dt><dd>{team}</dd></div></dl>{item.externalLinks?.[0] ? <a className="case-project-link" href={item.externalLinks[0].href} target="_blank" rel="noreferrer">{item.externalLinks[0].label}<ArrowUpRight /></a> : null}</div>
+      </div>
+    </header>
+
+    {isReapers ? <>
+      <section className="indie-section indie-section--light">
+        <div className="section-label"><span>01</span><span>Core mechanic</span></div>
+        <div className="indie-section-head"><h2>Choose where to aim.<br />Choose how much to risk.</h2><p>The confrontation is readable in one decision: shoot yourself or the opponent, then select a body part. Safer limb shots offer smaller rewards; head and vital shots turn one pull of the trigger into an extreme high-risk, high-reward choice.</p></div>
+        <div className="indie-media-pair"><figure><img src="/media/reapers-tutorial.png" alt="Reaper's Roulette tutorial introducing its Russian roulette confrontation" loading="lazy" /><figcaption>Tutorial · Establishing the rule</figcaption></figure><figure><img src="/media/reapers-combat.png" alt="Reaper's Roulette combat interface with body-part targeting and chamber information" loading="lazy" /><figcaption>Combat · Target and probability decisions</figcaption></figure></div>
+      </section>
+
+      <section className="indie-section indie-section--dark">
+        <div className="section-label dark"><span>02</span><span>Strategic control</span></div>
+        <div className="indie-section-head"><h2>Uncertainty with<br />room to plan.</h2><p>The game does not remove randomness. It gives players limited tools to shape it: equip cards, buy functional items, redraw at the start of a round and reveal upcoming chamber contents once per round.</p></div>
+        <div className="indie-feature-grid"><figure><img src="/media/reapers-loadout.png" alt="Reaper's Roulette card loadout and inventory screen" loading="lazy" /><figcaption>Build a loadout from functional cards</figcaption></figure><figure><img src="/media/reapers-shop.png" alt="Reaper's Roulette shop selling tactical items" loading="lazy" /><figcaption>Purchase props that change the next encounter</figcaption></figure></div>
+        <div className="indie-decision-row"><article><span>01</span><h3>Opening redraw</h3><p>Replace an unfavourable starting hand before committing to the round.</p></article><article><span>02</span><h3>Chamber preview</h3><p>Reveal upcoming bullet types once, then decide whether the available risk is worth taking.</p></article><article><span>03</span><h3>Item combinations</h3><p>Combine cards and props to create different tactical approaches across repeated runs.</p></article></div>
+      </section>
+
+      <section className="indie-video-section"><div className="section-label"><span>03</span><span>Playable result</span></div><div className="indie-section-head"><h2>A compact system<br />built for pressure.</h2><p>I designed and programmed the core gameplay system and created selected levels and combat encounters. The finished prototype turns a small set of rules into escalating psychological pressure.</p></div><figure className="indie-video"><video controls playsInline preload="metadata" poster="/media/reapers-combat.png"><source src="/media/reapers-gameplay.mp4" type="video/mp4" /></video><figcaption>Gameplay overview</figcaption></figure></section>
+    </> : null}
+
+    {isCapybara ? <>
+      <section className="indie-section indie-section--light">
+        <div className="section-label"><span>01</span><span>Narrative game loop</span></div>
+        <div className="indie-section-head"><h2>Investigate the murder.<br />Then erase the truth.</h2><p>Players search a wordless town for sets of three connected clues. Each completed set reconstructs a fragmented memory sequence, gradually revealing that the capybara investigating the murder is also the killer.</p></div>
+        <div className="indie-loop"><article><span>01</span><h3>Collect three clues</h3><p>Read visual information and interactions instead of dialogue-heavy instructions.</p></article><article><span>02</span><h3>Seven-day investigation</h3><p>The notice board updates with the strongest evidence gathered across each in-game day.</p></article><article><span>03</span><h3>Reverse the objective</h3><p>Locate and destroy the critical evidence before it leads to imprisonment.</p></article></div>
+        <div className="indie-capy-gallery"><img src="/media/capybara-town-01.jpg" alt="Capybara investigating a clue in the town" loading="lazy" /><img src="/media/capybara-town-02.jpg" alt="Capybara encountering a nervous suspect" loading="lazy" /><img src="/media/capybara-town-03.jpg" alt="Capybara receiving an interaction prompt near evidence" loading="lazy" /></div>
+      </section>
+
+      <section className="indie-section indie-section--dark">
+        <div className="section-label dark"><span>02</span><span>Player guidance</span></div>
+        <div className="indie-section-head"><h2>Let behaviour point<br />toward the next clue.</h2><p>AI townsfolk, police and nervous suspects keep the sandbox readable without explicit directions. Panicked suspects may run toward important locations, subtly guiding players toward evidence they have not yet discovered.</p></div>
+        <div className="indie-video-pair"><figure><video controls playsInline preload="metadata" poster="/media/capybara-town-01.jpg"><source src="/media/capybara-destroy-evidence.mp4" type="video/mp4" /></video><figcaption>Destroying critical evidence after the narrative reversal</figcaption></figure><figure><video controls playsInline preload="metadata" poster="/media/capybara-town-02.jpg"><source src="/media/capybara-police-ai.mp4" type="video/mp4" /></video><figcaption>AI police and suspect behaviour in the sandbox</figcaption></figure></div>
+      </section>
+
+      <section className="indie-contribution"><div className="section-label"><span>03</span><span>My contribution</span></div><div className="indie-section-head"><h2>System design,<br />code and world building.</h2><p>I designed and programmed the core gameplay system and created selected visual and environmental assets. The result combines investigation, environmental storytelling and a mid-game objective reversal inside one compact sandbox.</p></div></section>
+    </> : null}
+
+    {!isReapers && !isCapybara ? <>
+      <section className="indie-section indie-section--light">
+        <div className="section-label"><span>01</span><span>One-button rule</span></div>
+        <div className="indie-section-head"><h2>One button.<br />One precise distance.</h2><p>The entire game is controlled with the Space bar. The humour and tension both come from judging where to stop in relation to an approaching vehicle.</p></div>
+        <div className="indie-threshold-grid"><article><span>Too close</span><strong>Immediate failure</strong><p>The vehicle hits the character before the staged collision can succeed.</p></article><article className="is-success"><span>Exact threshold</span><strong>Earn the reward</strong><p>Stop inside the narrow danger zone and the collision is convincing enough to earn money.</p></article><article><span>Too far</span><strong>No reward</strong><p>The driver brakes early, so the attempt fails without a collision.</p></article></div>
+      </section>
+
+      <section className="indie-video-section indie-video-section--dark"><div className="section-label dark"><span>02</span><span>Gameplay result</span></div><div className="indie-section-head"><h2>Risk control expressed<br />through timing.</h2><p>As a solo developer, I translated a culturally specific comic premise into a readable game loop built around distance judgement, timing and immediate feedback.</p></div><figure className="indie-video"><video controls playsInline preload="metadata" poster="/media/pengci-gameplay.jpg"><source src="/media/pengci-gameplay.mp4" type="video/mp4" /></video><figcaption>Gameplay overview · Solo-developed prototype</figcaption></figure></section>
+    </> : null}
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 function PaintingCollection({ item, next }: { item: WorkItem; next: WorkItem }) {
   return <main className="case-page compact-case painting-case" style={{ "--accent": item.accent } as React.CSSProperties}>
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
@@ -483,6 +550,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   if (item.slug === "meat-lover") return <MeatLoverCaseStudy item={item} next={next} />;
   if (item.slug === "lets-build-a-dungeon") return <LetsBuildDungeonCaseStudy item={item} next={next} />;
   if (item.slug === "soul-vein") return <SoulVeinCaseStudy item={item} next={next} />;
+  if (["reapers-roulette", "untitled-capybara", "pengci-grandma"].includes(item.slug)) return <IndieGameCaseStudy item={item} next={next} />;
   if (item.slug === "painting") return <PaintingCollection item={item} next={next} />;
   return <main className="case-page compact-case" style={{ "--accent": item.accent } as React.CSSProperties}>
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
