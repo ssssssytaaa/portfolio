@@ -241,7 +241,7 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <div className="section-label"><span>Recognition</span><span>Public showcase</span></div>
       <div className="meat-recognition-heading">
         <div><p className="meat-overline">Award outcome</p><h2>Representative’s<br />Choice.</h2></div>
-        <p>Meat Lover received an <strong>Honorary Mention — Representative’s Choice</strong> as Team Meatchelin. The recognition and public showcase demonstrated that the concept could communicate beyond the screen: visitors could immediately understand its strange humour, interact with the prototype and remember its identity.</p>
+        <p>Meat Lover received an <strong>Honorary Mention — Representative’s Choice</strong> as Team Meatchelin.</p>
       </div>
       <div className="meat-recognition-gallery">
         <figure className="meat-award-photo"><img src="/media/meat-representatives-choice.webp" alt="Team Meatchelin receiving the Representative’s Choice honorary mention for Meat Lover" loading="eager" /><figcaption><span>Honorary Mention · Representative’s Choice</span><span>Team Meatchelin</span></figcaption></figure>

@@ -32,9 +32,8 @@ function Hero() {
     </div>
     <p className="hero-kicker">Singapore · Open to opportunities</p>
     <h1 aria-label="Sun Yutong"><span>SUN YUTONG</span></h1>
-    <Link href="/work/echos-of-her" className="video-label"><span>Featured project · 2025</span><strong>Echos of Her</strong><ArrowUpRight /></Link>
     <button className="sound-toggle" type="button" onClick={toggleSound} aria-label={muted ? "Play video with sound" : "Mute video"} aria-pressed={!muted}>{muted ? <VolumeX /> : <Volume2 />}<span>{muted ? "Sound on" : "Sound off"}</span></button>
-    <div className="hero-bottom"><p>Creative Marketing<br />& Player Experience</p><p>I turn player insight into ideas, stories and campaigns that people want to enter.</p><div className="hero-profile"><span>PROFILE</span><strong>Sun Yutong</strong><small>● Available for opportunities</small></div><a className="round-link" href="#work" aria-label="Explore selected work"><ArrowDownRight /></a></div>
+    <div className="hero-bottom"><p>Creative Marketing<br />& Player Experience</p><p>I turn player insight into ideas, stories and campaigns that people want to enter.</p><Link href="/work/echos-of-her" className="video-label"><span>Featured project · 2025</span><strong>Echos of Her</strong><ArrowUpRight /></Link><a className="round-link" href="#work" aria-label="Explore selected work"><ArrowDownRight /></a></div>
   </section>;
 }
 
@@ -48,24 +47,24 @@ function About() {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [70, -50]);
-  const words = "I’m a Game Design student at NTU ADM and a multidisciplinary creative with experience across game development, visual storytelling, QA and creative marketing. Guided by empathy, trend awareness and curiosity about psychology and human behaviour, I turn original ideas into engaging experiences that connect with people.".split(" ");
+  const words = "Great creative work is not just about looking good—it is about understanding what makes people care. I bring together game design, psychology and marketing to create visual stories, campaigns and player experiences that connect with audiences and leave a lasting impression.".split(" ");
   return <section className="about" id="about" ref={ref}><div className="section-label"><span>01</span><span>About</span></div><h2>ABOUT ME</h2><div className="about-grid">
     <motion.img style={{ y }} src="/media/portrait.webp" alt="Sun Yutong" loading="lazy" />
     <p className="reveal-copy">{words.map((word, index) => <motion.span key={`${word}-${index}`} initial={{ opacity: .15 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-12% 0px -12%" }} transition={{ delay: index * .018 }}>{word} </motion.span>)}</p>
-    <img className="about-art art-one" src="/media/bridget.webp" alt="Character artwork from Bridget" loading="lazy" /><img className="about-art art-two" src="/media/car.webp" alt="3D vehicle model" loading="lazy" /><p className="about-note">Based in Singapore<br />NTU ADM · Game Design<br />CDSA Gold Prize · Highest Honor</p>
+    <p className="about-note">Based in Singapore<br />NTU ADM · Game Design<br />Psychology & Marketing studies<br />HubSpot Academy · Social Media Strategy<br />CDSA Gold Prize · Highest Honor</p>
   </div></section>;
 }
 
 const capabilities = [
-  ["Creative Strategy", "Original, audience-focused concepts that connect emotional engagement with meaningful creative and commercial value."],
-  ["Audience & Trend Insight", "A sensitive reading of platform behaviour, cultural trends and human emotion to understand what people respond to."],
-  ["Creative Marketing", "Positioning, platform-native content and campaign ideas that translate product strengths into audience interest."],
+  ["Creative Strategy", "Audience-focused concepts that connect emotional engagement with clear creative and commercial goals."],
+  ["Audience Psychology & Trend Insight", "Psychology, human behaviour and platform trends help me understand what earns attention—and why people care."],
+  ["Creative Marketing", "Marketing study and HubSpot Academy-certified social media strategy support platform-native content, positioning and campaign ideas."],
   ["Game & Player Experience", "Hands-on game design, QA, progression balance and player-centred iteration across systems, levels and narrative."],
   ["Visual Storytelling", "Visual aesthetics, composition and motion used to turn complex ideas into clear, memorable experiences."],
 ];
 
 function Capabilities() {
-  return <section className="capabilities"><div className="section-label dark"><span>02</span><span>Capabilities</span></div><p className="cap-intro">I connect creative ideas with the people they are made for—across strategy, stories, platforms and play.</p><div className="cap-list">{capabilities.map(([title, body], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></article>)}</div></section>;
+  return <section className="capabilities"><div className="section-label dark"><span>02</span><span>Capabilities</span></div><p className="cap-intro">I connect creative ideas with audience behaviour—drawing on game design, psychology, marketing and certified social media strategy.</p><div className="cap-list">{capabilities.map(([title, body], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></article>)}</div></section>;
 }
 
 function Featured() {
