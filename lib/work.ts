@@ -184,13 +184,13 @@ export const work: WorkItem[] = [
     externalLinks: [{ label: "Play on itch.io", href: "https://sytaaa.itch.io/pengci-grandma" }],
   },
   {
-    slug: "shauns-last-escape", title: "Shaun’s Last Escape", category: "Games & Interactive", depth: "compact", role: "Game Design · Development",
-    summary: "A compact escape experience that uses environment, pressure and pacing to guide the player.", heroMedia: "/media/shaun.webp", accent: "#dd765a", tools: ["Unity", "C#", "Level Design"],
+    slug: "shauns-last-escape", title: "Shaun’s Last Escape", category: "Games & Interactive", depth: "compact", role: "Game Design · Interaction Design · Development",
+    summary: "A small Unreal Engine game prototype featuring multiple interactive mechanisms and trigger-based elements, presented through an edited gameplay demonstration.", heroMedia: "/media/shauns-last-escape-poster.webp", videoMedia: "/media/shauns-last-escape.mp4", videoPoster: "/media/shauns-last-escape-poster.webp", accent: "#dd765a", tools: ["Unreal Engine", "Interaction Design", "Prototyping", "Video Editing"],
     sections: [
-      { title: "Overview", body: "Shaun’s Last Escape is structured around forward momentum: each space gives the player enough information to act while maintaining pressure." },
-      { title: "Level Design", body: "I used landmarks, encounter rhythm and controlled sightlines to guide decisions without relying on constant text instructions." },
-      { title: "Result", body: "The project developed my understanding of environmental direction and how level pacing can communicate urgency." },
-    ], gallery: ["/media/shaun.webp"],
+      { title: "Prototype", body: "The project explores how environmental mechanisms and trigger-based events can shape a short playable sequence in Unreal Engine." },
+      { title: "Interaction", body: "Player actions activate linked responses across the environment, creating a compact flow of discovery, cause and effect." },
+      { title: "Demonstration", body: "I edited the gameplay into a focused video that presents the core mechanics and interaction design clearly." },
+    ], gallery: [],
   },
   {
     slug: "3d-modeling", title: "3D Modeling & Rendering", category: "3D & Motion", depth: "compact", role: "3D Artist · Lighting & Rendering",
