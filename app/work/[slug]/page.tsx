@@ -241,10 +241,10 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <div className="section-label"><span>Recognition</span><span>Public showcase</span></div>
       <div className="meat-recognition-heading">
         <div><p className="meat-overline">Award outcome</p><h2>Representative’s<br />Choice.</h2></div>
-        <p>Meat Lover received an <strong>Honorary Mention — Representative’s Choice</strong> as Team Meatchelin.</p>
+        <p>Awarded the <strong>Representative’s Choice Honorary Mention</strong> at the <strong>CAO × Garena Hackathon</strong> (2026) for Meatchelin.</p>
       </div>
       <div className="meat-recognition-gallery">
-        <figure className="meat-award-photo"><img src="/media/meat-representatives-choice.webp" alt="Team Meatchelin receiving the Representative’s Choice honorary mention for Meat Lover" loading="eager" /><figcaption><span>Honorary Mention · Representative’s Choice</span><span>Team Meatchelin</span></figcaption></figure>
+        <figure className="meat-award-photo"><img src="/media/meat-representatives-choice.webp" alt="Team Meatchelin receiving the Representative’s Choice Honorary Mention at the CAO × Garena Hackathon" loading="eager" /><figcaption><span>Representative’s Choice Honorary Mention</span><span>CAO × Garena Hackathon · 2026</span></figcaption></figure>
         <figure className="meat-showcase-photo"><img src="/media/meat-public-showcase.webp" alt="A visitor playing Meat Lover at the Team Meatchelin public showcase booth" loading="lazy" /><figcaption><span>Public showcase</span><span>Live player interaction</span></figcaption></figure>
       </div>
     </section>

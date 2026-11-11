@@ -29,8 +29,8 @@ export const work: WorkItem[] = [
     summary: "A digital art experience honouring the many roles women have carried across eras and cultures—preserving their tenderness, resilience and power through a contemporary visual language.",
     heroMedia: "/media/echos-screen.webp", accent: "#b88a72", tools: ["Unity", "Blender", "Adobe Creative Suite", "Narrative Design"],
     metrics: [
-      { value: "10", label: "Cities", context: "Presented across China and international cultural venues." },
-      { value: "170 × 18 m", label: "Public screen", context: "Adapted for a landmark-scale LED façade in Hangzhou." },
+      { value: "10", label: "Cities", context: "Prime-time presentations across Europe and Asia." },
+      { value: "170 × 18 m", label: "Public screen", context: "Shown on landmark-scale public LED displays, including the Hangzhou façade." },
       { value: "Gold Prize", label: "CDSA 2025", context: "International Media Art Competition." },
       { value: "Finalist", label: "Light Art", context: "Tuzishan International Light Art Festival." },
     ],
@@ -39,13 +39,13 @@ export const work: WorkItem[] = [
       { title: "Narrative", body: "Women appear as life-givers, resilient workers, creative world-builders, healers, guardians and pioneers. Each figure witnesses change while also helping to drive it, connecting individual memory with a wider cultural history." },
       { title: "Creative Direction", body: "I developed a visual system in which faces, flora, archival textures and symbolic landscapes overlap rather than sit apart. This layered language lets identity and history feel remembered, fragmented and continuously reborn." },
       { title: "Exhibition Design", body: "The composition was designed to travel across very different formats—from a personal screen to gallery presentation and a 170 × 18 metre public LED façade. Panoramic chapters preserve the work’s rhythm while allowing each venue to reveal a different scale of detail." },
-      { title: "Outcome", body: "The project received the Gold Prize at the 2025 CDSA International Media Art Competition and was a finalist at the Tuzishan International Light Art Festival. It was exhibited across ten cities, including Hangzhou, Milan, Hamburg, venues in Spain and Singapore." },
+      { title: "Outcome", body: "The project received the Gold Prize at the 2025 CDSA International Media Art Competition and was a finalist at the Tuzishan International Light Art Festival. It was exhibited during prime time on landmark, large-scale 170-metre public LED screens across ten cities worldwide, including Milan (Italy), Hamburg (Germany), locations in Spain and Malaysia, Changsha, Hangzhou, Beijing and Wuhan (China), and locations in Korea and Singapore." },
     ],
     gallery: ["/media/echos-gold-award-poster.webp", "/media/echos-art-3.webp", "/media/echos-award-ceremony.webp", "/media/echos-screen.webp"],
     recognition: [
       "Gold Prize — 2025 CDSA International Media Art Competition",
       "Finalist — Tuzishan International Light Art Festival",
-      "Global exhibition programme across 10 cities",
+      "Prime-time public LED exhibition programme across 10 cities",
     ],
     detailMedia: [
       { src: "/media/echos-visual-chapter-01.webp", alt: "A panoramic chapter from Echos of Her with a woman framed by flowers and branches", caption: "Selected visual chapter 01", group: "artwork" },
