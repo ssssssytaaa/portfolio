@@ -49,7 +49,7 @@ function About() {
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [70, -50]);
   const words = "Great creative work is not just about looking good—it is about understanding what makes people care. I bring together game design, psychology and marketing to create visual stories, campaigns and player experiences that connect with audiences and leave a lasting impression.".split(" ");
   return <section className="about" id="about" ref={ref}><div className="section-label"><span>01</span><span>About</span></div><h2>ABOUT ME</h2><div className="about-grid">
-    <motion.img style={{ y }} src="/media/portrait.webp" alt="Sun Yutong" loading="lazy" />
+    <motion.img style={{ y }} src="/media/portrait-blue-black.png" alt="Sun Yutong wearing a black jacket against a concrete wall" loading="lazy" />
     <p className="reveal-copy">{words.map((word, index) => <motion.span key={`${word}-${index}`} initial={{ opacity: .15 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-12% 0px -12%" }} transition={{ delay: index * .018 }}>{word} </motion.span>)}</p>
     <p className="about-note">Based in Singapore<br />NTU ADM · Game Design<br />Psychology & Marketing studies<br />HubSpot Academy · Social Media Strategy<br />CDSA Gold Prize · Highest Honor</p>
   </div></section>;

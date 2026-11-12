@@ -55,7 +55,7 @@ function EchosCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
       <div><p className="echos-lead">A tribute to women’s growth, cultural memory and identities carried across generations.</p><p>{item.sections[0].body}</p></div>
     </section>
 
-    <section className="echos-documentation">
+    <section className="echos-documentation" id="global-exhibition">
       <div className="section-label"><span>05</span><span>Global exhibition evidence</span></div>
       <div className="echos-section-intro"><h2>From award stage<br />to city scale.</h2><p>{item.sections[4].body}</p></div>
       <div className="echos-documentation-grid">{exhibition.map((media) => <figure key={media.src}><img src={media.src} alt={media.alt} loading="lazy" /><figcaption>{media.caption}</figcaption></figure>)}</div>
