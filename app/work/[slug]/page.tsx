@@ -556,6 +556,44 @@ function PaintingCollection({ item, next }: { item: WorkItem; next: WorkItem }) 
   </main>;
 }
 
+function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
+  const accountSnapshots = [
+    { name: "Culture & discovery", followers: "307", engagement: "7.1K", note: "Likes and saves across the account snapshot" },
+    { name: "Beauty & lifestyle", followers: "830", engagement: "53.6K", note: "Likes and saves across the account snapshot" },
+  ];
+
+  return <main className="case-page rednote-case" style={{ "--accent": item.accent } as React.CSSProperties}>
+    <nav className="case-nav rednote-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
+    <header className="rednote-hero">
+      <div className="case-eyebrow"><span>Personal social content practice</span><span>Marketing · RedNote</span></div>
+      <h1>Personal<br /><em>RedNote</em></h1>
+      <div className="rednote-hero-grid">
+        <figure><img src={item.heroMedia} alt="Portfolio slide showing Sun Yutong's personal RedNote account results and selected posts" /><figcaption>Selected account and post snapshots</figcaption></figure>
+        <div className="rednote-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Focus</dt><dd>Platform-native storytelling · Audience insight · Repeatable learning</dd></div></dl><div className="rednote-profile-links">{item.externalLinks?.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}<ArrowUpRight size={15} /></a>)}</div></div>
+      </div>
+    </header>
+
+    <section className="rednote-results">
+      <div className="section-label"><span>Selected post result</span><span>Public snapshot</span></div>
+      <div className="rednote-results-head"><h2>Content people<br />stopped to keep.</h2><p>The strongest highlighted post combined a clear discovery hook with useful, image-led information. Saves and shares show that the result travelled beyond passive viewing.</p></div>
+      <div className="rednote-metrics">{item.metrics?.map((metric) => <article key={metric.label}><strong>{metric.value}</strong><h3>{metric.label}</h3><p>{metric.context}</p></article>)}</div>
+      <p className="rednote-data-note">Figures reflect the public account snapshot supplied in the portfolio presentation.</p>
+    </section>
+
+    <section className="rednote-system">
+      <div className="section-label dark"><span>Account growth</span><span>Two visible account snapshots</span></div>
+      <div className="rednote-account-grid">{accountSnapshots.map((account) => <article key={account.name}><span>{account.name}</span><div><strong>{account.followers}</strong><small>Followers</small></div><div><strong>{account.engagement}</strong><small>{account.note}</small></div></article>)}</div>
+      <div className="rednote-strategy-grid">
+        <article><span>01</span><h3>Read the platform</h3><p>I followed RedNote’s visual discovery behaviour and shaped each post around a fast, specific promise rather than generic personal updates.</p></article>
+        <article><span>02</span><h3>Adapt by audience</h3><p>Culture, café, beauty and lifestyle topics each received a different headline, image rhythm and reason to save.</p></article>
+        <article><span>03</span><h3>Learn from signals</h3><p>Views measured reach; likes showed immediate appeal; saves, shares and follower growth revealed stronger long-term value.</p></article>
+      </div>
+    </section>
+
+    <a className="next-project" href={`/work/${next.slug}`}><span>Next project</span><strong>{next.title}</strong><ArrowUpRight /></a>
+  </main>;
+}
+
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const item = getWork(resolveWorkSlug(slug));
@@ -570,6 +608,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   if (item.slug === "soul-vein") return <SoulVeinCaseStudy item={item} next={next} />;
   if (["reapers-roulette", "untitled-capybara", "pengci-grandma"].includes(item.slug)) return <IndieGameCaseStudy item={item} next={next} />;
   if (item.slug === "painting") return <PaintingCollection item={item} next={next} />;
+  if (item.slug === "personal-rednote") return <PersonalRedNoteCaseStudy item={item} next={next} />;
   return <main className="case-page compact-case" style={{ "--accent": item.accent } as React.CSSProperties}>
     <nav className="case-nav"><a href="/"><ArrowLeft size={16} /> All work</a><span>Sun Yutong / Portfolio</span></nav>
     <header className="case-hero"><div className="case-eyebrow"><span>{item.category}</span><span>{item.depth === "case" ? "Case study" : "Selected project"}</span></div><h1>{item.title}</h1><div className="case-intro"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Tools</dt><dd>{item.tools.join(" · ")}</dd></div></dl></div></header>
