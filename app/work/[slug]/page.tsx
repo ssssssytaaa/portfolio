@@ -561,6 +561,7 @@ function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkIt
   const accountSnapshots = [
     { name: "Personal account", followers: "307", engagement: "7.1K", note: "Likes and saves across the account snapshot" },
     { name: "Co-managed account", followers: "830", engagement: "53.6K", note: "Likes and saves across the account snapshot" },
+    { name: "Game account · Meat Lover", followers: "454", engagement: "2.3K", note: "Likes and saves across the account snapshot" },
   ];
 
   return <main className="case-page rednote-case" style={{ "--accent": item.accent } as React.CSSProperties}>
@@ -569,7 +570,7 @@ function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkIt
       <div className="case-eyebrow"><span>Personal social content practice</span><span>Marketing · RedNote</span></div>
       <h1>Personal<br /><em>RedNote</em></h1>
       <div className="rednote-hero-grid">
-        <div className="rednote-account-images"><figure><img src="/media/personal-rednote-main.png" alt="Sun Yutong's personal RedNote account with selected culture and cafe posts" /><figcaption>Personal account · 307 followers · 7.1K likes and saves</figcaption></figure><figure><img src="/media/personal-rednote-co-managed.png" alt="Co-managed RedNote account focused on Singapore food, beauty and lifestyle content" /><figcaption>Co-managed account · 830 followers · 53.6K likes and saves</figcaption></figure></div>
+        <div className="rednote-account-images"><figure><img src="/media/personal-rednote-main.png" alt="Sun Yutong's personal RedNote account with selected culture and cafe posts" /><figcaption>Personal account · 307 followers · 7.1K likes and saves</figcaption></figure><figure><img src="/media/personal-rednote-co-managed.png" alt="Co-managed RedNote account focused on Singapore food, beauty and lifestyle content" /><figcaption>Co-managed account · 830 followers · 53.6K likes and saves</figcaption></figure><figure><img src="/media/meat-rednote-account.png" alt="Meat Lover game account showing 454 followers and 2.3K likes and saves" /><figcaption>Operated game account · 454 followers · 2.3K likes and saves</figcaption></figure></div>
         <div className="rednote-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Focus</dt><dd>Platform-native storytelling · Audience insight · Repeatable learning</dd></div></dl><div className="rednote-profile-links">{item.externalLinks?.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}<ArrowUpRight size={15} /></a>)}</div></div>
       </div>
     </header>
@@ -582,8 +583,13 @@ function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkIt
     </section>
 
     <section className="rednote-system">
-      <div className="section-label dark"><span>Account growth</span><span>Two visible account snapshots</span></div>
+      <div className="section-label dark"><span>Account growth</span><span>Three visible account snapshots</span></div>
       <div className="rednote-account-grid">{accountSnapshots.map((account) => <article key={account.name}><span>{account.name}</span><div><strong>{account.followers}</strong><small>Followers</small></div><div><strong>{account.engagement}</strong><small>{account.note}</small></div></article>)}</div>
+      <article className="rednote-meat-highlight">
+        <div><span>Game account result</span><h3>One Meat Lover post became a launch engine.</h3><p>The platform-native launch post translated a strange game concept into an immediately readable visual story, generating strong public engagement and helping the account reach 454 followers.</p></div>
+        <figure><img src="/media/meat-rednote-post-stats.png" alt="Meat Lover RedNote post showing 1,657 likes, 222 saves and 114 comments" loading="lazy" /><figcaption>1,657 likes · 222 saves · 114 comments</figcaption></figure>
+        <a href="/work/meat-lover">View the full Meat Lover case study <ArrowUpRight size={16} /></a>
+      </article>
       <div className="rednote-strategy-grid">
         <article><span>01</span><h3>Read the platform</h3><p>I followed RedNote’s visual discovery behaviour and shaped each post around a fast, specific promise rather than generic personal updates.</p></article>
         <article><span>02</span><h3>Adapt by audience</h3><p>Culture, café, beauty and lifestyle topics each received a different headline, image rhythm and reason to save.</p></article>
