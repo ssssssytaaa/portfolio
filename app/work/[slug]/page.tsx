@@ -254,7 +254,7 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
       <div className="meat-rednote-grid">
         <div className="meat-rednote-proof">
           <a className="meat-rednote-account-link" href={rednoteAccountUrl} target="_blank" rel="noreferrer" aria-label="Visit the Meat Lover RedNote account">
-            <figure><img src="/media/meat-rednote-profile.webp" alt="Meat Lover RedNote account showing 454 followers and 2.3K likes and saves" loading="eager" /><figcaption>Meat Lover · RedNote account <ArrowUpRight size={14} /></figcaption></figure>
+            <figure><img src="/media/meat-rednote-account.png" alt="Meat Lover RedNote account showing 454 followers and 2.3K likes and saves" loading="eager" /><figcaption>Meat Lover · Operated game account <ArrowUpRight size={14} /></figcaption></figure>
           </a>
           <p>One platform-native post introduced the game through a clear visual hook, then converted that attention into an audience for future development updates.</p>
           <a className="meat-rednote-profile-cta" href={rednoteAccountUrl} target="_blank" rel="noreferrer">Visit the RedNote account <ArrowUpRight size={16} /></a>
@@ -288,6 +288,7 @@ function MeatLoverCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) 
           <div className="meat-rednote-public-stats" aria-label="Public engagement on the RedNote launch post">
             <span><strong>1,657</strong>Likes</span><span><strong>222</strong>Saves</span><span><strong>114</strong>Comments</span>
           </div>
+          <figure className="meat-post-stats-proof"><img src="/media/meat-rednote-post-stats.png" alt="RedNote engagement bar showing 1,657 likes, 222 saves and 114 comments" loading="lazy" /><figcaption>Public engagement visible on the viral Meat Lover post</figcaption></figure>
           <a className="meat-rednote-post-link" href={rednoteLaunchPostUrl} target="_blank" rel="noreferrer">View the original post <ArrowUpRight size={17} /></a>
         </div>
         <div className="meat-rednote-carousel" aria-label="Six images from the RedNote launch post">
@@ -558,8 +559,8 @@ function PaintingCollection({ item, next }: { item: WorkItem; next: WorkItem }) 
 
 function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkItem }) {
   const accountSnapshots = [
-    { name: "Culture & discovery", followers: "307", engagement: "7.1K", note: "Likes and saves across the account snapshot" },
-    { name: "Beauty & lifestyle", followers: "830", engagement: "53.6K", note: "Likes and saves across the account snapshot" },
+    { name: "Personal account", followers: "307", engagement: "7.1K", note: "Likes and saves across the account snapshot" },
+    { name: "Co-managed account", followers: "830", engagement: "53.6K", note: "Likes and saves across the account snapshot" },
   ];
 
   return <main className="case-page rednote-case" style={{ "--accent": item.accent } as React.CSSProperties}>
@@ -568,7 +569,7 @@ function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkIt
       <div className="case-eyebrow"><span>Personal social content practice</span><span>Marketing · RedNote</span></div>
       <h1>Personal<br /><em>RedNote</em></h1>
       <div className="rednote-hero-grid">
-        <figure><img src={item.heroMedia} alt="Portfolio slide showing Sun Yutong's personal RedNote account results and selected posts" /><figcaption>Selected account and post snapshots</figcaption></figure>
+        <div className="rednote-account-images"><figure><img src="/media/personal-rednote-main.png" alt="Sun Yutong's personal RedNote account with selected culture and cafe posts" /><figcaption>Personal account · 307 followers · 7.1K likes and saves</figcaption></figure><figure><img src="/media/personal-rednote-co-managed.png" alt="Co-managed RedNote account focused on Singapore food, beauty and lifestyle content" /><figcaption>Co-managed account · 830 followers · 53.6K likes and saves</figcaption></figure></div>
         <div className="rednote-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Focus</dt><dd>Platform-native storytelling · Audience insight · Repeatable learning</dd></div></dl><div className="rednote-profile-links">{item.externalLinks?.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}<ArrowUpRight size={15} /></a>)}</div></div>
       </div>
     </header>

@@ -146,7 +146,7 @@ export const work: WorkItem[] = [
   },
   {
     slug: "personal-rednote", title: "Personal RedNote", category: "Marketing", depth: "compact", role: "Content Strategy · Audience Growth · Copywriting",
-    summary: "A multi-account content practice translating platform trends, audience interests and visual hooks into measurable post performance.", heroMedia: "/media/personal-rednote-portfolio.png", accent: "#f45b68", tools: ["RedNote", "Content Strategy", "Copywriting", "Analytics"],
+    summary: "A multi-account content practice translating platform trends, audience interests and visual hooks into measurable post performance.", heroMedia: "/media/personal-rednote-main.png", accent: "#f45b68", tools: ["RedNote", "Content Strategy", "Copywriting", "Analytics"],
     metrics: [
       { value: "31,513", label: "Top-post views", context: "Views on the strongest highlighted post in the supplied account snapshot." },
       { value: "749", label: "Likes", context: "Public likes recorded on the same post." },
@@ -157,11 +157,11 @@ export const work: WorkItem[] = [
       { title: "Approach", body: "I treated each account as a different audience test, adapting the subject, headline and image sequence to what people were already discovering and saving on RedNote." },
       { title: "Content Range", body: "The work moves across culture and fashion, Singapore café discovery, beauty and lifestyle content. Each post uses a clear visual promise and platform-native copy rather than applying one format to every subject." },
       { title: "Learning", body: "Comparing views, likes, saves, shares and follower growth helped me distinguish momentary attention from content people found useful enough to keep or pass on." },
-    ], gallery: ["/media/personal-rednote-portfolio.png"],
+    ], gallery: ["/media/personal-rednote-main.png", "/media/personal-rednote-co-managed.png"],
     externalLinks: [
-      { label: "RedNote profile 01", href: "https://www.rednote.com/user/profile/6982e12a000000002603a3ff?xsec_token=ABhbmUz6BU1cKYBxb-AKynb_TRziqJWAs3-urYO62I-Ww%3D&xsec_source=pc_search" },
-      { label: "RedNote profile 02", href: "https://www.rednote.com/user/profile/5a2c090a4eacab278f0edfba?xsec_token=ABJFlJoPFXCTAiLLROj-lsgtXmHKtm3TIb8Z9U_41rSoM=&xsec_source=pc_search&tab=note&subTab=note" },
-      { label: "RedNote profile 03", href: "https://www.rednote.com/user/profile/59a4def56a6a690791a7acfa?xsec_token=ABVI8GSN_MjOC-JAO2fIVnNq7LOp7ZSdz9nwB8MZXddTM%3D&xsec_source=pc_search" },
+      { label: "Personal RedNote account", href: "https://www.rednote.com/user/profile/6982e12a000000002603a3ff?xsec_token=ABhbmUz6BU1cKYBxb-AKynb_TRziqJWAs3-urYO62I-Ww%3D&xsec_source=pc_search" },
+      { label: "Co-managed RedNote account", href: "https://www.rednote.com/user/profile/5a2c090a4eacab278f0edfba?xsec_token=ABJFlJoPFXCTAiLLROj-lsgtXmHKtm3TIb8Z9U_41rSoM=&xsec_source=pc_search&tab=note&subTab=note" },
+      { label: "Additional RedNote profile", href: "https://www.rednote.com/user/profile/59a4def56a6a690791a7acfa?xsec_token=ABVI8GSN_MjOC-JAO2fIVnNq7LOp7ZSdz9nwB8MZXddTM%3D&xsec_source=pc_search" },
     ],
   },
   {
