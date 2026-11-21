@@ -570,15 +570,19 @@ function PersonalRedNoteCaseStudy({ item, next }: { item: WorkItem; next: WorkIt
       <div className="case-eyebrow"><span>Personal social content practice</span><span>Marketing · RedNote</span></div>
       <h1>Personal<br /><em>RedNote</em></h1>
       <div className="rednote-hero-grid">
-        <figure><img src={item.heroMedia} alt="Sun Yutong's personal RedNote profile showing 307 followers and 7.1K likes and saves" /><figcaption>Personal account · 307 followers · 7.1K likes and saves</figcaption></figure>
+        <div className="rednote-account-images">
+          <figure><img src={item.heroMedia} alt="Sun Yutong's personal RedNote profile showing 307 followers and 7.1K likes and saves" /><figcaption>Personal account · 307 followers · 7.1K likes and saves</figcaption></figure>
+          <figure><img src="/media/personal-rednote-co-managed.png" alt="Co-managed RedNote account showing 830 followers and 53.6K likes and saves" /><figcaption>Co-managed account · 830 followers · 53.6K likes and saves</figcaption></figure>
+          <figure><img src="/media/meat-rednote-account.png" alt="Meat Lover RedNote account showing 454 followers and 2.3K likes and saves" /><figcaption>Meat Lover · 454 followers · 2.3K likes and saves</figcaption></figure>
+        </div>
         <div className="rednote-hero-copy"><p>{item.summary}</p><dl><div><dt>Role</dt><dd>{item.role}</dd></div><div><dt>Focus</dt><dd>Platform-native storytelling · Audience insight · Repeatable learning</dd></div></dl><div className="rednote-profile-links">{item.externalLinks?.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}<ArrowUpRight size={15} /></a>)}</div></div>
       </div>
     </header>
 
     <section className="rednote-system">
-      <div className="section-label dark"><span>Account and post results</span><span>Three accounts · Three audiences</span></div>
+      <div className="section-label dark"><span>Best-performing post examples</span><span>Three accounts · Three audiences</span></div>
       <div className="rednote-account-grid">{accountSnapshots.map((account) => <article key={account.name}>
-        <figure><img src={account.image} alt={`${account.name} RedNote post example`} loading="lazy" /></figure>
+        <figure><img src={account.image} alt={`${account.name} best-performing RedNote post example`} loading="lazy" /><figcaption>Best-performing post example</figcaption></figure>
         <div className="rednote-account-heading"><span>{account.type}</span><h3>{account.name}</h3><p>{account.note}</p></div>
         <dl><div><dt>Followers</dt><dd>{account.followers}</dd></div><div><dt>Account likes & saves</dt><dd>{account.engagement}</dd></div></dl>
         <div className="rednote-post-results"><span><strong>{account.likes}</strong>Likes</span><span><strong>{account.saves}</strong>Saves</span><span><strong>{account.comments}</strong>Comments</span></div>
